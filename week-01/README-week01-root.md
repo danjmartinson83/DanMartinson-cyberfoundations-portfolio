@@ -45,9 +45,9 @@ There's no GitHub deliverable this week — your first graded deliverable is in 
 
 ## Checklist
 
-- [x ] I created a GitHub account
+- [x] I created a GitHub account
 - [x] I created this repo using the green **Use this template** button (not a fork, not built from scratch)
-- [x ] My repo is set to Public
+- [x] My repo is set to Public
 - [x] I edited `README.md` with a short intro about myself and committed the change
 - [x] I can access my cohort's Circle space
 - [x] I can log into the Lab Portal and see my Student Dashboard
