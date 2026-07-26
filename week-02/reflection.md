@@ -34,11 +34,11 @@ Your answers need to be in complete sentences.
 
 ## Professional Growth Check
 
-- [ ] I documented my reflection clearly and in my own words
+- [x] I documented my reflection clearly and in my own words
 
-- [ ] I used structured formatting in my submission
+- [x] I used structured formatting in my submission
 
-- [ ] My commit message was meaningful and descriptive
+- [x] My commit message was meaningful and descriptive
 
 ---
 
