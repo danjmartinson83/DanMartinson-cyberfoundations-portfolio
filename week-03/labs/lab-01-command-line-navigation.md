@@ -1,8 +1,10 @@
 # Week 3 Lab — Navigate Your First File System (CLI Simulator)
 
-**Student Name:**  
-**Date Completed:**  
-**Module:** 1 — Digital Infrastructure & CLI | **Week:** 3
+**Student Name:** Dan Martinson
+
+**Date Completed:** 8/8/2026
+
+**Module:** 1 — Digital Infrastructure & CLI | **Week:** 3  
 **Submission Path:** `week-03/labs/lab-01-command-line-navigation.md`
 
 ---
@@ -34,12 +36,16 @@ Lesson 3 introduced your first five commands — finding where you are, looking 
 Load the Foundry District Shift Log scenario and run the command that tells you where you currently are (`pwd` in bash, `Get-Location` in PowerShell).
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wks2:/home/morgan$pwd
 ```
+
 Output (your current path):
+
 ```
-(paste the output here)
+/home/morgan
+
 ```
 
 ### Step 2 — Look Around
@@ -47,12 +53,15 @@ Output (your current path):
 Run the command that lists what's in your current location (`ls` in bash, `dir` in PowerShell).
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wk02:/home/morgan$ls
 ```
+
 Output (files/folders listed):
+
 ```
-(paste the output here)
+README.md intake logs Maintenance
 ```
 
 ### Step 3 — Predict Before You Move
@@ -60,8 +69,9 @@ Output (files/folders listed):
 Before moving anywhere, look at the folder names from Step 2 and guess which one might contain a shift log or notes file. Write your guess down first — you'll check it in Part B.
 
 My guess:
+
 ```
-(type your guess here)
+logs
 ```
 
 ---
@@ -73,8 +83,10 @@ My guess:
 Use `cd` (with a folder name from Step 2 as its argument) to move into the folder you guessed in Part A, Step 3.
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wk02:/home/morgan$cd logs
+morgan@foundry-wk02:/home/morgan/logs$pwd
 ```
 
 ### Step 2 — Confirm Your New Location
@@ -82,12 +94,15 @@ Command you ran:
 Run `pwd` or `Get-Location` again to confirm exactly where you landed.
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wk02:/home/morgan/logs$pwd
 ```
+
 Output (your new path):
+
 ```
-(paste the output here)
+/home/morgan/logs
 ```
 
 ### Step 3 — Look Around Again
@@ -95,12 +110,22 @@ Output (your new path):
 Run `ls` or `dir` again in this new location. Keep moving with `cd` (repeating Steps 1–3 as needed) until you find a text file — something like a shift log, notes file, or README.
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wks-02:/home/morgan$cd logs
+morgan@foundry-wks-02:/home/morgan/logs$ls
+morgan@foundry-wks-02:/home/morgan/logs$ cat shift-log.txt
 ```
+
 Output:
+
 ```
-(paste the output here)
+shift-log.txt
+Shift log - Foundry District
+06:00 - All systems normal.
+14:00 - Routine inspection complete.
+22:00 - Handoff to night shift.
+
 ```
 
 ### Step 4 — Peek Inside the File
@@ -108,12 +133,21 @@ Output:
 Once you've found a text file, use `cat` (bash) or `type` (PowerShell) to read its contents.
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wks-02:/home/morgan$cd logs
+morgan@foundry-wks-02:/home/morgan/logs$ls
+morgan@foundry-wks-02:/home/morgan/logs$ cat shift-log.txt
 ```
+
 File contents:
+
 ```
-(paste the file contents here)
+Shift log - Foundry District
+06:00 - All systems normal.
+14:00 - Routine inspection complete.
+22:00 - Handoff to night shift.
+
 ```
 
 ### Step 5 — Move Back Up
@@ -121,12 +155,17 @@ File contents:
 Use `cd ..` at least once to move back up a level, and confirm with `pwd`/`Get-Location` that the path changed the way you expected.
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wks-02:/home/morgan/logs$cd ~
+morgan@foundry-wks-02:/home/morgan/logs$cd ..
 ```
+
 Output (confirming your new — higher — location):
+
 ```
-(paste the output here)
+morgan@foundry-wks-02:/home/morgan$
+morgan@foundry-wks-02:/home/morgan$
 ```
 
 ---
@@ -142,12 +181,15 @@ The CLI Simulator's Foundry District scenario includes one command you haven't b
 Use `--help` or `man` (bash) or `Get-Help` (PowerShell) on that unfamiliar command.
 
 Command you ran:
+
 ```
-(paste the command here)
+morgan@foundry-wks-02:/home/morgan$man grep
 ```
+
 What the help text told you the command does, in your own words:
+
 ```
-(describe it in your own words here)
+man grep searches inside files for a pattern. This is useful when a folder holds many files. 
 ```
 
 ---
@@ -167,7 +209,7 @@ Look at the path `pwd` (or `Get-Location`) printed in Part A, Step 1. Is it writ
 In Part B, you ran `pwd`/`Get-Location` right after moving with `cd`, more than once. Explain why that "move, then check" habit matters, especially while you're still building confidence with the command line.
 
 ```
-(your answer here — minimum 3 sentences)
+It is important that after every move you make in the command line to check where you are and what's there.  It's using "The Golden Rule" for running commands. Before you move, look.  After you move, check where you are or what's there.
 ```
 
 ### Analysis Question 3
@@ -175,7 +217,7 @@ In Part B, you ran `pwd`/`Get-Location` right after moving with `cd`, more than 
 In Part C, you looked up a command you'd never used before, instead of guessing or skipping it. Explain why this habit — asking the terminal for help instead of memorizing everything in advance — matters for a real career in IT or cybersecurity.
 
 ```
-(your answer here — minimum 3 sentences)
+Not a lot of people have every command that can be made memorized. Asking the terminal for help can help you acknowledge your location.  It can also help you see your next move or command.     
 ```
 
 ### Analysis Question 4
@@ -183,22 +225,30 @@ In Part C, you looked up a command you'd never used before, instead of guessing 
 Compare this lab to Lesson 1's filing-room analogy (the pile of paper vs. the labeled cabinets). Now that you've actually navigated a file-system tree yourself instead of just reading about one, what — if anything — surprised you or felt different from what you expected?
 
 ```
-(your answer here — minimum 2 sentences)
+When navigating the file system, it feels much more structured and organized.  Using a path hierarchy is much faster than searching on my own. Making work much more efficient. 
 ```
 
 ---
 
 ## Submission Checklist
 
-- [ ] Starting location recorded using `pwd`/`Get-Location` (Part A, Step 1)
-- [ ] Folder contents listed using `ls`/`dir` (Part A, Step 2)
-- [ ] Prediction written down before moving (Part A, Step 3)
-- [ ] Moved into a folder using `cd` and confirmed the new location with `pwd`/`Get-Location` **immediately after** the move, not just at the end (Part B, Steps 1–2)
-- [ ] Found and read a text file using `cat`/`type` (Part B, Steps 3–4)
-- [ ] Moved back up using `cd ..` and confirmed with `pwd`/`Get-Location` (Part B, Step 5)
-- [ ] Looked up an unfamiliar command using `--help`, `man`, or `Get-Help` and recorded what it does (Part C)
-- [ ] All four Analysis Questions answered (minimum sentence counts met)
-- [ ] This file is committed to your portfolio repo at `week-03/labs/lab-01-command-line-navigation.md`
+- [x] Starting location recorded using `pwd`/`Get-Location` (Part A, Step 1)
+
+- [x] Folder contents listed using `ls`/`dir` (Part A, Step 2)
+
+- [x] Prediction written down before moving (Part A, Step 3)
+
+- [x] Moved into a folder using `cd` and confirmed the new location with `pwd`/`Get-Location` **immediately after** the move, not just at the end (Part B, Steps 1–2)
+
+- [x] Found and read a text file using `cat`/`type` (Part B, Steps 3–4)
+
+- [x] Moved back up using `cd ..` and confirmed with `pwd`/`Get-Location` (Part B, Step 5)
+
+- [x] Looked up an unfamiliar command using `--help`, `man`, or `Get-Help` and recorded what it does (Part C)
+
+- [x] All four Analysis Questions answered (minimum sentence counts met)
+
+- [x] This file is committed to your portfolio repo at `week-03/labs/lab-01-command-line-navigation.md`
 
 ---
 
@@ -232,4 +282,3 @@ If you'd like to add one, take a screenshot showing your commands and their outp
 ---
 
 *CyberVisionaries Institute · Cyber Foundations · Tier I*
-
