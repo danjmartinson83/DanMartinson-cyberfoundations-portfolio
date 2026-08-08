@@ -201,7 +201,8 @@ man grep searches inside files for a pattern. This is useful when a folder holds
 Look at the path `pwd` (or `Get-Location`) printed in Part A, Step 1. Is it written in Windows style or Linux style, and how do you know? Reference at least one specific detail from Lesson 2 (a drive letter, a slash direction, or the presence of a ~) to support your answer.
 
 ```
-(your answer here — minimum 3 sentences)
+Linux uses / instead of \ which is used on Windows style.  When using the window peep to sneak a peek at what's inside a file user@foundry:~$cat notes.txt was used instead of typing out the entire address.  This works in finding the file faster to look at it. Also in Linux if you get lost and want to start over from home you can use morgan@foundry-wks-02:/home/morgan/logs$cd ~ or
+morgan@foundry-wks-02:/home/morgan/logs$cd .. until you are home.
 ```
 
 ### Analysis Question 2
