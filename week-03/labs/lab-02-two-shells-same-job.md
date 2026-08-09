@@ -1,7 +1,7 @@
 # Week 3 Lab 02 — Two Shells, Same Job: Incident Response Edition (CLI Simulator)
 
-**Student Name:**  
-**Date Completed:**  
+**Student Name:**  Dan Martinson
+**Date Completed:**  8/8/2026
 **Module:** 1 — Digital Infrastructure & CLI | **Week:** 3
 **Submission Path:** `week-03/labs/lab-02-two-shells-same-job.md`
 
@@ -39,10 +39,10 @@ Before you start typing, remember these three professional efficiency "cheat cod
 
 ## 🛠️ Lab Checklist
 
-- [ ] Part A: Complete the Bash Pass (Linux), including creating and backing up your investigation note
-- [ ] Part B: Complete the PowerShell Pass (Windows), including creating and backing up your investigation note
-- [ ] Part C: Side-by-Side Comparison & Reflection
-- [ ] Analysis Questions: Final Conceptual Review
+- [x ] Part A: Complete the Bash Pass (Linux), including creating and backing up your investigation note
+- [x ] Part B: Complete the PowerShell Pass (Windows), including creating and backing up your investigation note
+- [x ] Part C: Side-by-Side Comparison & Reflection
+- [x ] Analysis Questions: Final Conceptual Review
 
 ---
 
@@ -56,11 +56,11 @@ Run the command to print your current working directory.
 
 Command you ran:
 ```
-(paste the command here)
+pwd
 ```
 Output:
 ```
-(paste the output here)
+/home/agent$
 ```
 
 ### Step A2 — Look Around the Directory
@@ -69,11 +69,11 @@ List the contents of your current location to spot any files or folders.
 
 Command you ran:
 ```
-(paste the command here)
+ls
 ```
 Output:
 ```
-(paste the output here)
+README.txt archive
 ```
 
 ### Step A3 — Move Deeper into the Storeroom
@@ -82,18 +82,21 @@ Move into the `archive/incident-42` folder — flagged in the README as the one 
 
 Command you ran:
 ```
-(paste the command here)
+cd archive
+ls
+cd incident-42
+ls
 ```
 
 **⚠️ Stop and check:** run your location-check command *immediately* after moving, to confirm you arrived safely.
 
 Command you ran:
 ```
-(paste the command here)
+agent@storeroom-lnx01:/home/agent$pwd
 ```
 Output:
 ```
-(paste the output here)
+/home/agent/archive/incident-42
 ```
 
 ### Step A4 — Inspect the Incident Log File
@@ -102,11 +105,16 @@ Find a text file in this directory and print its contents to the screen to peek 
 
 Command you ran:
 ```
-(paste the command here)
+ls
+cat access-log.txt
 ```
 Output:
 ```
-(paste the output here)
+access-log.txt
+Access log - incident 42
+03:14 - Unknown login attempt, storeroom bay 3.
+03:16 - Access denied.
+03:17 - Alert raised to on-call.
 ```
 
 ### Step A5 — Create Your Investigation Note
@@ -115,7 +123,7 @@ Investigators document as they go. Create a new, empty file right here called `i
 
 Command you ran:
 ```
-(paste the command here)
+touch investigation-notes.txt
 ```
 
 ### Step A6 — Back Up Your Note
@@ -124,12 +132,13 @@ Before you go any further, make a backup copy of `investigation-notes.txt` calle
 
 Command you ran:
 ```
-(paste the command here)
+cp investigation-notes.txt investigation-notes-backup.txt
+
 ```
 
 Confirm both files now exist:
 ```
-(paste the output here)
+agent@storeroom-lnx01:/home/agent$ls
 ```
 
 ---
@@ -144,11 +153,11 @@ Run the Windows command to print your current location.
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/agent>pwd
 ```
 Output:
 ```
-(paste the output here)
+/home/agent
 ```
 
 ### Step B2 — Look Around the Directory
@@ -157,11 +166,14 @@ List the contents of your current location.
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/agent>dir
 ```
 Output:
 ```
-(paste the output here)
+Mode             Name
+d-----           archive
+-a----           README.txt
+PS/home/agent>
 ```
 
 ### Step B3 — Move Deeper into the Storeroom
@@ -170,18 +182,25 @@ Move into `archive/incident-42` again — the same folder from Part A.
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/agent>cd archive
+Mode             Name
+D-----           incident-07
+D-----           incident-42
+PS/home/agent/archive>cd incident-42
+PS/home/agent/archive/incident-42>
+
 ```
 
 **⚠️ Stop and check:** run your location-check command *immediately* after moving, to confirm you arrived safely.
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/agent/archive/incident-42>pwd
 ```
 Output:
 ```
-(paste the output here)
+/home/agent/archive/incident-42
+PS/home/agent/archive/incident-42>
 ```
 
 ### Step B4 — Inspect the Incident Log File
@@ -190,11 +209,18 @@ Print the contents of the **exact same text file** you read in Part A.
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/agent/archive/incident-42>ls
+PS/home/agent/archive/incident-42>type access-log.txt
 ```
 Output:
 ```
-(paste the output here)
+Mode              Name
+-a----            access-log.txt
+Access Log - Incident 42
+03:14 - Unknown login attempt, storeroom bay 3.
+03:16 - Access denied.
+03:17 - Alert raised to on-call.
+PS/home/agent/archive/incident-42>
 ```
 
 ### Step B5 — Create Your Investigation Note
@@ -203,7 +229,7 @@ Create the **same-named** empty file, `investigation-notes.txt`, right here on t
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/agent/archive/incident-42>New-Item investigation-notes.txt
 ```
 
 ### Step B6 — Back Up Your Note
@@ -212,12 +238,12 @@ Make a backup copy of `investigation-notes.txt` called `investigation-notes-back
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/agent/archive/incident-42>Copy-Item investigation-notes.txt investigation-notes-backup.txt
 ```
 
 Confirm both files now exist:
 ```
-(paste the output here)
+PS/home/agent/archive/incident-42>dir
 ```
 
 ---
@@ -230,11 +256,11 @@ Fill in the exact commands you typed for each task. Do not use generic names —
 
 | Task / Question | Bash Command (Linux Pass) | PowerShell Command (Windows Pass) |
 |---|---|---|
-| 1. Where am I? | | |
-| 2. Look around | | |
-| 3. Move into a folder | | |
-| 4. Peek inside a file | | |
-| 5. Create + back up your note | | |
+| 1. Where am I? |agent@storeroom-lnx01:/home/agent$pwd |PS/home/agent>pwd |
+| 2. Look around |agent@storeroom-lnx01:/home/agent$ls |PS/home/agent/archive/incident-42>dir |
+| 3. Move into a folder |cd incident-42 |cd incident-42|
+| 4. Peek inside a file |cat access-log.txt |type access-log.txt|
+| 5. Create + back up your note |touch investigation-notes.txt and touch investigation-notes-backup.txt  |New-Item investigation-notes.txt and Copy-Item investigation-notes.txt investigation-notes-backup.txt|
 
 **⚠️ Stop and check:** did you use the exact same folder and file for both your bash and PowerShell passes? If they don't match, your comparison table below won't make sense — go back to Part B and re-target the same location before continuing.
 
@@ -243,7 +269,8 @@ Fill in the exact commands you typed for each task. Do not use generic names —
 Describe at least one difference in how the two shells presented information to you (e.g., column layout, text colors, file details, folder headers). Minimum 2 sentences.
 
 ```
-(your answer here)
+If you look at the paths to the folder that the access-log.txt was located you notice they are different only just by a few letters.
+One was/home/agent/archive/incident-42  while the other was PS/home/agent/archive/incident-42>.
 ```
 
 ---
@@ -255,7 +282,7 @@ Describe at least one difference in how the two shells presented information to 
 How do you know that the underlying file system tree was identical across both passes, even though you used completely different commands and operating systems? Point to concrete evidence from your terminal outputs (e.g., matching folder names, file content, or sizes). Minimum 3 sentences.
 
 ```
-(your answer here)
+If you follow the hierarchy of the path that each program file that contained access-logs.txt they are very similar.  The only diffrence is that powershell uses a root of PS while Linux just uses a /.  Both shells had the same info inside the access-logs.
 ```
 
 ### Analysis Question 2 — Syntax Preferences
@@ -263,7 +290,7 @@ How do you know that the underlying file system tree was identical across both p
 Which command pair (e.g., pwd vs. Get-Location, ls vs. dir, cat vs. type) felt most different to you? Give a specific reason why one felt more comfortable or intuitive than the other. Minimum 3 sentences.
 
 ```
-(your answer here)
+The powershell felt a little more complex with its longer commands.  I also didn't feel the powershell was easier to read at all.  It was easier to type out commands with Bash.
 ```
 
 ### Analysis Question 3 — Applying Lesson 2 Differences
@@ -271,23 +298,23 @@ Which command pair (e.g., pwd vs. Get-Location, ls vs. dir, cat vs. type) felt m
 Describe how a specific difference you learned about in Lesson 2 (such as slash styles, case-sensitivity, or drive letters) was directly visible in your hands-on commands or output during this lab. Minimum 3 sentences.
 
 ```
-(your answer here)
+Bash is very strict about case sensitivity.  Bash uses / while powershell uses\ slash styles.  Powershell is a but more forgiving to people who are used to other programs sharing some of the same commands. 
 ```
 
 ---
 
 ## Submission Checklist
 
-- [ ] Part A completed entirely in bash (Steps A1–A6, all commands and output recorded)
-- [ ] Location re-checked immediately after the Part A move (Step A3), not just at the end
-- [ ] Investigation note created and backed up in Part A (Steps A5–A6)
-- [ ] Part B completed entirely in PowerShell, on the same folder/file as Part A (Steps B1–B6)
-- [ ] Location re-checked immediately after the Part B move (Step B3)
-- [ ] Investigation note created and backed up in Part B, with the same filenames as Part A (Steps B5–B6)
-- [ ] Comparison table filled in with actual commands, not placeholders (Part C, Step C1)
-- [ ] Output-differences reflection written (Part C, Step C2 — minimum 2 sentences)
-- [ ] All three Analysis Questions answered (minimum sentence counts met)
-- [ ] This file is committed to your portfolio repo at `week-03/labs/lab-02-two-shells-same-job.md`
+- [x ] Part A completed entirely in bash (Steps A1–A6, all commands and output recorded)
+- [x ] Location re-checked immediately after the Part A move (Step A3), not just at the end
+- [x ] Investigation note created and backed up in Part A (Steps A5–A6)
+- [x ] Part B completed entirely in PowerShell, on the same folder/file as Part A (Steps B1–B6)
+- [x ] Location re-checked immediately after the Part B move (Step B3)
+- [x ] Investigation note created and backed up in Part B, with the same filenames as Part A (Steps B5–B6)
+- [x ] Comparison table filled in with actual commands, not placeholders (Part C, Step C1)
+- [x ] Output-differences reflection written (Part C, Step C2 — minimum 2 sentences)
+- [x ] All three Analysis Questions answered (minimum sentence counts met)
+- [x ] This file is committed to your portfolio repo at `week-03/labs/lab-02-two-shells-same-job.md`
 
 ---
 
