@@ -1,8 +1,10 @@
 # Week 3 Lab 03 — Command Line Scavenger Hunt (CLI Simulator)
 
-**Student Name:**  Dan Martinson
-**Date Completed:**  8/9/2026
-**Module:** 1 — Digital Infrastructure & CLI | **Week:** 3
+**Student Name:** Dan Martinson
+
+**Date Completed:** 8/9/2026
+
+**Module:** 1 — Digital Infrastructure & CLI | **Week:** 3  
 **Submission Path:** `week-03/labs/lab-03-command-line-scavenger-hunt.md`
 
 ---
@@ -38,16 +40,21 @@ Find all three of the following, hidden at different depths in the Archive Room 
 For each one, use `pwd`/`Get-Location` and `ls`/`dir` as many times as you need while you search, then record the **full path** once you find it.
 
 Shift log file — full path once found:
+
 ```
-archivist@archive-room:/home/archivist/operations/ops-log$
+archivist@archive-room:/home/archivist/operations/ops-log$ cat shift-log.txt
 ```
+
 Maintenance note file — full path once found:
+
 ```
-archivist@archive-room:/home/archivist/records/records-2025$
+archivist@archive-room:/home/archivist/records/records-2025$ cat maintenance-note.txt
 ```
+
 Supply inventory file — full path once found:
+
 ```
-archivist@archive-room:/home/archivist/records/records-2024$
+archivist@archive-room:/home/archivist/records/records-2024$ cat supply-inventory.txt
 ```
 
 ---
@@ -57,16 +64,21 @@ archivist@archive-room:/home/archivist/records/records-2024$
 For each of the three files you found in Part A, use `cat`/`type` to read it and record what it says.
 
 Shift log contents:
+
 ```
 Shift Log - Foundry District Archive Room
 07:00 - Archive opened, no incidents overnight.
 15:00 - Routine filing complete.
 ```
+
 Maintenance note contents:
+
 ```
 Maintenance Note - Conveyor belt 3 serviced, next check due in 90 days.
 ```
+
 Supply inventory contents:
+
 ```
 Supply Inventory - Q4 2024
 Gloves - 400 units
@@ -85,6 +97,7 @@ Now that you've located and read all three files, clean up after yourself the wa
 Create a new folder called `sorted-findings` in your home directory.
 
 Command you ran:
+
 ```
 PS/home/archivist>New-Item sorted-findings -ItemType Directory
 ```
@@ -94,6 +107,7 @@ PS/home/archivist>New-Item sorted-findings -ItemType Directory
 Move the shift log, maintenance note, and supply inventory files — the same three you found in Part A — into `sorted-findings`.
 
 Commands you ran:
+
 ```
 PS/home/archivist>Move-Item operations/ops-log/shift-log.txt sorted-findings/
 PS/home/archivist>Move-Item records/records-2025/maintenance-note.txt sorted-findings/
@@ -106,15 +120,18 @@ PS/home/archivist>Move-Item records/records-2024/supply-inventory.txt sorted-fin
 List the contents of `sorted-findings` to confirm all three files are now there.
 
 Command you ran:
+
 ```
 PS/home/archivist>Get-ChildItem sorted-findings
 ```
+
 Output:
+
 ```
 Mode                  Name
 -a----                Maintenance-note.txt
 -a----                shift-log.txt
--a----                supply-inventort.txt
+-a----                supply-inventory.txt
 ```
 
 ---
@@ -128,10 +145,13 @@ At some point in the Archive Room, you'll likely run across a command or folder 
 When that happens, use `--help`, `man`, or `Get-Help` instead of guessing. Record what you looked up and what you learned.
 
 Command or term you looked up:
+
 ```
 PS/home/archivist>Get-Help
 ```
+
 What the help text (or the folder's contents) told you:
+
 ```
 It said that it displays a short description
 ```
@@ -141,7 +161,7 @@ It said that it displays a short description
 Everyone takes at least one wrong turn in a tree this size. Describe one moment you ended up somewhere unexpected, and how you used `pwd`/`Get-Location` and `cd ..` to recover.
 
 ```
-(your answer here — minimum 2 sentences)
+While going down the paths looking for the files, I went into the wrong file.  I used cd .. and backed out of the folder to correct and recover.
 ```
 
 ---
@@ -153,7 +173,7 @@ Everyone takes at least one wrong turn in a tree this size. Describe one moment 
 Which of the three files in Part A took the longest to find, and what was it about the tree's structure (depth, similarly-named folders, etc.) that made it harder?
 
 ```
-(your answer here — minimum 3 sentences)
+I would say that the supply inventory was the hardest to find.  It was listed under a different year, and as it was old, I didn't think to look there at first. I looked in other folders first.
 ```
 
 ### Analysis Question 2
@@ -161,7 +181,7 @@ Which of the three files in Part A took the longest to find, and what was it abo
 Compare how you felt starting this lab to how you felt at the very start of Lesson 3A, looking at a blank blinking cursor for the first time. What changed?
 
 ```
-(your answer here — minimum 3 sentences)
+At first, I was nervous due to the depth of the directories.  After navigating back and forth in each of the directories, I became more comfortable.  Now, using the different navigational commands, I can move through each of them much more easily. 
 ```
 
 ### Analysis Question 3
@@ -169,20 +189,26 @@ Compare how you felt starting this lab to how you felt at the very start of Less
 Week 4 moves from managing your own files to controlling who's allowed to do what to them — permissions — plus your first look at what a virtual machine is. Based on everything you've practiced this week, what's one thing you're curious about or looking forward to?
 
 ```
-(your answer here — minimum 2 sentences)
+I am looking forward to looking at what each lesson teaches us about the different permissions.  Looking at what the rings represent and also learning the different ways to make sure that doors that should be locked in different files are. 
 ```
 
 ---
 
 ## Submission Checklist
 
-- [ ] All three target files located, with full paths recorded (Part A)
-- [ ] All three target files read and their contents recorded (Part B)
-- [ ] `sorted-findings` folder created and all three files moved into it, confirmed with a listing (Part C)
-- [ ] At least one command or term looked up with `--help`/`man`/`Get-Help`, with what you learned recorded (Part D, Step 1)
-- [ ] One wrong-turn moment described, including how you recovered (Part D, Step 2 — minimum 2 sentences)
-- [ ] All three Analysis Questions answered (minimum sentence counts met)
-- [ ] This file is committed to your portfolio repo at `week-03/labs/lab-03-command-line-scavenger-hunt.md`
+- [x] All three target files located, with full paths recorded (Part A)
+
+- [x] All three target files read and their contents recorded (Part B)
+
+- [x] `sorted-findings` folder created and all three files moved into it, confirmed with a listing (Part C)
+
+- [x] At least one command or term looked up with `--help`/`man`/`Get-Help`, with what you learned recorded (Part D, Step 1)
+
+- [x] One wrong-turn moment described, including how you recovered (Part D, Step 2 — minimum 2 sentences)
+
+- [x] All three Analysis Questions answered (minimum sentence counts met)
+
+- [x] This file is committed to your portfolio repo at `week-03/labs/lab-03-command-line-scavenger-hunt.md`
 
 ---
 
@@ -195,4 +221,3 @@ Same mechanism as Labs 01 and 02: fill out this lab's worksheet in the **CyberFo
 ---
 
 *CyberVisionaries Institute · Cyber Foundations · Tier I*
-
