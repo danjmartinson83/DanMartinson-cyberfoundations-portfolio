@@ -1,7 +1,7 @@
 # Week 3 Lab 03 — Command Line Scavenger Hunt (CLI Simulator)
 
-**Student Name:**  
-**Date Completed:**  
+**Student Name:**  Dan Martinson
+**Date Completed:**  8/9/2026
 **Module:** 1 — Digital Infrastructure & CLI | **Week:** 3
 **Submission Path:** `week-03/labs/lab-03-command-line-scavenger-hunt.md`
 
@@ -39,15 +39,15 @@ For each one, use `pwd`/`Get-Location` and `ls`/`dir` as many times as you need 
 
 Shift log file — full path once found:
 ```
-(paste the full path here)
+archivist@archive-room:/home/archivist/operations/ops-log$
 ```
 Maintenance note file — full path once found:
 ```
-(paste the full path here)
+archivist@archive-room:/home/archivist/records/records-2025$
 ```
 Supply inventory file — full path once found:
 ```
-(paste the full path here)
+archivist@archive-room:/home/archivist/records/records-2024$
 ```
 
 ---
@@ -58,15 +58,20 @@ For each of the three files you found in Part A, use `cat`/`type` to read it and
 
 Shift log contents:
 ```
-(paste the file contents here)
+Shift Log - Foundry District Archive Room
+07:00 - Archive opened, no incidents overnight.
+15:00 - Routine filing complete.
 ```
 Maintenance note contents:
 ```
-(paste the file contents here)
+Maintenance Note - Conveyor belt 3 serviced, next check due in 90 days.
 ```
 Supply inventory contents:
 ```
-(paste the file contents here)
+Supply Inventory - Q4 2024
+Gloves - 400 units
+Masks - 250 units
+Tape - 60 Rolls
 ```
 
 ---
@@ -81,7 +86,7 @@ Create a new folder called `sorted-findings` in your home directory.
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/archivist>New-Item sorted-findings -ItemType Directory
 ```
 
 ### Step 2 — Move All Three Files Into It
@@ -90,7 +95,10 @@ Move the shift log, maintenance note, and supply inventory files — the same th
 
 Commands you ran:
 ```
-(paste the commands here)
+PS/home/archivist>Move-Item operations/ops-log/shift-log.txt sorted-findings/
+PS/home/archivist>Move-Item records/records-2025/maintenance-note.txt sorted-findings/
+PS/home/archivist>Move-Item records/records-2024/supply-inventory.txt sorted-findings/
+
 ```
 
 ### Step 3 — Confirm the Move
@@ -99,11 +107,14 @@ List the contents of `sorted-findings` to confirm all three files are now there.
 
 Command you ran:
 ```
-(paste the command here)
+PS/home/archivist>Get-ChildItem sorted-findings
 ```
 Output:
 ```
-(paste the output here)
+Mode                  Name
+-a----                Maintenance-note.txt
+-a----                shift-log.txt
+-a----                supply-inventort.txt
 ```
 
 ---
@@ -118,11 +129,11 @@ When that happens, use `--help`, `man`, or `Get-Help` instead of guessing. Recor
 
 Command or term you looked up:
 ```
-(paste the command here)
+PS/home/archivist>Get-Help
 ```
 What the help text (or the folder's contents) told you:
 ```
-(describe it in your own words here)
+It said that it displays a short description
 ```
 
 ### Step 2 — Describe a Wrong Turn
