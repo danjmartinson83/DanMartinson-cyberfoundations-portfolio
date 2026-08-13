@@ -152,14 +152,59 @@ Before you go any further, make a backup copy of `investigation-notes.txt` calle
 Command you ran:
 
 ```
-cp investigation-notes.txt investigation-notes-backup.txt
+agent@storeroom-lnx01:/home/agent$ ls
+README.txt  archive
+agent@storeroom-lnx01:/home/agent$ cd archive
+agent@storeroom-lnx01:/home/agent/archive$ ls
+incident-07  incident-42
+agent@storeroom-lnx01:/home/agent/archive$ cd incident-42
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ cat access-log.txt
+Access Log - Incident 42
+03:14 - Unknown login attempt, storeroom bay 3.
+03:16 - Access denied.
+03:17 - Alert raised to on-call.
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ touch investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ cp access-log.txt investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ cp investigation-notes.txt investigation-notes-backup.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes-backup.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$
 
 ```
 
 Confirm both files now exist:
 
 ```
-agent@storeroom-lnx01:/home/agent$ls
+agent@storeroom-lnx01:/home/agent$ ls
+README.txt  archive
+agent@storeroom-lnx01:/home/agent$ cd archive
+agent@storeroom-lnx01:/home/agent/archive$ ls
+incident-07  incident-42
+agent@storeroom-lnx01:/home/agent/archive$ cd incident-42
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ cat access-log.txt
+Access Log - Incident 42
+03:14 - Unknown login attempt, storeroom bay 3.
+03:16 - Access denied.
+03:17 - Alert raised to on-call.
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ touch investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ cp access-log.txt investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ cp investigation-notes.txt investigation-notes-backup.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$ ls
+access-log.txt  investigation-notes-backup.txt  investigation-notes.txt
+agent@storeroom-lnx01:/home/agent/archive/incident-42$
+
 ```
 
 ---
@@ -277,13 +322,56 @@ Make a backup copy of `investigation-notes.txt` called `investigation-notes-back
 Command you ran:
 
 ```
-PS/home/agent/archive/incident-42>Copy-Item investigation-notes.txt investigation-notes-backup.txt
+PS /home/agent> Get-Location
+PS /home/agent> Get-ChildItem
+PS /home/agent> Set-Location archive
+PS /home/agent/archive> Get-ChildItem
+PS /home/agent/archive> Set-Location incident-42
+PS /home/agent/archive/incident-42> Get-ChildItem
+PS /home/agent/archive/incident-42> Get-Content access-log.txt
+PS /home/agent/archive/incident-42> New-Item investigation-notes.txt
+PS /home/agent/archive/incident-42> Get-ChildItem
+PS /home/agent/archive/incident-42> Copy-Item access-log.txt  investigation-notes.txt
+PS /home/agent/archive/incident-42> Copy-Item investigation-notes.txt investigation-notes-backup.txt
+PS /home/agent/archive/incident-42> Get-ChildItem
 ```
 
 Confirm both files now exist:
 
 ```
-PS/home/agent/archive/incident-42>dir
+PS /home/agent> Get-Location
+/home/agent
+PS /home/agent> Get-ChildItem
+Mode                 Name
+d-----               archive
+-a----               README.txt
+PS /home/agent> Set-Location archive
+PS /home/agent/archive> Get-ChildItem
+Mode                 Name
+d-----               incident-07
+d-----               incident-42
+PS /home/agent/archive> Set-Location incident-42
+PS /home/agent/archive/incident-42> Get-ChildItem
+Mode                 Name
+-a----               access-log.txt
+PS /home/agent/archive/incident-42> Get-Content access-log.txt
+Access Log - Incident 42
+03:14 - Unknown login attempt, storeroom bay 3.
+03:16 - Access denied.
+03:17 - Alert raised to on-call.
+PS /home/agent/archive/incident-42> New-Item investigation-notes.txt
+PS /home/agent/archive/incident-42> Get-ChildItem
+Mode                 Name
+-a----               access-log.txt
+-a----               investigation-notes.txt
+PS /home/agent/archive/incident-42> Copy-Item access-log.txt  investigation-notes.txt
+PS /home/agent/archive/incident-42> Copy-Item investigation-notes.txt investigation-notes-backup.txt
+PS /home/agent/archive/incident-42> Get-ChildItem
+Mode                 Name
+-a----               access-log.txt
+-a----               investigation-notes-backup.txt
+-a----               investigation-notes.txt
+
 ```
 
 ---
