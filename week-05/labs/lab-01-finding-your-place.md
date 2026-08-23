@@ -69,6 +69,7 @@ Your IPv4 address:
 
 ```
 10.20.5.42
+255.255.255.0
 ```
 
 ### Step 3 — Translate the Slash Into a Subnet Mask
@@ -83,7 +84,9 @@ Your prefix length and the subnet mask it means:
 
 ```
 10.20.5.42/24
-10.20.5.255
+Prefix Length: /24
+The hostname and IP reach the same destination.
+Subnet Mask: 255.255.255.0
 ```
 
 ### Step 4 — Find the Door Out
