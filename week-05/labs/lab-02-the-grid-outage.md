@@ -128,7 +128,10 @@ Two healthy results is not "nothing happened." It's a finding, and it eliminates
 What your baseline rules out, and why that matters before you go further:
 
 ```
-My IP address is working.  The Grid gateway is not working.  The ping of the relay-station.grid.local timed out with 100% packet loss.
+My IP address is working.  The Grid gateway is working.  The ping of the relay-station.grid.local timed out with 100% packet loss.
+Establishing this baseline eliminates local host and local network failures right at the start.
+
+If I had skipped this step and jumped straight to pinging the relay station, its failure would leave me with an ambiguous result: I wouldn't know if the relay station was down or if my own network connection was completely broken. By proving your gateway is healthy first, I guarantee that any subsequent timeouts or packet loss are caused by a problem downstream in the path or at the target itself, not on my end.
 ```
 
 ---
