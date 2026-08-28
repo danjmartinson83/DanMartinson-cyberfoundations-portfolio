@@ -48,7 +48,7 @@ Cloud Heights may warn you that the VM is idle. Return to the Lab Portal and cho
 Before opening the rule list, predict why a course environment would protect its access and safety rules from student edits.
 
 ```text
-(write your prediction here — 2 or 3 sentences)
+A course environment protects its baseline access and safety rules so students don't accidentally cut off administrative connections like SSH and lock themselves out of the virtual machine. Keeping these management rules locked ensures the lab infrastructure stays reachable and functional for everyone. It also creates a safe, isolated priority window where students can experiment with firewall rules without risking permanent damage to the host setup.
 ```
 
 ## Guided Steps
