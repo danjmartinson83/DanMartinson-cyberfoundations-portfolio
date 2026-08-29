@@ -117,7 +117,7 @@ Capture the rule view in its displayed evaluation order and annotate your worksh
 Write a five-sentence explanation of first-match-wins that a classmate could use without memorizing Azure terminology.
 
 ```text
-(your explanation here)
+(When network traffic arrives, security rules are evaluated strictly in order starting from the lowest priority number up to the highest. The firewall reads down this list line by line to check if the incoming connection details match a rule's criteria. As soon as a single rule matches the traffic, the system immediately applies that rule's decision to either allow or block it. Once that first match is found, the evaluation process stops entirely, meaning any rules lower down on the list are completely ignored. Therefore, a higher-priority rule will always override any conflicting rule that comes after it, regardless of what action the later rule specifies.)
 ```
 
 ## Required Evidence
