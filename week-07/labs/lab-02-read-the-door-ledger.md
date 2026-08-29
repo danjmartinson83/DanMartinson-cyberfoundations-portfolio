@@ -1,7 +1,7 @@
 # Week 7 Lab 02 — Read the Door Ledger
 
-**Student Name:**  
-**Date Completed:**  
+**Student Name:**  Dan Martinson  
+**Date Completed:**  8/28/2025
 **Module:** 2 — Networking & Cloud Foundations | **Week:** 7  
 **Submission Path:** `week-07/labs/lab-02-read-the-door-ledger.md`
 
