@@ -44,8 +44,7 @@ Cloud Heights may warn you that the VM is idle. Return to the Lab Portal and cho
 Two inbound rules match TCP 8080 from the same source: priority 250 is **Deny** and priority 300 is **Allow**. Predict the verdict before reading further.
 
 ```text
-(write ALLOWED or DENIED and explain why)
-```
+Denied. Network security rule ledgers process incoming traffic sequentially starting from the lowest priority number to the highest. Because priority 250 is evaluated before priority 300, the Deny rule matches first. Evaluation stops immediately upon the first match, preventing the higher-numbered Allow rule from ever being processed.```
 
 ## Guided Steps
 
