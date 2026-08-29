@@ -53,7 +53,7 @@ Two inbound rules match TCP 8080 from the same source: priority 250 is **Deny** 
 View the inbound rules, then the outbound rules. Record one sentence explaining why an inbound allow does not automatically create an outbound allow.
 
 ```text
-(your sentence here)
+(Inbound and outbound rules are evaluated in completely separate ledgers, so allowing traffic entering a network does not implicitly permit response or return traffic leaving it.)
 ```
 
 ### Step 2 — Translate a Rule
