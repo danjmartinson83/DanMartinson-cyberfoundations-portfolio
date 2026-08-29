@@ -63,7 +63,7 @@ Choose one visible protected rule and translate it using this form:
 > Read in the [direction] ledger at priority [number], [allow/deny] [protocol] traffic from [source]:[source port] to [destination]:[destination port].
 
 ```text
-(your translation here)
+(the inbound ledger at priority 100, allow TCP traffic from 192.168.10.128/26:* to *:22.)
 ```
 
 ### Step 3 — Evaluate in Order
