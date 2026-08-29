@@ -75,7 +75,29 @@ For each scenario, list the rules in evaluation order, identify the first match,
 3. An inbound Allow exists, but the traffic being evaluated is outbound.
 
 ```text
-(write your ordered reasoning for all three scenarios)
+(Scenario 1
+
+Evaluation order: Priority 250 (Deny TCP from 10.60.6.4 to port 8080) -> Priority 300 (Allow TCP from 10.60.6.4 to port 8080)
+
+First match: Priority 250 (Deny TCP from 10.60.6.4 to port 8080)
+
+Verdict: Denied
+
+Scenario 2
+
+Evaluation order: Priority 300 (Allow TCP from 10.60.6.4 to port 8080) -> Priority 350 (Deny TCP from any source to port 8080)
+
+First match: Priority 300 (Allow TCP from 10.60.6.4 to port 8080)
+
+Verdict: Allowed
+
+Scenario 3
+
+Evaluation order: Outbound ledger rules in ascending priority order (lowest priority number first)
+
+First match: The first matching rule in the outbound ledger (or default outbound rule if no student rules match)
+
+Verdict: Subject to outbound ledger evaluation (the inbound Allow does not grant outbound traffic permission))
 ```
 
 ## Stop & Check
