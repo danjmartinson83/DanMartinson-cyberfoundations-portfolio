@@ -29,10 +29,10 @@ A network security rule is a decision about traffic. Rules are evaluated from th
 | Evaluation | Lower priority number first; first match wins |
 | Time | 25–30 minutes |
 
-- [ ] I am using my assigned `cf-student-XX` VM through the CyberFoundations Lab Portal.
-- [ ] The VM shows **Running**.
-- [ ] I can identify the three protected baseline rules at priorities 100, 110, and 120.
-- [ ] I understand that my editable priority range is 200–999.
+- [*] I am using my assigned `cf-student-XX` VM through the CyberFoundations Lab Portal.
+- [*] The VM shows **Running**.
+- [*] I can identify the three protected baseline rules at priorities 100, 110, and 120.
+- [*] I understand that my editable priority range is 200–999.
 
 ### Cloud Heights Idle Stop
 
@@ -43,7 +43,7 @@ Cloud Heights may warn you that the VM is idle. Return to the Lab Portal and cho
 Two inbound rules match TCP 8080 from the same source: priority 250 is **Deny** and priority 300 is **Allow**. Predict the verdict before reading further.
 
 ```text
-(write ALLOWED or DENIED and explain why)
+(DENIED  Rules are evaluated sequentially starting from the lowest priority number to the highest, and evaluation stops immediately at the first matching rule; since priority 250 is evaluated before priority 300, the Deny rule takes effect.)
 ```
 
 ## Guided Steps
