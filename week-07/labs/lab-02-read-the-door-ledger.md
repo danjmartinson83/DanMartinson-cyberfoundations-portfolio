@@ -133,31 +133,31 @@ Open each image at full size before submission. Confirm that no password, Bastio
 **Analysis Question 1.** If a Deny at priority 300 and an Allow at priority 400 both match, which wins and why? (Minimum 3 sentences.)
 
 ```text
-(your answer here)
+(The Deny rule at priority 300 wins because rules are evaluated sequentially in order of priority, from the lowest numerical value to the highest. Since 300 is lower than 400, the firewall checks and matches the Deny rule first. Under the "first-match-wins" principle, once a matching rule is encountered, its action is immediately applied and evaluation stops, causing the Allow rule at priority 400 to be completely ignored.)
 ```
 
 **Analysis Question 2.** Why do inbound and outbound rules have to be reasoned about separately? (Minimum 3 sentences.)
 
 ```text
-(your answer here)
+(Inbound and outbound rules are maintained in two completely separate, independent evaluation ledgers within network security configurations. Allowing network traffic in one direction does not automatically permit response or return traffic in the opposite direction. Because of this, network security administrators must explicitly evaluate and define both directions separately to ensure connections are permitted end-to-end without unintentionally blocking return packets or exposing unintended outbound vectors.)
 ```
 
 **Analysis Question 3.** How can an Allow rule be correct by itself but ineffective in the full ledger? (Minimum 3 sentences.)
 
 ```text
-(your answer here)
+(An Allow rule can be perfectly written and formatted on its own but still fail to take effect if a higher-priority rule matches the same traffic first. Because rules are evaluated sequentially from lowest priority number to highest under the first-match-wins principle, a preceding Deny rule (for example, at priority 200) will catch and block the traffic before evaluation ever reaches an Allow rule lower down the list (such as at priority 300). As a result, the firewall executes the higher-priority Deny action and stops processing further, rendering the valid Allow rule completely inactive and ignored within the full ledger.)
 ```
 
 ## Submission Checklist
 
-- [ ] Three scenarios evaluated in order
-- [ ] One live rule translated to plain English
-- [ ] Inbound and outbound ledgers distinguished
-- [ ] `week07-lab02-evaluation-order.png` captured
-- [ ] Protected priorities 100, 110, and 120 were not changed.
-- [ ] Every rule I created or edited used priority 200–999.
-- [ ] No password, Bastion URL, or browser address bar appears in my files.
-- [ ] This worksheet is committed to `week-07/labs/lab-02-read-the-door-ledger.md`.
+- [*] Three scenarios evaluated in order
+- [*] One live rule translated to plain English
+- [*] Inbound and outbound ledgers distinguished
+- [*] `week07-lab02-evaluation-order.png` captured
+- [*] Protected priorities 100, 110, and 120 were not changed.
+- [*] Every rule I created or edited used priority 200–999.
+- [*] No password, Bastion URL, or browser address bar appears in my files.
+- [*] This worksheet is committed to `week-07/labs/lab-02-read-the-door-ledger.md`.
 
 ## GitHub / Lab Portal Submission
 
