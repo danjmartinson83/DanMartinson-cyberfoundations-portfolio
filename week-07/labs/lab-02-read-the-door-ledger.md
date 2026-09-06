@@ -1,12 +1,14 @@
 # Week 7 Lab 02 — Read the Door Ledger
 
-**Student Name:**  Dan Martinson  
-**Date Completed:**  8/28/2025
+**Student Name:** Dan Martinson
+
+**Date Completed:** 8/28/2026
+
 **Module:** 2 — Networking & Cloud Foundations | **Week:** 7  
 **Submission Path:** `week-07/labs/lab-02-read-the-door-ledger.md`
 
 > ## Cloud Heights Protected-Rules Safety Rule
-> The baseline rules at priorities **100** (`allow-ssh-from-bastion`), **110** (`allow-icmp-intra-vnet`), and **120** (`deny-ssh-student-subnet`) are protected. **Never modify, delete, replace, or use them as troubleshooting targets.** Create or edit student rules only in priorities **200–999**. A mistake in your student range is recoverable and is not a grading penalty when you diagnose it honestly.
+> Four baseline rules are protected: **100** (`allow-ssh-from-bastion`), **110** (`allow-icmp-intra-vnet`), **120** (`deny-ssh-student-subnet`), and **1000** (`deny-tcp8080-student-subnet` — Inbound Deny TCP from `10.60.6.0/26` to port `8080`). **You never modify, delete, replace, or use a protected rule as a troubleshooting target.** Create or edit student rules only in priorities **200–999**. The priority **1000** fallback deny sits after your band on purpose, so a narrower Allow you create in 200–999 is evaluated first. A mistake in your student range is recoverable and is not a grading penalty when you diagnose it honestly.
 
 > **Evidence safety:** Never include a Cloud Heights password or Bastion shareable URL. Crop browser address bars and login information before committing screenshots.
 
@@ -29,10 +31,13 @@ A network security rule is a decision about traffic. Rules are evaluated from th
 | Evaluation | Lower priority number first; first match wins |
 | Time | 25–30 minutes |
 
-- [*] I am using my assigned `cf-student-XX` VM through the CyberFoundations Lab Portal.
-- [*] The VM shows **Running**.
-- [*] I can identify the three protected baseline rules at priorities 100, 110, and 120.
-- [*] I understand that my editable priority range is 200–999.
+- [x] I am using my assigned `cf-student-XX` VM through the CyberFoundations Lab Portal.
+
+- [x] The VM shows **Running**.
+
+- [x] I can identify the four protected baseline rules at priorities 100, 110, 120, and 1000.
+
+- [x] I understand that my editable priority range is 200–999.
 
 ### Cloud Heights Idle Stop
 
@@ -40,20 +45,26 @@ Cloud Heights may warn you that the VM is idle. Return to the Lab Portal and cho
 
 ## Predict First
 
+The priorities **250**, **300**, and **350** used in this lab are **hypothetical examples on paper only — do not create them**. This lab is prediction-only: do not add, edit, or delete rules, and do not run **Test My Rule** unless your instructor tells you to.
+
+Remember the live baseline also contains the protected priority **1000** `deny-tcp8080-student-subnet` fallback (Inbound Deny TCP from `10.60.6.0/26` to port 8080), which is reached only when no earlier rule matches.
+
 Two inbound rules match TCP 8080 from the same source: priority 250 is **Deny** and priority 300 is **Allow**. Predict the verdict before reading further.
 
 ```text
 (DENIED  Rules are evaluated sequentially starting from the lowest priority number to the highest, and evaluation stops immediately at the first matching rule; since priority 250 is evaluated before priority 300, the Deny rule takes effect.)
+
 ```
 
 ## Guided Steps
 
 ### Step 1 — Separate the Ledgers
 
-View the inbound rules, then the outbound rules. Record one sentence explaining why an inbound allow does not automatically create an outbound allow.
+Scroll below the yellow protected-rules summary to the detailed lists headed **INBOUND — EVALUATION ORDER** and **OUTBOUND — EVALUATION ORDER**. Read the inbound list, then the outbound list. Record one sentence explaining why an inbound allow does not automatically create an outbound allow.
 
 ```text
 (Inbound and outbound rules are evaluated in completely separate ledgers, so allowing traffic entering a network does not automatically permit response or return traffic leaving it.)
+
 ```
 
 ### Step 2 — Translate a Rule
@@ -68,7 +79,7 @@ Choose one visible protected rule and translate it using this form:
 
 ### Step 3 — Evaluate in Order
 
-For each scenario, list the rules in evaluation order, identify the first match, and state the verdict.
+For each hypothetical scenario below, list the rules in evaluation order, identify the first matching rule, and state the verdict. These rules are imaginary — do not create them.
 
 1. Priority 250 Deny TCP from `10.60.6.4` to port 8080; priority 300 Allow the same traffic.
 2. Priority 300 Allow TCP from `10.60.6.4` to port 8080; priority 350 Deny TCP from any source to port 8080.
@@ -110,7 +121,7 @@ Use the displayed rule list to predict whether Grid Beacon TCP 8080 would curren
 
 ## Capture Evidence
 
-Capture the rule view in its displayed evaluation order and annotate your worksheet with the first rule you would inspect for each scenario.
+Capture the detailed **INBOUND — EVALUATION ORDER** view (and **OUTBOUND — EVALUATION ORDER** if your evidence needs it), then name the first matching hypothetical rule and the resulting verdict for each scenario in your worksheet.
 
 ## Explain
 
@@ -118,6 +129,7 @@ Write a five-sentence explanation of first-match-wins that a classmate could use
 
 ```text
 (When network traffic arrives, security rules are evaluated strictly in order starting from the lowest priority number up to the highest. The firewall reads down this list line by line to check if the incoming connection details match a rule's criteria. As soon as a single rule matches the traffic, the system immediately applies that rule's decision to either allow or block it. Once that first match is found, the evaluation process stops entirely, meaning any rules lower down on the list are completely ignored. Therefore, a higher-priority rule will always override any conflicting rule that comes after it, regardless of what action the later rule specifies.)
+
 ```
 
 ## Required Evidence
@@ -134,30 +146,40 @@ Open each image at full size before submission. Confirm that no password, Bastio
 
 ```text
 (The Deny rule at priority 300 wins because rules are evaluated sequentially in order of priority, from the lowest numerical value to the highest. Since 300 is lower than 400, the firewall checks and matches the Deny rule first. Under the "first-match-wins" principle, once a matching rule is encountered, its action is immediately applied and evaluation stops, causing the Allow rule at priority 400 to be completely ignored.)
+
 ```
 
 **Analysis Question 2.** Why do inbound and outbound rules have to be reasoned about separately? (Minimum 3 sentences.)
 
 ```text
 (Inbound and outbound rules are maintained in two completely separate, independent evaluation ledgers within network security configurations. Allowing network traffic in one direction does not automatically permit response or return traffic in the opposite direction. Because of this, network security administrators must explicitly evaluate and define both directions separately to ensure connections are permitted end-to-end without unintentionally blocking return packets or exposing unintended outbound vectors.)
+
 ```
 
 **Analysis Question 3.** How can an Allow rule be correct by itself but ineffective in the full ledger? (Minimum 3 sentences.)
 
 ```text
 (An Allow rule can be perfectly written and formatted on its own but still fail to take effect if a higher-priority rule matches the same traffic first. Because rules are evaluated sequentially from lowest priority number to highest under the first-match-wins principle, a preceding Deny rule (for example, at priority 200) will catch and block the traffic before evaluation ever reaches an Allow rule lower down the list (such as at priority 300). As a result, the firewall executes the higher-priority Deny action and stops processing further, rendering the valid Allow rule completely inactive and ignored within the full ledger.)
+
 ```
 
 ## Submission Checklist
 
-- [*] Three scenarios evaluated in order
-- [*] One live rule translated to plain English
-- [*] Inbound and outbound ledgers distinguished
-- [*] `week07-lab02-evaluation-order.png` captured
-- [*] Protected priorities 100, 110, and 120 were not changed.
-- [*] Every rule I created or edited used priority 200–999.
-- [*] No password, Bastion URL, or browser address bar appears in my files.
-- [*] This worksheet is committed to `week-07/labs/lab-02-read-the-door-ledger.md`.
+- [x] Three scenarios evaluated in order
+
+- [x] One live rule translated to plain English
+
+- [x] Inbound and outbound ledgers distinguished
+
+- [x] `week07-lab02-evaluation-order.png` captured
+
+- [x] Protected priorities 100, 110, 120, and 1000 were not changed.
+
+- [x] Every rule I created or edited used priority 200–999.
+
+- [x] No password, Bastion URL, or browser address bar appears in my files.
+
+- [x] This worksheet is committed to `week-07/labs/lab-02-read-the-door-ledger.md`.
 
 ## GitHub / Lab Portal Submission
 
