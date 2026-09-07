@@ -137,13 +137,17 @@ Your sequence must show broken rules, observed denial, repaired rules, and final
 ## Explain — Incident Note
 
 ```text
-Problem:
-Evidence:
-Healthy conditions ruled out:
-Root cause:
-Remediation:
-Retest:
-Prevention:
+Problem: Inbound traffic on TCP port 8080 from Grid Beacon (10.60.6.4) to my VM (10.60.6.26) was unexpectedly denied despite having a pre-existing allow rule configured.
+Evidence: Test My Rule gave a DENIED verdict and timed out when testing traffic from Grid Beacon on port 8080.
+Cloud Heights NSG inspection showed the rule deny-grid-beacon-8080-test (Priority 250) positioned above my allow-grid-beacon-8080 rule (Priority 300).
+Healthy conditions ruled out: VM Status: VM cf-student-07 was confirmed in a Running state.
+Local Service: The Python HTTP server was running and actively listening on port 8080 on the target host.
+Allow Rule: The original rule allow-grid-beacon-8080 (Priority 300) remained intact and properly targeted.
+Root cause: Network security group rules evaluate sequentially by priority number (lowest value evaluated first) and stop on the first match. Priority 250 (deny-grid-beacon-8080-test) matched inbound traffic from Grid Beacon (10.60.6.4:8080) first, blocking it before evaluation ever reached priority 300 (allow-grid-beacon-8080).
+Remediation: Deleted the temporary Priority 250 rule deny-grid-beacon-8080-test from the student priority range.
+Retest: Grid Beacon (10.60.6.4): Connection test returned ALLOWED.
+Other Test Source (10.60.6.10): Connection test returned DENIED (as expected from the Priority 1000 fallback).
+Prevention: Always inspect existing rule priority numbers and evaluation order before creating or troubleshooting security group rules, ensuring allow rules are assigned lower priority numbers (evaluated earlier) than any overlapping deny rules.
 ```
 
 ## Required Evidence
