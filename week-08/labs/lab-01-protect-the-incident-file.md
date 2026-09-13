@@ -1,7 +1,9 @@
 # Week 8 Lab 01 — Protect the Incident File
 
-**Student Name:**  
-**Date Completed:**  
+**Student Name:** Dan Martinson
+
+**Date Completed:** 9/12/2026
+
 **Module:** 3 — Practical Cryptography  
 **Submission Path:** `week-08/labs/lab-01-protect-the-incident-file.md`
 
@@ -33,7 +35,7 @@ Encryption changes readable **plaintext** into protected **ciphertext**. In this
 | Starting file | `evidence/incident-report.txt` |
 | Estimated time | 25–35 minutes |
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~$ analyst@cf-student-07:~$ whoami analyst@cf-student-07:~$: command not found analyst@cf-student-07:~$ analyst analyst: command not found analyst@cf-student-07:~$ analyst@cf-student-07:~$ hostname analyst@cf-student-07:~$: command not found analyst@cf-student-07:~$ cf-student-07 cf-student-07: command not found analyst@cf-student-07:~$ analyst@cf-student-07:~$ cf-week8-check analyst@cf-student-07:~$: command not found analyst@cf-student-07:~$ [PASS] analyst account [PASS]: command not found analyst@cf-student-07:~$ [PASS] openssl [PASS]: command not found analyst@cf-student-07:~$ [PASS] sha256sum [PASS]: command not found analyst@cf-student-07:~$ [PASS] SSH client [PASS]: command not found analyst@cf-student-07:~$ [PASS] SSH server [PASS]: command not found analyst@cf-student-07:~$ [PASS] xxd [PASS]: command not found analyst@cf-student-07:~$ [PASS] tree [PASS]: command not found analyst@cf-student-07:~$ [PASS] file [PASS]: command not found analyst@cf-student-07:~$ [PASS] cmp [PASS]: command not found analyst@cf-student-07:~$ [PASS] diff [PASS]: command not found analyst@cf-student-07:~$ [PASS] sshd active [PASS]: command not found analyst@cf-student-07:~$ [PASS] public-key authentication enabled [PASS]: command not found analyst@cf-student-07:~$ [PASS] password authentication enabled [PASS]: command not found analyst@cf-student-07:~$ [PASS] Week 8 workspace [PASS]: command not found analyst@cf-student-07:~$ [PASS] incident-report.txt [PASS]: command not found analyst@cf-student-07:~$ [PASS] analyst ownership [PASS]: command not found analyst@cf-student-07:~$  analyst@cf-student-07:~$ SUMMARY: 16 passed, 0 failed SUMMARY:: command not found analyst@cf-student-07:~$ analyst@cf-student-07:~$ pwd analyst@cf-student-07:~$: command not found analyst@cf-student-07:~$ /home/analystpwd -bash: /home/analystpwd: No such file or directory analyst@cf-student-07:~$ whoami analyst analyst@cf-student-07:~$ hostname cf-student-07 analyst@cf-student-07:~$ cf-week8-check [PASS] analyst account [PASS] openssl [PASS] sha256sum [PASS] SSH client [PASS] SSH server [PASS] xxd [PASS] tree [PASS] file [PASS] cmp [PASS] diff [PASS] sshd active [PASS] public-key authentication enabled [PASS] password authentication enabled [PASS] Week 8 workspace [PASS] incident-report.txt [PASS] analyst ownership  SUMMARY: 16 passed, 0 failed analyst@cf-student-07:~$ cd ~/cloud-heights/week8-cryptography analyst@cf-student-07:~/cloud-heights/week8-cryptography$ pwd /home/analyst/cloud-heights/week8-cryptography analyst@cf-student-07:~/cloud-heights/week8-cryptography$
 
 ```bash
 whoami
@@ -54,14 +56,14 @@ Return to **My Lab Environment** in the Lab Portal and start your assigned VM. A
 **[WORKSHEET]** What do you expect to see when encrypted data is inspected as bytes? Why should it not look like the original report?
 
 ```text
-(write 2–3 sentences here)
+When inspecting encrypted data as bytes, I expect to see pseudo-random hexadecimal output and garbled binary characters rather than readable ASCII text. It should not look like the original report because the encryption process uses a mathematical cipher and key to scramble the plaintext into ciphertext. This eliminates recognizable patterns and structure, ensuring the report's content remains confidential without the proper decryption key.
 ```
 
 ## Guided Steps
 
 ### Step 1 — Confirm the Original Is Readable
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~/cloud-heights/week8-cryptography$ cat evidence/incident-report.txt CLOUD HEIGHTS INCIDENT REPORT Incident ID: CH-CRYPTO-08 Classification: Training Use Owner: Security Operations  Summary: A copy of a Grid Operations incident report was discovered in a shared location. The security team must protect the report, verify whether it changes, and document how cryptographic controls can support confidentiality, integrity, and authentication.  Status: Pending Security Analyst review. analyst@cf-student-07:~/cloud-heights/week8-cryptography$  analyst@cf-student-07:~/cloud-heights/week8-cryptography$ ^C analyst@cf-student-07:~/cloud-heights/week8-cryptography$
 
 ```bash
 cat evidence/incident-report.txt
@@ -73,7 +75,7 @@ cat evidence/incident-report.txt
 
 Choose one temporary lab passphrase that you can re-enter during this lab. Do not write it in the worksheet.
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~/cloud-heights/week8-cryptography$ openssl enc -aes-256-cbc -salt -pbkdf2 -iter 100000   -in evidence/incident-report.txt   -out encrypted/incident-report.enc enter AES-256-CBC encryption password:
 
 ```bash
 openssl enc -aes-256-cbc -salt -pbkdf2 -iter 100000   -in evidence/incident-report.txt   -out encrypted/incident-report.enc
@@ -85,7 +87,7 @@ At `enter AES-256-CBC encryption password:`, type the passphrase. Nothing may ap
 
 ### Step 3 — Inspect the Encrypted File
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~/cloud-heights/week8-cryptography$ file encrypted/incident-report.enc encrypted/incident-report.enc: openssl enc'd data with salted password analyst@cf-student-07:~/cloud-heights/week8-cryptography$ xxd -l 64 encrypted/incident-report.enc 00000000: 5361 6c74 6564 5f5f af0e 78d6 b552 3b92  Salted__..x..R;. 00000010: a098 b281 aa46 e0eb d68f e192 14e9 4586  .....F........E. 00000020: 686a 5cfa 5e78 b7d1 dcb5 81f7 c485 f883  hj\.^x.......... 00000030: 1ffe bf13 fb54 9d25 fb2e e14e 7faf 4a21  .....T.%...N..J! analyst@cf-student-07:~/cloud-heights/week8-cryptography$ ^C analyst@cf-student-07:~/cloud-heights/week8-cryptography$ ^C analyst@cf-student-07:~/cloud-heights/week8-cryptography$
 
 ```bash
 file encrypted/incident-report.enc
@@ -98,7 +100,7 @@ xxd -l 64 encrypted/incident-report.enc
 
 ### Step 4 — Decrypt the File
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~/cloud-heights/week8-cryptography$ openssl enc -d -aes-256-cbc -pbkdf2 -iter 100000   -in encrypted/incident-report.enc   -out encrypted/incident-report-decrypted.txt enter AES-256-CBC decryption password: analyst@cf-student-07:~/cloud-heights/week8-cryptography$ ^C analyst@cf-student-07:~/cloud-heights/week8-cryptography$
 
 ```bash
 openssl enc -d -aes-256-cbc -pbkdf2 -iter 100000   -in encrypted/incident-report.enc   -out encrypted/incident-report-decrypted.txt
@@ -108,7 +110,7 @@ Enter the same passphrase from Step 2.
 
 ### Step 5 — Prove the Files Match
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~/cloud-heights/week8-cryptography$ cmp -s evidence/incident-report.txt encrypted/incident-report-decrypted.txt   && echo "MATCH: decrypted file equals original"   || e cho "MISMATCH: stop and troubleshoot" MATCH: decrypted file equals original analyst@cf-student-07:~/cloud-heights/week8-cryptography$
 
 ```bash
 cmp -s evidence/incident-report.txt encrypted/incident-report-decrypted.txt   && echo "MATCH: decrypted file equals original"   || echo "MISMATCH: stop and troubleshoot"
@@ -133,14 +135,30 @@ Do not submit unless both required evidence moments succeeded.
 **[WORKSHEET]** In 3–4 sentences, explain how this lab demonstrates confidentiality and why encryption does not prevent deletion.
 
 ```text
-(write your explanation here)
+This lab demonstrates confidentiality by using AES-256 encryption to scramble the readable incident report into ciphertext, making the contents unreadable without the correct passphrase. When inspecting the file as raw bytes, the plaintext patterns are completely hidden, ensuring only authorized parties with the key can view the sensitive data. However, encryption only protects data confidentiality and content secrecy; it does not protect system-level file permissions. Because operating system controls govern file storage, anyone with write or delete permissions on the host system can still erase or overwrite the encrypted file regardless of whether they hold the decryption key.
 ```
 
 ## Analysis Questions
 
 1. Why can an encrypted file still be copied or deleted?
+
+```text
+An encrypted file can still be copied or deleted because encryption only protects the contents of the file, not the file system container itself. The operating system handles actions like copying, moving, or deleting files based on directory and file permissions, not on whether the data inside is encrypted or readable. As long as a user account has the necessary write or execute permissions on the host system, the OS will allow them to copy or delete the file container regardless of whether they have the decryption key.
+```
+
 2. What job did the passphrase perform?
+
+```text
+The passphrase acted as the secret key used by OpenSSL to handle both the encryption and decryption processes. During encryption, it worked with PBKDF2 to derive the cryptographic key and initialization vector that scrambled the cleartext report into unreadable ciphertext. During decryption, entering the exact same passphrase provided the secret needed to reverse the mathematical algorithm and restore the file back to its original readable plaintext.
+```
+
 3. Why does the match test prove correct recovery but not prove who handled the file?
+
+```text
+The match test proves correct recovery because it compares the decrypted file against the original plaintext byte-for-byte and confirms they are identical, showing that the data was restored without any loss or corruption.
+
+However, it does not prove who handled the file because symmetric encryption and file comparison commands only verify data integrity and content recovery, not identity. The cmp command only looks at the file bytes and does not record user metadata, audit logs, or digital signatures to prove who actually ran the decryption command or accessed the file.
+```
 
 ## Required Evidence
 
@@ -151,11 +169,15 @@ Save exactly these files in `assets/screenshots/week-08/`:
 
 ## Submission Checklist
 
-- [ ] Both required results appeared.
-- [ ] Both screenshots use the exact filenames above.
-- [ ] No passphrase or other secret appears.
-- [ ] Every worksheet response is complete.
-- [ ] The worksheet is saved at the stated submission path.
+- [x] Both required results appeared.
+
+- [x] Both screenshots use the exact filenames above.
+
+- [x] No passphrase or other secret appears.
+
+- [x] Every worksheet response is complete.
+
+- [x] The worksheet is saved at the stated submission path.
 
 ## GitHub / Lab Portal Submission
 
@@ -166,4 +188,3 @@ Save exactly these files in `assets/screenshots/week-08/`:
 5. Open the committed worksheet and screenshots on GitHub. Confirm they are readable and contain no secrets.
 
 **Never submit:** `.pem` files, files from `~/.ssh/`, passwords, passphrases, private-key contents, or a Bastion shareable URL.
-
