@@ -161,7 +161,7 @@ Hashing is designed to verify integrity (showing if data was altered), not confi
 
 - [x] The original and changed copy have different digests.
 
-- [ ] The required success message appears.
+- [x] The required success message appears.
 
 - [x] The screenshot uses the exact filename.
 
