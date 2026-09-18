@@ -150,7 +150,7 @@ The baseline rule that protects our administrative path is priority 100, allow-s
 
 - [x] No password, Bastion URL, or browser address bar appears in my files.
 
-- [ ] This worksheet is committed to `week-07/labs/lab-01-meet-the-guard.md`.
+- [x] This worksheet is committed to `week-07/labs/lab-01-meet-the-guard.md`.
 
 ## GitHub / Lab Portal Submission
 
