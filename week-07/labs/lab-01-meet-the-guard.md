@@ -65,10 +65,10 @@ Record each protected rule exactly as shown.
 
 | Priority | Rule name | Direction | Protocol | Source | Destination/port | Action | Protected? |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 100 | allow-ssh-from-bastion | Inbound | Tcp | 192.168.10.128/26 | 22 | Allow | Yes |
-| 110 | allow-icmp-intra-vnet | Inbound | icmp |  VirtualNetwork | * | Allow | Yes |
-| 120 | deny-ssh-student-subnet | inbound | Tcp | 10.60.6.0/26 | 22 | Deny | Yes |
-| 1000 | deny-tcp8080-student-subnet | Inbound | Tcp | 10.60.6.0/26 | 8080 | Deny | Yes |
+| 100 | allow-ssh-from-bastion | Inbound |      Tcp | 192.168.10.128/26 | 	22 | Allow | Yes |
+| 110 | allow-icmp-intra-vnet | Inbound | 	icmp | VirtualNetwork | * | Allow | Yes |
+| 120 | 	deny-ssh-student-subnet | Inbound | 	Tcp | 10.60.6.0/26 | 22 | 	Deny | Yes |
+| 1000 | deny-tcp8080-student-subnet | Inbound | 	Tcp | 10.60.6.0/26 | 	8080 | 	Deny | Yes |
 
 ### Step 3 — Map the Fields
 
@@ -103,7 +103,7 @@ Capture the detailed **INBOUND — EVALUATION ORDER** view showing all four prot
 In 3–4 sentences, explain how protected baselines and a separate student priority band reduce accidental lockout while still allowing meaningful practice.
 
 ```text
-Protected baseline rules sit at the highest priority levels to lock down critical admin access like SSH, ensuring we can't accidentally lock ourselves out while working. Restricting our edits to a separate student priority band (200–999) gives us a safe sandbox to add, test, and troubleshoot custom rules without destroying those essential management connections. Because student rules evaluate right after the baselines but before the fallback deny rules, we get to see realistic firewall behavior and learn from our mistakes without breaking the whole lab setup.
+Protected baseline rules sit at the highest priority levels to lock down critical admin access like SSH, ensuring we can't accidentally lock ourselves out while working. Restricting our edits to a separate student priority band (200–999) gives us a safe space to add, test, and troubleshoot custom rules without destroying those essential management connections. Because student rules evaluate right after the baselines but before the fallback deny rules, we get to see realistic firewall behavior and learn from our mistakes without breaking the whole lab setup.
 ```
 
 ## Required Evidence
@@ -119,7 +119,7 @@ Open each image at full size before submission. Confirm that no password, Bastio
 **Analysis Question 1.** Why is a priority number part of rule behavior rather than just an identifier? (Minimum 3 sentences.)
 
 ```text
-A priority number actively dictates the evaluation order because firewalls process rules sequentially from the lowest number to the highest. Since the firewall stops inspecting the moment traffic matches a rule "first match wins", a lower priority number gives a rule higher precedence over others. If it were just an identifier, the system wouldn't know which rule to apply when network traffic matches multiple overlapping criteria, like an allow rule and a deny rule.
+A rule being visible means it shows up in our evaluation list so we can review its priority and settings. A priority number actively dictates the evaluation order because firewalls process rules sequentially from the lowest number to the highest. Since the firewall stops inspecting the moment traffic matches a rule "first match wins", a lower priority number gives a rule higher precedence over others. If it were just an identifier, the system wouldn't know which rule to apply when network traffic matches multiple overlapping criteria, like an allow rule and a deny rule., and how it handles traffic. A rule being editable means we have permission to change its parameters—like modifying ports, source IPs, or priority numbers—or delete it completely, which applies to any rules we create in the student range (200–999). Finally, a rule being protected means it's locked down by the lab environment (like rules 100, 110, 120, and 1000) so we can't alter or delete it, keeping essential baseline security and access controls safely intact while we practice.
 ```
 
 **Analysis Question 2.** Explain the difference between a rule being visible, editable, and protected. (Minimum 3 sentences.)
@@ -150,7 +150,7 @@ The baseline rule that protects our administrative path is priority 100, allow-s
 
 - [x] No password, Bastion URL, or browser address bar appears in my files.
 
-- [x] This worksheet is committed to `week-07/labs/lab-01-meet-the-guard.md`.
+- [ ] This worksheet is committed to `week-07/labs/lab-01-meet-the-guard.md`.
 
 ## GitHub / Lab Portal Submission
 
