@@ -1,7 +1,9 @@
 # Week 8 Lab 03 — Meet Your Key Pair
 
-**Student Name:**  
-**Date Completed:**  
+**Student Name:** Dan Martinson
+
+**Date Completed:** 9/18/2026
+
 **Module:** 3 — Practical Cryptography  
 **Submission Path:** `week-08/labs/lab-03-meet-your-key-pair.md`
 
@@ -25,7 +27,7 @@ The public and private keys have different jobs. The public key may be shared wh
 
 ## Lab Environment / Pre-Lab Check
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** Last login: Sat Sep 19 18:46:41 2026 from 192.168.10.134 analyst@cf-student-07:~$ whoami analyst analyst@cf-student-07:~$ cf-week8-check [PASS] analyst account [PASS] openssl [PASS] sha256sum [PASS] SSH client [PASS] SSH server [PASS] xxd [PASS] tree [PASS] file [PASS] cmp [PASS] diff [PASS] sshd active [PASS] public-key authentication enabled [PASS] password authentication enabled [PASS] Week 8 workspace [PASS] incident-report.txt [PASS] analyst ownership  SUMMARY: 16 passed, 0 failed analyst@cf-student-07:~$ test ! -e ~/.ssh/week8_analyst_ed25519 &&   test ! -e ~/.ssh/week8_analyst_ed25519.pub &&   echo "READY: Week 8 key path is unused" ||   echo "STOP: Week 8 key alrea dy exists" READY: Week 8 key path is unused
 
 ```bash
 whoami
@@ -46,14 +48,14 @@ Return to **My Lab Environment** in the Lab Portal and start your assigned VM. A
 **[WORKSHEET]** Which file can be distributed when appropriate: the public key or private key? Explain.
 
 ```text
-(write 2–3 sentences here)
+The public key file (ending in .pub) can be distributed when appropriate. It is designed to be shared with remote servers or other parties so they can verify your identity or encrypt messages sent to you. Conversely, the private key must never be shared or distributed, as it acts as your secret credentials to prove ownership of the key pair.
 ```
 
 ## Guided Steps
 
 ### Step 1 — Prepare the SSH Directory
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~$ mkdir -p ~/.ssh analyst@cf-student-07:~$ chmod 700 ~/.ssh
 
 ```bash
 mkdir -p ~/.ssh
@@ -62,7 +64,7 @@ chmod 700 ~/.ssh
 
 ### Step 2 — Generate the Key Pair
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~$ ssh-keygen -t ed25519 -a 100   -f ~/.ssh/week8_analyst_ed25519   -C "week8-analyst-key" Generating public/private ed25519 key pair. Enter passphrase (empty for no passphrase):  Enter same passphrase again:  Your identification has been saved in /home/analyst/.ssh/week8_analyst_ed25519 Your public key has been saved in /home/analyst/.ssh/week8_analyst_ed25519.pub The key fingerprint is: SHA256:6KIKc8hTkHQt4hOZ7WYDIdwf+IemdIEsAh1ACgqA0S8 week8-analyst-key The key's randomart image is: +--[ED25519 256]--+ |#OOo+            | |XO=B +           | |=o*.+ +          | | oE*.* o         | |  =o= o S        | |.... .           | |+o. . .          | |.o.. .           | |...              | +----[SHA256]-----+ analyst@cf-student-07:~$ ^C analyst@cf-student-07:~$
 
 ```bash
 ssh-keygen -t ed25519 -a 100   -f ~/.ssh/week8_analyst_ed25519   -C "week8-analyst-key"
@@ -72,7 +74,7 @@ At `Enter passphrase`, create a memorable Week 8 **key passphrase**. Type it aga
 
 ### Step 3 — List the Two Key Files
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~$ ls -l ~/.ssh/week8_analyst_ed25519 ~/.ssh/week8_analyst_ed25519.pub -rw------- 1 analyst analyst 464 Sep 19 19:56 /home/analyst/.ssh/week8_analyst_ed25519 -rw-r--r-- 1 analyst analyst  99 Sep 19 19:56 /home/analyst/.ssh/week8_analyst_ed25519.pub
 
 ```bash
 ls -l ~/.ssh/week8_analyst_ed25519 ~/.ssh/week8_analyst_ed25519.pub
@@ -84,7 +86,7 @@ ls -l ~/.ssh/week8_analyst_ed25519 ~/.ssh/week8_analyst_ed25519.pub
 
 ### Step 4 — Display the Public-Key Fingerprint
 
-**[TERMINAL] Run:**
+**[TERMINAL] Run:** analyst@cf-student-07:~$ ssh-keygen -lf ~/.ssh/week8_analyst_ed25519.pub 256 SHA256:6KIKc8hTkHQt4hOZ7WYDIdwf+IemdIEsAh1ACgqA0S8 week8-analyst-key (ED25519)
 
 ```bash
 ssh-keygen -lf ~/.ssh/week8_analyst_ed25519.pub
@@ -109,14 +111,31 @@ Do not run `cat`, `head`, `tail`, `less`, or `nano` on `~/.ssh/week8_analyst_ed2
 **[WORKSHEET]** In 3–4 sentences, explain the handling difference between the two files and the purpose of the key passphrase.
 
 ```text
-(write your explanation here)
+The public key file can be shared freely with remote servers to grant SSH access or verify your identity, whereas the private key file must remain strictly confidential and never be shared, copied, or transmitted. The key passphrase provides an additional layer of security by encrypting the private key file on your local machine. This ensures that even if an unauthorized party gains access to your private key file, they cannot use it without knowing the passphrase to decrypt it.
 ```
 
 ## Analysis Questions
 
 1. Why can the public key be distributed while the private key must remain protected?
+
+```text
+The public key is designed specifically for public distribution because it can only be used to encrypt data or verify digital signatures—it cannot be used to decrypt messages or impersonate you.
+
+In contrast, the private key performs the actual decryption and creates the digital signatures that prove your identity. Because public-key cryptography relies on a asymmetric mathematical relationship, anyone with access to your private key can decrypt your confidential messages or sign in to remote servers as if they were you.
+```
+
 2. How is the key passphrase different from the `analyst` account password?
+
+```text
+The key passphrase is used locally by your SSH client to encrypt and protect your private key file stored on your disk. In contrast, the analyst account password is used by the operating system to authenticate your user session when logging into the system, running administrative tasks, or elevating privileges.
+Even if both happen to be identical, they serve entirely different security boundaries: the passphrase protects a specific cryptographic asset on your filesystem, while the account password authenticates your identity to the operating system itself.
+```
+
 3. Why did you use a unique Week 8 filename?
+
+```text
+I used a unique Week 8 filename (~/.ssh/week8_analyst_ed25519) to avoid accidentally overwriting my default SSH key pairs, such as id_rsa or id_ed25519. Creating a dedicated filename also helps me organize and isolate keys intended for specific labs or projects, making it easier to manage access and revoke specific credentials later without impacting my other SSH connections.
+```
 
 ## Required Evidence
 
@@ -125,11 +144,15 @@ Do not run `cat`, `head`, `tail`, `less`, or `nano` on `~/.ssh/week8_analyst_ed2
 
 ## Submission Checklist
 
-- [ ] The key pair uses the exact Week 8 filenames.
-- [ ] The private key was never displayed or submitted.
-- [ ] The fingerprint includes `SHA256:` and `ED25519`.
-- [ ] Both screenshots use the exact filenames.
-- [ ] Every worksheet response is complete.
+- [x] The key pair uses the exact Week 8 filenames.
+
+- [x] The private key was never displayed or submitted.
+
+- [x] The fingerprint includes `SHA256:` and `ED25519`.
+
+- [x] Both screenshots use the exact filenames.
+
+- [x] Every worksheet response is complete.
 
 ## GitHub / Lab Portal Submission
 
@@ -140,4 +163,3 @@ Do not run `cat`, `head`, `tail`, `less`, or `nano` on `~/.ssh/week8_analyst_ed2
 5. Open the committed worksheet and screenshots on GitHub. Confirm they are readable and contain no secrets.
 
 **Never submit:** `.pem` files, files from `~/.ssh/`, passwords, passphrases, private-key contents, or a Bastion shareable URL.
-
