@@ -1,1 +1,5141 @@
-
+[
+  {
+    "id": "EV-81B676-001",
+    "slot": "E01",
+    "mission": "M01",
+    "title": "Directory trace: Alex person, both accounts, OU, one AD grant path, one cloud role path",
+    "captured_revision": 5,
+    "content_hash": "045d27ffbb77bce6b02dc6a51c62e2b01c1a699eace8ee8c17057b3aa6c28ef3",
+    "origin": "simulator_capture",
+    "caption": "These snapshots show one person with two accounts. In each directory, I observed that Alex Morgan has separate active records (ad-alex and cl-alex) mapped independently to their respective on-premises Active Directory and Cloud Identity environments.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": "CN=Alex Morgan,OU=Response,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-RESP",
+          "dir": "AD",
+          "key": "ad-alex",
+          "mfa": "not_in_scope",
+          "upn": "alex@ad.cloudheights.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GA-ALL",
+            "GA-RESP"
+          ],
+          "locked": false,
+          "ouName": "Response",
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-RESP",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-2"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-ALL",
+                  "scope": "R-HAND"
+                }
+              ],
+              "action": "read",
+              "resource": "R-HAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-RESP",
+                  "scope": "R-ADRESP"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ADRESP"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-RESP",
+                  "scope": "R-ADRESP"
+                }
+              ],
+              "action": "update",
+              "resource": "R-ADRESP"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-alex",
+          "mfa": "enrolled",
+          "upn": "alex@cvi-training.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GC-RESP"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-RESP",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "read",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "update",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-ABAC",
+                  "assignment": "AS-04"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ABAC"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 5
+    }
+  },
+  {
+    "id": "EV-81B676-002",
+    "slot": "E02",
+    "mission": "M01",
+    "title": "Comparison of Blair, Finley and Drew",
+    "captured_revision": 12,
+    "content_hash": "5062c474234d8cc1ce19552c0d5935239807e3cf88f6df4267240003961269a3",
+    "origin": "simulator_capture",
+    "caption": "Comparing these accounts, I observed that active cloud accounts (cl-blair and cl-finley) yielded mixed results for the landing resource in access tests, while Drew's disabled accounts (ad-drew and cl-drew) consistently resulted in access denials.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-7-1",
+          "seq": 7,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-LAND",
+              "group": "GC-JUN",
+              "scope": "R-LAND",
+              "assignment": "AS-01"
+            }
+          ],
+          "action": "read",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-6",
+          "decision": "allow",
+          "resource": "R-LAND",
+          "revision": 7,
+          "memberships": [
+            "GC-JUN"
+          ]
+        },
+        {
+          "id": "AT-81B676-10-1",
+          "seq": 10,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": null,
+          "account": "cl-drew",
+          "reasons": [
+            "ACCOUNT_DISABLED"
+          ],
+          "session": null,
+          "decision": "deny",
+          "resource": "R-LAND",
+          "revision": 10,
+          "memberships": []
+        },
+        {
+          "id": "AT-81B676-12-1",
+          "seq": 12,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": "managed-finley",
+          "account": "cl-finley",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-11",
+          "decision": "deny",
+          "resource": "R-LAND",
+          "revision": 12,
+          "memberships": [
+            "GC-READ"
+          ]
+        }
+      ],
+      "audits": [],
+      "groups": [],
+      "signins": [
+        {
+          "id": "LS-81B676-6-1",
+          "raw": {
+            "user": "blair@cvi-training.example",
+            "reason": "accepted",
+            "outcome": "success",
+            "event_id": "LS-81B676-6-1",
+            "time_utc": "2026-09-28T13:06:00Z",
+            "device_id": "managed-blair",
+            "source_ip": "192.0.2.11",
+            "mfa_detail": "challenged_now",
+            "application": "CaseDesk",
+            "correlation_id": "LC-81B676-6",
+            "scenario_location": "Office-A",
+            "authentication_method": "password_plus_mfa"
+          },
+          "seq": 6,
+          "account": "cl-blair"
+        },
+        {
+          "id": "LS-81B676-8-1",
+          "raw": {
+            "user": "finley@cvi-training.example",
+            "reason": "accepted",
+            "outcome": "success",
+            "event_id": "LS-81B676-8-1",
+            "time_utc": "2026-09-28T13:08:00Z",
+            "device_id": "managed-finley",
+            "source_ip": "192.0.2.14",
+            "mfa_detail": "challenged_now",
+            "application": "CaseDesk",
+            "correlation_id": "LC-81B676-8",
+            "scenario_location": "Office-A",
+            "authentication_method": "password_plus_mfa"
+          },
+          "seq": 8,
+          "account": "cl-finley"
+        }
+      ],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-finley",
+          "mfa": "enrolled",
+          "upn": "finley@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-READ"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-finley",
+            "key": "P06",
+            "dept": "DEP-SUP",
+            "hrId": "CH-006",
+            "name": "Finley Ross",
+            "cloud": "cl-finley",
+            "status": "contractor_ending"
+          },
+          "status": "enabled",
+          "username": "finley",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-8",
+            "SES-81B676-11"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-READ",
+                  "group": "GC-READ",
+                  "scope": "R-CASE",
+                  "assignment": "AS-02"
+                }
+              ],
+              "action": "read",
+              "resource": "R-CASE"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-drew",
+          "mfa": "enrolled",
+          "upn": "drew@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-drew",
+            "key": "P04",
+            "dept": "DEP-SUP",
+            "hrId": "CH-004",
+            "name": "Drew Patel",
+            "cloud": "cl-drew",
+            "status": "departed"
+          },
+          "status": "disabled",
+          "username": "drew",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": "CN=Drew Patel,OU=Disabled Accounts,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-DIS",
+          "dir": "AD",
+          "key": "ad-drew",
+          "mfa": "not_in_scope",
+          "upn": "drew@ad.cloudheights.example",
+          "dept": "DEP-SUP",
+          "groups": [],
+          "locked": false,
+          "ouName": "Disabled Accounts",
+          "person": {
+            "ad": "ad-drew",
+            "key": "P04",
+            "dept": "DEP-SUP",
+            "hrId": "CH-004",
+            "name": "Drew Patel",
+            "cloud": "cl-drew",
+            "status": "departed"
+          },
+          "status": "disabled",
+          "username": "drew",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-blair",
+          "mfa": "enrolled",
+          "upn": "blair@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-JUN"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-blair",
+            "key": "P02",
+            "dept": "DEP-SUP",
+            "hrId": "CH-002",
+            "name": "Blair Chen",
+            "cloud": "cl-blair",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "blair",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-6"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-LAND",
+                  "group": "GC-JUN",
+                  "scope": "R-LAND",
+                  "assignment": "AS-01"
+                }
+              ],
+              "action": "read",
+              "resource": "R-LAND"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 12
+    }
+  },
+  {
+    "id": "EV-81B676-003",
+    "slot": "E01",
+    "mission": "M01",
+    "title": "Directory trace: Alex person, both accounts, OU, one AD grant path, one cloud role path",
+    "captured_revision": 23,
+    "content_hash": "d79a22567f6a3e1228dcad7ca78a81565d7ace9ae6538f7f89d8f1de04826d5d",
+    "origin": "simulator_capture",
+    "caption": "These snapshots show one person with two accounts. In each directory, I observed that Alex Morgan has independent records (ad-alex and cl-alex) mapped separately to the Active Directory and Cloud Identity environments.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": "CN=Alex Morgan,OU=Response,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-RESP",
+          "dir": "AD",
+          "key": "ad-alex",
+          "mfa": "not_in_scope",
+          "upn": "alex@ad.cloudheights.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GA-ALL",
+            "GA-RESP"
+          ],
+          "locked": false,
+          "ouName": "Response",
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-RESP",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-2"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-ALL",
+                  "scope": "R-HAND"
+                }
+              ],
+              "action": "read",
+              "resource": "R-HAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-RESP",
+                  "scope": "R-ADRESP"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ADRESP"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-RESP",
+                  "scope": "R-ADRESP"
+                }
+              ],
+              "action": "update",
+              "resource": "R-ADRESP"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-alex",
+          "mfa": "enrolled",
+          "upn": "alex@cvi-training.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GC-RESP"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-RESP",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "read",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "update",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-ABAC",
+                  "assignment": "AS-04"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ABAC"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 23
+    }
+  },
+  {
+    "id": "EV-81B676-004",
+    "slot": "E02",
+    "mission": "M01",
+    "title": "Comparison of Blair, Finley and Drew",
+    "captured_revision": 23,
+    "content_hash": "ef5709d20412b51299317a61e8928b9f0d51305240fedc11d1c10ff593ebaeeb",
+    "origin": "simulator_capture",
+    "caption": "Comparing these accounts, I observed that active cloud accounts (cl-blair and cl-finley) maintained successful sign-ins and varied access results, whereas Drew's disabled accounts (ad-drew and cl-drew) consistently resulted in explicit access denials.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-blair",
+          "mfa": "enrolled",
+          "upn": "blair@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-JUN"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-blair",
+            "key": "P02",
+            "dept": "DEP-SUP",
+            "hrId": "CH-002",
+            "name": "Blair Chen",
+            "cloud": "cl-blair",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "blair",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-6"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-LAND",
+                  "group": "GC-JUN",
+                  "scope": "R-LAND",
+                  "assignment": "AS-01"
+                }
+              ],
+              "action": "read",
+              "resource": "R-LAND"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-finley",
+          "mfa": "enrolled",
+          "upn": "finley@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-READ"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-finley",
+            "key": "P06",
+            "dept": "DEP-SUP",
+            "hrId": "CH-006",
+            "name": "Finley Ross",
+            "cloud": "cl-finley",
+            "status": "contractor_ending"
+          },
+          "status": "enabled",
+          "username": "finley",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-8",
+            "SES-81B676-11"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-READ",
+                  "group": "GC-READ",
+                  "scope": "R-CASE",
+                  "assignment": "AS-02"
+                }
+              ],
+              "action": "read",
+              "resource": "R-CASE"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-drew",
+          "mfa": "enrolled",
+          "upn": "drew@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-drew",
+            "key": "P04",
+            "dept": "DEP-SUP",
+            "hrId": "CH-004",
+            "name": "Drew Patel",
+            "cloud": "cl-drew",
+            "status": "departed"
+          },
+          "status": "disabled",
+          "username": "drew",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": "CN=Drew Patel,OU=Disabled Accounts,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-DIS",
+          "dir": "AD",
+          "key": "ad-drew",
+          "mfa": "not_in_scope",
+          "upn": "drew@ad.cloudheights.example",
+          "dept": "DEP-SUP",
+          "groups": [],
+          "locked": false,
+          "ouName": "Disabled Accounts",
+          "person": {
+            "ad": "ad-drew",
+            "key": "P04",
+            "dept": "DEP-SUP",
+            "hrId": "CH-004",
+            "name": "Drew Patel",
+            "cloud": "cl-drew",
+            "status": "departed"
+          },
+          "status": "disabled",
+          "username": "drew",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 23
+    }
+  },
+  {
+    "id": "EV-81B676-005",
+    "slot": "E03",
+    "mission": "M02",
+    "title": "Successful sign-in + the access result before your change",
+    "captured_revision": 25,
+    "content_hash": "c29a81a4baa2f86219f54aadc7e25da24ac35ae263357200d1e52779b23c93a2",
+    "origin": "simulator_capture",
+    "caption": "The sign-in record shows that Blair successfully authenticated. The before-change access test records show the access decision for the requested resource before any changes were made.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-7-1",
+          "seq": 7,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-LAND",
+              "group": "GC-JUN",
+              "scope": "R-LAND",
+              "assignment": "AS-01"
+            }
+          ],
+          "action": "read",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-6",
+          "decision": "allow",
+          "resource": "R-LAND",
+          "revision": 7,
+          "memberships": [
+            "GC-JUN"
+          ]
+        }
+      ],
+      "audits": [],
+      "groups": [],
+      "signins": [
+        {
+          "id": "LS-81B676-24-1",
+          "raw": {
+            "user": "blair@cvi-training.example",
+            "reason": "accepted",
+            "outcome": "success",
+            "event_id": "LS-81B676-24-1",
+            "time_utc": "2026-09-28T13:24:00Z",
+            "device_id": "managed-blair",
+            "source_ip": "192.0.2.11",
+            "mfa_detail": "challenged_now",
+            "application": "CaseDesk",
+            "correlation_id": "LC-81B676-24",
+            "scenario_location": "Office-A",
+            "authentication_method": "password_plus_mfa"
+          },
+          "seq": 24,
+          "account": "cl-blair"
+        }
+      ],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 25
+    }
+  },
+  {
+    "id": "EV-81B676-006",
+    "slot": "E04",
+    "mission": "M02",
+    "title": "Membership/access change audit + read result + update result",
+    "captured_revision": 36,
+    "content_hash": "b63e8e2b6ad46ec00552c227cc5f93cdc5fbce4352d0a91c49e6af5d4a67987c",
+    "origin": "simulator_capture",
+    "caption": "The audit records the change to add Blair to the Case-Readers group. The retests show that Blair is now allowed to read Case Summaries while update access remains denied.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-35-1",
+          "seq": 35,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-READ",
+              "group": "GC-READ",
+              "scope": "R-CASE",
+              "assignment": "AS-02"
+            }
+          ],
+          "action": "read",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-6",
+          "decision": "allow",
+          "resource": "R-CASE",
+          "revision": 35,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-36-1",
+          "seq": 36,
+          "mode": "current-access",
+          "paths": [],
+          "action": "update",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-6",
+          "decision": "deny",
+          "resource": "R-CASE",
+          "revision": 36,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-31-1",
+          "seq": 31,
+          "time": "2026-09-28T13:31:00Z",
+          "after": null,
+          "before": null,
+          "reason": "Assignment already exists",
+          "result": "no_op",
+          "target": "GC-READ",
+          "ticket": "T201",
+          "changed": [],
+          "activity": "role_assignment_changed",
+          "actorKind": "learner",
+          "targetType": "group",
+          "correlation": "LC-81B676-31"
+        },
+        {
+          "id": "LA-81B676-33-1",
+          "seq": 33,
+          "time": "2026-09-28T13:33:00Z",
+          "after": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-JUN"
+          ],
+          "reason": "",
+          "result": "accepted",
+          "target": "cl-blair",
+          "ticket": "T201",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-33"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 36
+    }
+  },
+  {
+    "id": "EV-81B676-007",
+    "slot": "E03",
+    "mission": "M02",
+    "title": "Successful sign-in + the access result before your change",
+    "captured_revision": 37,
+    "content_hash": "ca35c5c23f075b56efb3640a6e4c723b2172154cae87f0ea567dae740eb54394",
+    "origin": "simulator_capture",
+    "caption": "The sign-in record shows that Blair successfully authenticated. The before-change access test records show a DENY decision for the requested Case Summaries read access before any configuration changes were made.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-32-1",
+          "seq": 32,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-6",
+          "decision": "deny",
+          "resource": "R-CASE",
+          "revision": 32,
+          "memberships": [
+            "GC-JUN"
+          ]
+        }
+      ],
+      "audits": [],
+      "groups": [],
+      "signins": [
+        {
+          "id": "LS-81B676-6-1",
+          "raw": {
+            "user": "blair@cvi-training.example",
+            "reason": "accepted",
+            "outcome": "success",
+            "event_id": "LS-81B676-6-1",
+            "time_utc": "2026-09-28T13:06:00Z",
+            "device_id": "managed-blair",
+            "source_ip": "192.0.2.11",
+            "mfa_detail": "challenged_now",
+            "application": "CaseDesk",
+            "correlation_id": "LC-81B676-6",
+            "scenario_location": "Office-A",
+            "authentication_method": "password_plus_mfa"
+          },
+          "seq": 6,
+          "account": "cl-blair"
+        }
+      ],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 37
+    }
+  },
+  {
+    "id": "EV-81B676-008",
+    "slot": "E06",
+    "mission": "M03",
+    "title": "Passed verification + reset version change",
+    "captured_revision": 50,
+    "content_hash": "fa88605525cb9c60e0c94becf728f6e5d402c65083b46ade066b50947d18202a",
+    "origin": "simulator_capture",
+    "caption": "The verification audit shows identity verification was successfully completed for T302. The reset audit records the password reset execution for ad-jamie under T302.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [
+        {
+          "id": "LA-81B676-49-1",
+          "seq": 49,
+          "time": "2026-09-28T13:49:00Z",
+          "after": {
+            "route": "trusted",
+            "outcome": "passed",
+            "hrIdSupplied": "CH-008"
+          },
+          "before": null,
+          "reason": "Trusted callback and matching HR ID.",
+          "result": "accepted",
+          "target": "ad-jamie",
+          "ticket": "T302",
+          "changed": [
+            "verification"
+          ],
+          "activity": "verification_completed",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-49"
+        },
+        {
+          "id": "LA-81B676-50-1",
+          "seq": 50,
+          "time": "2026-09-28T13:50:00Z",
+          "after": {
+            "locked": false,
+            "mustChange": true,
+            "failedCount": 0,
+            "sessionsRevoked": 0,
+            "securityRevision": 2,
+            "credentialVersion": 2
+          },
+          "before": {
+            "locked": false,
+            "mustChange": true,
+            "failedCount": 0,
+            "securityRevision": 1,
+            "credentialVersion": 1
+          },
+          "result": "accepted",
+          "target": "ad-jamie",
+          "ticket": "T302",
+          "changed": [
+            "credentialVersion",
+            "mustChange",
+            "locked",
+            "failedCount",
+            "securityRevision",
+            "sessions"
+          ],
+          "activity": "password_reset",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-50"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 50
+    }
+  },
+  {
+    "id": "EV-81B676-009",
+    "slot": "E07",
+    "mission": "M03",
+    "title": "Disable / re-enable / session validation sequence",
+    "captured_revision": 62,
+    "content_hash": "7226af34b260e522a1ab3c905413a39ab2044d125ce6ad1b6cae2bdb6f29a619",
+    "origin": "simulator_capture",
+    "caption": "In sequence, the status changes and tests show that when Jamie's account was disabled, access tests resulted in DENY and sign-ins failed due to the disabled state, and upon re-enabling, access tests returned ALLOW and sign-ins succeeded.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-47-1",
+          "seq": 47,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": null,
+          "account": "ad-jamie",
+          "reasons": [
+            "ACCOUNT_DISABLED"
+          ],
+          "session": null,
+          "decision": "deny",
+          "resource": "R-HAND",
+          "revision": 47,
+          "memberships": [
+            "GA-ALL",
+            "GA-SUP"
+          ]
+        },
+        {
+          "id": "AT-81B676-52-1",
+          "seq": 52,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": null,
+          "account": "ad-jamie",
+          "reasons": [
+            "NO_VALID_SESSION"
+          ],
+          "session": null,
+          "decision": "deny",
+          "resource": "R-HAND",
+          "revision": 52,
+          "memberships": [
+            "GA-ALL",
+            "GA-SUP"
+          ]
+        },
+        {
+          "id": "AT-81B676-58-1",
+          "seq": 58,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-ALL",
+              "scope": "R-HAND"
+            }
+          ],
+          "action": "read",
+          "device": "managed-jamie",
+          "account": "ad-jamie",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-57",
+          "decision": "allow",
+          "resource": "R-HAND",
+          "revision": 58,
+          "memberships": [
+            "GA-ALL",
+            "GA-SUP"
+          ]
+        },
+        {
+          "id": "AT-81B676-60-1",
+          "seq": 60,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-ALL",
+              "scope": "R-HAND"
+            }
+          ],
+          "action": "read",
+          "device": "managed-jamie",
+          "account": "ad-jamie",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-57",
+          "decision": "allow",
+          "resource": "R-HAND",
+          "revision": 60,
+          "memberships": [
+            "GA-ALL",
+            "GA-SUP"
+          ]
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-51-1",
+          "seq": 51,
+          "time": "2026-09-28T13:51:00Z",
+          "after": {
+            "status": "enabled",
+            "sessionsRevoked": 0,
+            "securityRevision": 2
+          },
+          "before": {
+            "status": "disabled",
+            "securityRevision": 2
+          },
+          "reason": "",
+          "result": "accepted",
+          "target": "ad-jamie",
+          "ticket": "T301",
+          "changed": [
+            "status"
+          ],
+          "activity": "account_status_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-51"
+        },
+        {
+          "id": "LA-81B676-61-1",
+          "seq": 61,
+          "time": "2026-09-28T14:01:00Z",
+          "after": {
+            "status": "enabled",
+            "securityRevision": 2
+          },
+          "before": {
+            "status": "enabled",
+            "securityRevision": 2
+          },
+          "reason": "T301",
+          "result": "no_op",
+          "target": "ad-jamie",
+          "ticket": "T301",
+          "changed": [],
+          "activity": "account_status_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-61"
+        }
+      ],
+      "groups": [],
+      "signins": [
+        {
+          "id": "LS-81B676-42-1",
+          "raw": {
+            "user": "jamie@ad.cloudheights.example",
+            "reason": "ACCOUNT_DISABLED",
+            "outcome": "failure",
+            "event_id": "LS-81B676-42-1",
+            "time_utc": "2026-09-28T13:42:00Z",
+            "device_id": "managed-jamie",
+            "source_ip": "192.0.2.16",
+            "mfa_detail": "not_recorded",
+            "application": "AD-Logon (simulated)",
+            "correlation_id": "LC-81B676-42",
+            "scenario_location": "Office-A",
+            "authentication_method": "password"
+          },
+          "seq": 42,
+          "account": "ad-jamie"
+        },
+        {
+          "id": "LS-81B676-48-1",
+          "raw": {
+            "user": "jamie@ad.cloudheights.example",
+            "reason": "ACCOUNT_DISABLED",
+            "outcome": "failure",
+            "event_id": "LS-81B676-48-1",
+            "time_utc": "2026-09-28T13:48:00Z",
+            "device_id": "managed-jamie",
+            "source_ip": "192.0.2.16",
+            "mfa_detail": "not_recorded",
+            "application": "AD-Logon (simulated)",
+            "correlation_id": "LC-81B676-48",
+            "scenario_location": "Office-A",
+            "authentication_method": "password"
+          },
+          "seq": 48,
+          "account": "ad-jamie"
+        },
+        {
+          "id": "LS-81B676-59-1",
+          "raw": {
+            "user": "jamie@cvi-training.example",
+            "reason": "ACCOUNT_DISABLED",
+            "outcome": "failure",
+            "event_id": "LS-81B676-59-1",
+            "time_utc": "2026-09-28T13:59:00Z",
+            "device_id": "managed-jamie",
+            "source_ip": "192.0.2.16",
+            "mfa_detail": "not_recorded",
+            "application": "CaseDesk",
+            "correlation_id": "LC-81B676-59",
+            "scenario_location": "Office-A",
+            "authentication_method": "password"
+          },
+          "seq": 59,
+          "account": "cl-jamie"
+        },
+        {
+          "id": "LS-81B676-62-1",
+          "raw": {
+            "user": "jamie@ad.cloudheights.example",
+            "reason": "accepted",
+            "outcome": "success",
+            "event_id": "LS-81B676-62-1",
+            "time_utc": "2026-09-28T14:02:00Z",
+            "device_id": "managed-jamie",
+            "source_ip": "192.0.2.16",
+            "mfa_detail": "not_recorded",
+            "application": "AD-Logon (simulated)",
+            "correlation_id": "LC-81B676-62",
+            "scenario_location": "Office-A",
+            "authentication_method": "password"
+          },
+          "seq": 62,
+          "account": "ad-jamie"
+        }
+      ],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 62
+    }
+  },
+  {
+    "id": "EV-81B676-010",
+    "slot": "E05",
+    "mission": "M03",
+    "title": "Created account with OU and groups",
+    "captured_revision": 62,
+    "content_hash": "8415cd2c92f3e08038d009035b33b3aece7982c7c2ecb3980e0ef0a728802238",
+    "origin": "simulator_capture",
+    "caption": "Jamie’s account snapshot shows the OU placement and groups assigned to ad-jamie within Active Directory.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": "CN=Jamie Ellis,OU=Support,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-SUP",
+          "dir": "AD",
+          "key": "ad-jamie",
+          "mfa": "not_in_scope",
+          "upn": "jamie@ad.cloudheights.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GA-ALL",
+            "GA-SUP"
+          ],
+          "locked": false,
+          "ouName": "Support",
+          "person": {
+            "ad": "ad-jamie",
+            "key": "P08",
+            "dept": "DEP-SUP",
+            "hrId": "CH-008",
+            "name": "Jamie Ellis",
+            "cloud": "cl-jamie",
+            "status": "approved_joiner"
+          },
+          "status": "enabled",
+          "username": "jamie",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-57",
+            "SES-81B676-62"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-ALL",
+                  "scope": "R-HAND"
+                }
+              ],
+              "action": "read",
+              "resource": "R-HAND"
+            }
+          ],
+          "securityRevision": 2,
+          "credentialVersion": 3
+        }
+      ],
+      "historical": [],
+      "captured_revision": 62
+    }
+  },
+  {
+    "id": "EV-81B676-011",
+    "slot": "E05",
+    "mission": "M03",
+    "title": "Created account with OU and groups",
+    "captured_revision": 62,
+    "content_hash": "8415cd2c92f3e08038d009035b33b3aece7982c7c2ecb3980e0ef0a728802238",
+    "origin": "simulator_capture",
+    "caption": "Jamie’s account snapshot shows the OU placement for ad-jamie and the assigned groups granting the correct access level.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": "CN=Jamie Ellis,OU=Support,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-SUP",
+          "dir": "AD",
+          "key": "ad-jamie",
+          "mfa": "not_in_scope",
+          "upn": "jamie@ad.cloudheights.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GA-ALL",
+            "GA-SUP"
+          ],
+          "locked": false,
+          "ouName": "Support",
+          "person": {
+            "ad": "ad-jamie",
+            "key": "P08",
+            "dept": "DEP-SUP",
+            "hrId": "CH-008",
+            "name": "Jamie Ellis",
+            "cloud": "cl-jamie",
+            "status": "approved_joiner"
+          },
+          "status": "enabled",
+          "username": "jamie",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-57",
+            "SES-81B676-62"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-ALL",
+                  "scope": "R-HAND"
+                }
+              ],
+              "action": "read",
+              "resource": "R-HAND"
+            }
+          ],
+          "securityRevision": 2,
+          "credentialVersion": 3
+        }
+      ],
+      "historical": [],
+      "captured_revision": 62
+    }
+  },
+  {
+    "id": "EV-81B676-012",
+    "slot": "E08",
+    "mission": "M04",
+    "title": "Three job configuration snapshots with rationales",
+    "captured_revision": 101,
+    "content_hash": "d0277ed4d8f63e731b9d7355f99fbb293bb17f445a11cf8b834ef7bc0ed5f0a3",
+    "origin": "simulator_capture",
+    "caption": "These configurations show the updated cloud group memberships for Blair, Casey, and Emi. My review records explain the rationale and least-privilege role assignments applied for each user.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [
+        {
+          "id": "LA-81B676-94-1",
+          "seq": 94,
+          "time": "2026-09-28T14:34:00Z",
+          "after": {
+            "members": [
+              "cl-blair"
+            ],
+            "assignments": [
+              "RL-LAND@R-LAND"
+            ]
+          },
+          "before": null,
+          "reason": "Junior-Analysts group scoped to landing page and case review per T401",
+          "result": "no_op",
+          "target": "GC-JUN",
+          "ticket": null,
+          "changed": [],
+          "activity": "configuration_reviewed",
+          "actorKind": "learner",
+          "targetType": "group",
+          "correlation": "LC-81B676-94"
+        },
+        {
+          "id": "LA-81B676-98-1",
+          "seq": 98,
+          "time": "2026-09-28T14:38:00Z",
+          "after": {
+            "members": [
+              "cl-alex",
+              "cl-casey"
+            ],
+            "assignments": [
+              "RL-RESP@R-QUEUE",
+              "RL-RESP@R-ABAC"
+            ]
+          },
+          "before": null,
+          "reason": "Response-Operators group scoped to response queue and internal response note per T402",
+          "result": "no_op",
+          "target": "GC-RESP",
+          "ticket": null,
+          "changed": [],
+          "activity": "configuration_reviewed",
+          "actorKind": "learner",
+          "targetType": "group",
+          "correlation": "LC-81B676-98"
+        },
+        {
+          "id": "LA-81B676-100-1",
+          "seq": 100,
+          "time": "2026-09-28T14:40:00Z",
+          "after": [
+            "GC-AUD"
+          ],
+          "before": [],
+          "reason": "T403",
+          "result": "accepted",
+          "target": "cl-emi",
+          "ticket": "T403",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-100"
+        },
+        {
+          "id": "LA-81B676-101-1",
+          "seq": 101,
+          "time": "2026-09-28T14:41:00Z",
+          "after": {
+            "members": [
+              "cl-emi"
+            ],
+            "assignments": [
+              "RL-AUD@R-AUD"
+            ]
+          },
+          "before": null,
+          "reason": "Audit-Reviewers group scoped to read and export audit evidence per T403",
+          "result": "no_op",
+          "target": "GC-AUD",
+          "ticket": null,
+          "changed": [],
+          "activity": "configuration_reviewed",
+          "actorKind": "learner",
+          "targetType": "group",
+          "correlation": "LC-81B676-101"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-casey",
+          "mfa": "enrolled",
+          "upn": "casey@cvi-training.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GC-RESP"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-casey",
+            "key": "P03",
+            "dept": "DEP-RESP",
+            "hrId": "CH-003",
+            "name": "Casey Rivera",
+            "cloud": "cl-casey",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "casey",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "read",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "update",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-ABAC",
+                  "assignment": "AS-04"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ABAC"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-blair",
+          "mfa": "enrolled",
+          "upn": "blair@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-blair",
+            "key": "P02",
+            "dept": "DEP-SUP",
+            "hrId": "CH-002",
+            "name": "Blair Chen",
+            "cloud": "cl-blair",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "blair",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-6",
+            "SES-81B676-24"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-LAND",
+                  "group": "GC-JUN",
+                  "scope": "R-LAND",
+                  "assignment": "AS-01"
+                }
+              ],
+              "action": "read",
+              "resource": "R-LAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-READ",
+                  "group": "GC-READ",
+                  "scope": "R-CASE",
+                  "assignment": "AS-02"
+                }
+              ],
+              "action": "read",
+              "resource": "R-CASE"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-emi",
+          "mfa": "enrolled",
+          "upn": "emi@cvi-training.example",
+          "dept": "DEP-AUD",
+          "groups": [
+            "GC-AUD"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-emi",
+            "key": "P05",
+            "dept": "DEP-AUD",
+            "hrId": "CH-005",
+            "name": "Emi Brooks",
+            "cloud": "cl-emi",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "emi",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "read",
+              "resource": "R-AUD"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "export",
+              "resource": "R-AUD"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 101
+    }
+  },
+  {
+    "id": "EV-81B676-013",
+    "slot": "E09",
+    "mission": "M04",
+    "title": "The nine required access tests",
+    "captured_revision": 113,
+    "content_hash": "86a0aa23fffbf71bb7be38cd2f74a65f56ba4c840dcca9134c138959dbc3cbed",
+    "origin": "simulator_capture",
+    "caption": "These tests record each account’s requested actions and decisions: verifying whether Blair, Casey, and Emi are granted or denied specific read, update, export, and delete actions against the target resources under their current access levels.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-36-1",
+          "seq": 36,
+          "mode": "current-access",
+          "paths": [],
+          "action": "update",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-6",
+          "decision": "deny",
+          "resource": "R-CASE",
+          "revision": 36,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-104-1",
+          "seq": 104,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-READ",
+              "group": "GC-READ",
+              "scope": "R-CASE",
+              "assignment": "AS-02"
+            }
+          ],
+          "action": "read",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-102",
+          "decision": "allow",
+          "resource": "R-CASE",
+          "revision": 104,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-106-1",
+          "seq": 106,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-RESP",
+              "group": "GC-RESP",
+              "scope": "R-QUEUE",
+              "assignment": "AS-03"
+            }
+          ],
+          "action": "read",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-105",
+          "decision": "allow",
+          "resource": "R-QUEUE",
+          "revision": 106,
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-107-1",
+          "seq": 107,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-RESP",
+              "group": "GC-RESP",
+              "scope": "R-QUEUE",
+              "assignment": "AS-03"
+            }
+          ],
+          "action": "update",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-105",
+          "decision": "allow",
+          "resource": "R-QUEUE",
+          "revision": 107,
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-108-1",
+          "seq": 108,
+          "mode": "current-access",
+          "paths": [],
+          "action": "delete",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-105",
+          "decision": "deny",
+          "resource": "R-AUD",
+          "revision": 108,
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-109-1",
+          "seq": 109,
+          "mode": "current-access",
+          "paths": [],
+          "action": "manage_sensitive_groups",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-105",
+          "decision": "deny",
+          "resource": "R-DIR",
+          "revision": 109,
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-111-1",
+          "seq": 111,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-AUD",
+              "group": "GC-AUD",
+              "scope": "R-AUD",
+              "assignment": "AS-05"
+            }
+          ],
+          "action": "read",
+          "device": "managed-emi",
+          "account": "cl-emi",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-110",
+          "decision": "allow",
+          "resource": "R-AUD",
+          "revision": 111,
+          "memberships": [
+            "GC-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-112-1",
+          "seq": 112,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-AUD",
+              "group": "GC-AUD",
+              "scope": "R-AUD",
+              "assignment": "AS-05"
+            }
+          ],
+          "action": "export",
+          "device": "managed-emi",
+          "account": "cl-emi",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-110",
+          "decision": "allow",
+          "resource": "R-AUD",
+          "revision": 112,
+          "memberships": [
+            "GC-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-113-1",
+          "seq": 113,
+          "mode": "current-access",
+          "paths": [],
+          "action": "delete",
+          "device": "managed-emi",
+          "account": "cl-emi",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-110",
+          "decision": "deny",
+          "resource": "R-AUD",
+          "revision": 113,
+          "memberships": [
+            "GC-AUD"
+          ]
+        }
+      ],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 113
+    }
+  },
+  {
+    "id": "EV-81B676-014",
+    "slot": "E10",
+    "mission": "M04",
+    "title": "Temporary grant → allowed test → revoke → denied retest",
+    "captured_revision": 117,
+    "content_hash": "3d0a018fa70b951b581a91292db18d9cd7ad45a61d56bcaf22d6e5b6c2b7d0b9",
+    "origin": "simulator_capture",
+    "caption": "Before and after removing the temporary membership, the tests show that Blair's access to read audit evidence changed from allowed while in the review group to denied once the membership was revoked.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-115-1",
+          "seq": 115,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-AUD",
+              "group": "GC-AUD",
+              "scope": "R-AUD",
+              "assignment": "AS-05"
+            }
+          ],
+          "action": "read",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-102",
+          "decision": "allow",
+          "resource": "R-AUD",
+          "revision": 115,
+          "memberships": [
+            "GC-AUD",
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-117-1",
+          "seq": 117,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-102",
+          "decision": "deny",
+          "resource": "R-AUD",
+          "revision": 117,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-114-1",
+          "seq": 114,
+          "time": "2026-09-28T14:54:00Z",
+          "after": [
+            "GC-AUD",
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "reason": "temporary audit-reviewers experiment",
+          "result": "accepted",
+          "target": "cl-blair",
+          "ticket": "T401",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-114"
+        },
+        {
+          "id": "LA-81B676-116-1",
+          "seq": 116,
+          "time": "2026-09-28T14:56:00Z",
+          "after": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-AUD",
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "reason": "removing temporary audit-reviewers membership",
+          "result": "accepted",
+          "target": "cl-blair",
+          "ticket": "T401",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_removed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-116"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 117
+    }
+  },
+  {
+    "id": "EV-81B676-015",
+    "slot": "E11",
+    "mission": "M04",
+    "title": "Four ABAC cases (current + three what-ifs)",
+    "captured_revision": 122,
+    "content_hash": "f9ecb9de67ff17642c9ad71a2f1faadd7441219dc688efb834537b2da1b8976d",
+    "origin": "simulator_capture",
+    "caption": "The current state test shows allowed access for Casey to read internal response notes under valid attributes. Changing one attribute at a time produced denied access results when device trust, department, or classification constraints failed.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-119-1",
+          "seq": 119,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-RESP",
+              "group": "GC-RESP",
+              "scope": "R-ABAC",
+              "assignment": "AS-04"
+            }
+          ],
+          "action": "read",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-118",
+          "decision": "allow",
+          "resource": "R-ABAC",
+          "revision": 119,
+          "attributes": {
+            "department": "DEP-RESP",
+            "deviceTrust": "managed",
+            "classification": "Internal"
+          },
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-120-1",
+          "seq": 120,
+          "mode": "abac-what-if",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-RESP",
+              "group": "GC-RESP",
+              "scope": "R-ABAC",
+              "assignment": "AS-04"
+            }
+          ],
+          "action": "read",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "ABAC_CONDITION_FAILED"
+          ],
+          "session": "SES-81B676-118",
+          "decision": "deny",
+          "resource": "R-ABAC",
+          "revision": 120,
+          "overrides": {
+            "deviceTrust": "unmanaged"
+          },
+          "attributes": {
+            "department": "DEP-RESP",
+            "deviceTrust": "unmanaged",
+            "classification": "Internal"
+          },
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-121-1",
+          "seq": 121,
+          "mode": "abac-what-if",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-RESP",
+              "group": "GC-RESP",
+              "scope": "R-ABAC",
+              "assignment": "AS-04"
+            }
+          ],
+          "action": "read",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "ABAC_CONDITION_FAILED"
+          ],
+          "session": "SES-81B676-118",
+          "decision": "deny",
+          "resource": "R-ABAC",
+          "revision": 121,
+          "overrides": {
+            "department": "DEP-AUD"
+          },
+          "attributes": {
+            "department": "DEP-AUD",
+            "deviceTrust": "managed",
+            "classification": "Internal"
+          },
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-122-1",
+          "seq": 122,
+          "mode": "abac-what-if",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-RESP",
+              "group": "GC-RESP",
+              "scope": "R-ABAC",
+              "assignment": "AS-04"
+            }
+          ],
+          "action": "read",
+          "device": "managed-casey",
+          "account": "cl-casey",
+          "reasons": [
+            "ABAC_CONDITION_FAILED"
+          ],
+          "session": "SES-81B676-118",
+          "decision": "deny",
+          "resource": "R-ABAC",
+          "revision": 122,
+          "overrides": {
+            "classification": "Confidential"
+          },
+          "attributes": {
+            "department": "DEP-RESP",
+            "deviceTrust": "managed",
+            "classification": "Confidential"
+          },
+          "memberships": [
+            "GC-RESP"
+          ]
+        }
+      ],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 122
+    }
+  },
+  {
+    "id": "EV-81B676-016",
+    "slot": "E08",
+    "mission": "M04",
+    "title": "Three job configuration snapshots with rationales",
+    "captured_revision": 125,
+    "content_hash": "67bf5a899974068b1ad1b329fdb07a26de424b4cd276b27a6fc35332a9ad9cae",
+    "origin": "simulator_capture",
+    "caption": "These configurations show the updated cloud account memberships and least privilege group assignments for Blair, Casey, and Emi. My review records explain the specific group additions, removals, and ticket resolutions taken to enforce authorized access boundaries.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [
+        {
+          "id": "LA-81B676-95-1",
+          "seq": 95,
+          "time": "2026-09-28T14:35:00Z",
+          "after": [],
+          "before": [
+            "GC-PRIV"
+          ],
+          "reason": "T402",
+          "result": "accepted",
+          "target": "cl-casey",
+          "ticket": "T402",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_removed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-95"
+        },
+        {
+          "id": "LA-81B676-96-1",
+          "seq": 96,
+          "time": "2026-09-28T14:36:00Z",
+          "after": [
+            "GC-RESP"
+          ],
+          "before": [],
+          "reason": "T402",
+          "result": "accepted",
+          "target": "cl-casey",
+          "ticket": "T402",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-96"
+        },
+        {
+          "id": "LA-81B676-100-1",
+          "seq": 100,
+          "time": "2026-09-28T14:40:00Z",
+          "after": [
+            "GC-AUD"
+          ],
+          "before": [],
+          "reason": "T403",
+          "result": "accepted",
+          "target": "cl-emi",
+          "ticket": "T403",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-100"
+        },
+        {
+          "id": "LA-81B676-114-1",
+          "seq": 114,
+          "time": "2026-09-28T14:54:00Z",
+          "after": [
+            "GC-AUD",
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "reason": "temporary audit-reviewers experiment",
+          "result": "accepted",
+          "target": "cl-blair",
+          "ticket": "T401",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-114"
+        },
+        {
+          "id": "LA-81B676-116-1",
+          "seq": 116,
+          "time": "2026-09-28T14:56:00Z",
+          "after": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-AUD",
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "reason": "removing temporary audit-reviewers membership",
+          "result": "accepted",
+          "target": "cl-blair",
+          "ticket": "T401",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_removed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-116"
+        },
+        {
+          "id": "LA-81B676-123-1",
+          "seq": 123,
+          "time": "2026-09-28T15:03:00Z",
+          "after": "resolved",
+          "before": "open",
+          "reason": "Checked Blair's junior analyst access requirements against ticket T401. Verified that Blair has read-only access to case summaries and removed any excess or temporary permissions to adhere to the approved scope and least privilege.",
+          "result": "accepted",
+          "target": "T401",
+          "ticket": "T401",
+          "changed": [
+            "status"
+          ],
+          "activity": "ticket_resolved",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-123"
+        },
+        {
+          "id": "LA-81B676-124-1",
+          "seq": 124,
+          "time": "2026-09-28T15:04:00Z",
+          "after": "resolved",
+          "before": "open",
+          "reason": "Checked Blair's junior analyst access requirements against ticket T401. Verified that Blair has read-only access to case summaries and removed any excess or temporary permissions to adhere to the approved scope and least privilege.",
+          "result": "accepted",
+          "target": "T402",
+          "ticket": "T402",
+          "changed": [
+            "status"
+          ],
+          "activity": "ticket_resolved",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-124"
+        },
+        {
+          "id": "LA-81B676-125-1",
+          "seq": 125,
+          "time": "2026-09-28T15:05:00Z",
+          "after": "resolved",
+          "before": "open",
+          "reason": "Checked Emi's audit reviewer access against ticket T403 and the attached APP-403 approval. Verified that Emi has proper audit review, read, and export privileges, while confirming unauthorized destructive permissions (such as delete) remain blocked in accordance with approved scope and least privilege.",
+          "result": "accepted",
+          "target": "T403",
+          "ticket": "T403",
+          "changed": [
+            "status"
+          ],
+          "activity": "ticket_resolved",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-125"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-blair",
+          "mfa": "enrolled",
+          "upn": "blair@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-blair",
+            "key": "P02",
+            "dept": "DEP-SUP",
+            "hrId": "CH-002",
+            "name": "Blair Chen",
+            "cloud": "cl-blair",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "blair",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-6",
+            "SES-81B676-24",
+            "SES-81B676-102"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-LAND",
+                  "group": "GC-JUN",
+                  "scope": "R-LAND",
+                  "assignment": "AS-01"
+                }
+              ],
+              "action": "read",
+              "resource": "R-LAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-READ",
+                  "group": "GC-READ",
+                  "scope": "R-CASE",
+                  "assignment": "AS-02"
+                }
+              ],
+              "action": "read",
+              "resource": "R-CASE"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-casey",
+          "mfa": "enrolled",
+          "upn": "casey@cvi-training.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GC-RESP"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-casey",
+            "key": "P03",
+            "dept": "DEP-RESP",
+            "hrId": "CH-003",
+            "name": "Casey Rivera",
+            "cloud": "cl-casey",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "casey",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-105",
+            "SES-81B676-118"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "read",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "update",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-ABAC",
+                  "assignment": "AS-04"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ABAC"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-emi",
+          "mfa": "enrolled",
+          "upn": "emi@cvi-training.example",
+          "dept": "DEP-AUD",
+          "groups": [
+            "GC-AUD"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-emi",
+            "key": "P05",
+            "dept": "DEP-AUD",
+            "hrId": "CH-005",
+            "name": "Emi Brooks",
+            "cloud": "cl-emi",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "emi",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-110"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "read",
+              "resource": "R-AUD"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "export",
+              "resource": "R-AUD"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 125
+    }
+  },
+  {
+    "id": "EV-81B676-017",
+    "slot": "E12",
+    "mission": "M05",
+    "title": "Jamie joiner chain",
+    "captured_revision": 137,
+    "content_hash": "1162a1cf9eb056bf4a7d04849039797c80ac74db416327d8a51457ebce3d0a52",
+    "origin": "simulator_capture",
+    "caption": "Jamie’s joiner records show that cloud identity account cl-jamie was successfully created, verified, MFA-enrolled, enabled, and assigned to the Junior-Analysts and Case-Readers groups under ticket T501. The access tests record that the account is permitted to read case summaries but denied updates due to lacking appropriate permissions.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-136-1",
+          "seq": 136,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-READ",
+              "group": "GC-READ",
+              "scope": "R-CASE",
+              "assignment": "AS-02"
+            }
+          ],
+          "action": "read",
+          "device": "managed-jamie",
+          "account": "cl-jamie",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-131",
+          "decision": "allow",
+          "resource": "R-CASE",
+          "revision": 136,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-137-1",
+          "seq": 137,
+          "mode": "current-access",
+          "paths": [],
+          "action": "update",
+          "device": "managed-jamie",
+          "account": "cl-jamie",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-131",
+          "decision": "deny",
+          "resource": "R-CASE",
+          "revision": 137,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-39-1",
+          "seq": 39,
+          "time": "2026-09-28T13:39:00Z",
+          "after": {
+            "dn": null,
+            "ou": null,
+            "dir": "CLOUD",
+            "key": "cl-jamie",
+            "mfa": "not_enrolled",
+            "upn": "jamie@cvi-training.example",
+            "dept": "DEP-SUP",
+            "locked": false,
+            "person": "P08",
+            "status": "disabled",
+            "username": "jamie",
+            "mustChange": true,
+            "failedCount": 0,
+            "securityRevision": 1,
+            "credentialVersion": 1
+          },
+          "before": null,
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "account"
+          ],
+          "activity": "user_created",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-39"
+        },
+        {
+          "id": "LA-81B676-126-1",
+          "seq": 126,
+          "time": "2026-09-28T15:06:00Z",
+          "after": {
+            "route": "trusted",
+            "outcome": "passed",
+            "hrIdSupplied": "CH-008"
+          },
+          "before": null,
+          "reason": "Trusted callback and matching HR ID.",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "verification"
+          ],
+          "activity": "verification_completed",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-126"
+        },
+        {
+          "id": "LA-81B676-127-1",
+          "seq": 127,
+          "time": "2026-09-28T15:07:00Z",
+          "after": {
+            "mfa": "enrolled"
+          },
+          "before": {
+            "mfa": "not_enrolled"
+          },
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "mfa"
+          ],
+          "activity": "mfa_enrolled",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-127"
+        },
+        {
+          "id": "LA-81B676-128-1",
+          "seq": 128,
+          "time": "2026-09-28T15:08:00Z",
+          "after": {
+            "status": "enabled",
+            "sessionsRevoked": 0,
+            "securityRevision": 1
+          },
+          "before": {
+            "status": "disabled",
+            "securityRevision": 1
+          },
+          "reason": "T501 Finish Jamie's cloud onboarding",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "status"
+          ],
+          "activity": "account_status_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-128"
+        },
+        {
+          "id": "LA-81B676-132-1",
+          "seq": 132,
+          "time": "2026-09-28T15:12:00Z",
+          "after": [
+            "GC-JUN"
+          ],
+          "before": [],
+          "reason": "Finish Jamie's cloud onboarding",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-132"
+        },
+        {
+          "id": "LA-81B676-133-1",
+          "seq": 133,
+          "time": "2026-09-28T15:13:00Z",
+          "after": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-JUN"
+          ],
+          "reason": "Finish Jamie's cloud onboarding",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-133"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-jamie",
+          "mfa": "enrolled",
+          "upn": "jamie@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-jamie",
+            "key": "P08",
+            "dept": "DEP-SUP",
+            "hrId": "CH-008",
+            "name": "Jamie Ellis",
+            "cloud": "cl-jamie",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "jamie",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-131"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-LAND",
+                  "group": "GC-JUN",
+                  "scope": "R-LAND",
+                  "assignment": "AS-01"
+                }
+              ],
+              "action": "read",
+              "resource": "R-LAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-READ",
+                  "group": "GC-READ",
+                  "scope": "R-CASE",
+                  "assignment": "AS-02"
+                }
+              ],
+              "action": "read",
+              "resource": "R-CASE"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 2
+        }
+      ],
+      "historical": [],
+      "captured_revision": 137
+    }
+  },
+  {
+    "id": "EV-81B676-018",
+    "slot": "E13",
+    "mission": "M05",
+    "title": "Alex before/after access and changes",
+    "captured_revision": 142,
+    "content_hash": "9f80e6ca8996fd0ca48557d0b6dff01cf1a2560fef505e5d9119d6f9c6dcb809",
+    "origin": "simulator_capture",
+    "caption": "At this point in Alex’s move, the account snapshots and tests show Alex’s active accounts (ad-alex and cl-alex) in their initial Response department configuration with corresponding allowed/denied baseline access tests. The changes recorded are none yet, establishing the baseline prior to executing ticket T502.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-139-1",
+          "seq": 139,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-RESP",
+              "scope": "R-ADRESP"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "ad-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-2",
+          "decision": "allow",
+          "resource": "R-ADRESP",
+          "revision": 139,
+          "memberships": [
+            "GA-ALL",
+            "GA-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-141-1",
+          "seq": 141,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": null,
+          "account": "cl-alex",
+          "reasons": [
+            "NO_VALID_SESSION"
+          ],
+          "session": null,
+          "decision": "deny",
+          "resource": "R-QUEUE",
+          "revision": 141,
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-142-1",
+          "seq": 142,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": null,
+          "account": "cl-alex",
+          "reasons": [
+            "NO_VALID_SESSION"
+          ],
+          "session": null,
+          "decision": "deny",
+          "resource": "R-QUEUE",
+          "revision": 142,
+          "memberships": [
+            "GC-RESP"
+          ]
+        }
+      ],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": "CN=Alex Morgan,OU=Response,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-RESP",
+          "dir": "AD",
+          "key": "ad-alex",
+          "mfa": "not_in_scope",
+          "upn": "alex@ad.cloudheights.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GA-ALL",
+            "GA-RESP"
+          ],
+          "locked": false,
+          "ouName": "Response",
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-RESP",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-2"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-ALL",
+                  "scope": "R-HAND"
+                }
+              ],
+              "action": "read",
+              "resource": "R-HAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-RESP",
+                  "scope": "R-ADRESP"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ADRESP"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-RESP",
+                  "scope": "R-ADRESP"
+                }
+              ],
+              "action": "update",
+              "resource": "R-ADRESP"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-alex",
+          "mfa": "enrolled",
+          "upn": "alex@cvi-training.example",
+          "dept": "DEP-RESP",
+          "groups": [
+            "GC-RESP"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-RESP",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "read",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-QUEUE",
+                  "assignment": "AS-03"
+                }
+              ],
+              "action": "update",
+              "resource": "R-QUEUE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-RESP",
+                  "group": "GC-RESP",
+                  "scope": "R-ABAC",
+                  "assignment": "AS-04"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ABAC"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 142
+    }
+  },
+  {
+    "id": "EV-81B676-019",
+    "slot": "E13",
+    "mission": "M05",
+    "title": "Alex before/after access and changes",
+    "captured_revision": 155,
+    "content_hash": "561c5a580c1c04b20aac69d6603584006f7667eaa0699959b341a8568ddfa5d0",
+    "origin": "simulator_capture",
+    "caption": "At this point in Alex’s move, the account snapshots and tests show Alex’s accounts updated to the Audit department with successful access to audit resources and denied access to old response resources. The changes recorded are the successful transfer of department, removal of old operational group memberships, and addition of new audit memberships across both Active Directory and Cloud Identity under ticket T502.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-148-1",
+          "seq": 148,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "ad-alex",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-147",
+          "decision": "deny",
+          "resource": "R-ADRESP",
+          "revision": 148,
+          "memberships": [
+            "GA-ALL",
+            "GA-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-149-1",
+          "seq": 149,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-AUD",
+              "scope": "R-ADAUD"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "ad-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-147",
+          "decision": "allow",
+          "resource": "R-ADAUD",
+          "revision": 149,
+          "memberships": [
+            "GA-ALL",
+            "GA-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-150-1",
+          "seq": 150,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-ALL",
+              "scope": "R-HAND"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "ad-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-147",
+          "decision": "allow",
+          "resource": "R-HAND",
+          "revision": 150,
+          "memberships": [
+            "GA-ALL",
+            "GA-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-154-1",
+          "seq": 154,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "cl-alex",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-153",
+          "decision": "deny",
+          "resource": "R-QUEUE",
+          "revision": 154,
+          "memberships": [
+            "GC-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-155-1",
+          "seq": 155,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-AUD",
+              "group": "GC-AUD",
+              "scope": "R-AUD",
+              "assignment": "AS-05"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "cl-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-153",
+          "decision": "allow",
+          "resource": "R-AUD",
+          "revision": 155,
+          "memberships": [
+            "GC-AUD"
+          ]
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-143-2",
+          "seq": 143,
+          "time": "2026-09-28T15:23:00Z",
+          "after": "DEP-AUD",
+          "before": "DEP-RESP",
+          "result": "accepted",
+          "target": "ad-alex",
+          "ticket": "T502",
+          "changed": [
+            "department"
+          ],
+          "activity": "department_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-143"
+        },
+        {
+          "id": "LA-81B676-143-3",
+          "seq": 143,
+          "time": "2026-09-28T15:23:00Z",
+          "after": "DEP-AUD",
+          "before": "DEP-RESP",
+          "result": "accepted",
+          "target": "cl-alex",
+          "ticket": "T502",
+          "changed": [
+            "department"
+          ],
+          "activity": "department_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-143"
+        },
+        {
+          "id": "LA-81B676-145-1",
+          "seq": 145,
+          "time": "2026-09-28T15:25:00Z",
+          "after": [
+            "GA-ALL"
+          ],
+          "before": [
+            "GA-ALL",
+            "GA-RESP"
+          ],
+          "reason": "T502",
+          "result": "accepted",
+          "target": "ad-alex",
+          "ticket": "T502",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_removed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-145"
+        },
+        {
+          "id": "LA-81B676-146-1",
+          "seq": 146,
+          "time": "2026-09-28T15:26:00Z",
+          "after": [
+            "GA-ALL",
+            "GA-AUD"
+          ],
+          "before": [
+            "GA-ALL"
+          ],
+          "reason": "T502",
+          "result": "accepted",
+          "target": "ad-alex",
+          "ticket": "T502",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-146"
+        },
+        {
+          "id": "LA-81B676-151-1",
+          "seq": 151,
+          "time": "2026-09-28T15:31:00Z",
+          "after": [],
+          "before": [
+            "GC-RESP"
+          ],
+          "reason": "T502",
+          "result": "accepted",
+          "target": "cl-alex",
+          "ticket": "T502",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_removed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-151"
+        },
+        {
+          "id": "LA-81B676-152-1",
+          "seq": 152,
+          "time": "2026-09-28T15:32:00Z",
+          "after": [
+            "GC-AUD"
+          ],
+          "before": [],
+          "reason": "T502",
+          "result": "accepted",
+          "target": "cl-alex",
+          "ticket": "T502",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-152"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": "CN=Alex Morgan,OU=Response,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-RESP",
+          "dir": "AD",
+          "key": "ad-alex",
+          "mfa": "not_in_scope",
+          "upn": "alex@ad.cloudheights.example",
+          "dept": "DEP-AUD",
+          "groups": [
+            "GA-ALL",
+            "GA-AUD"
+          ],
+          "locked": false,
+          "ouName": "Response",
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-AUD",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-2",
+            "SES-81B676-147"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-ALL",
+                  "scope": "R-HAND"
+                }
+              ],
+              "action": "read",
+              "resource": "R-HAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-AUD",
+                  "scope": "R-ADAUD"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ADAUD"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-alex",
+          "mfa": "enrolled",
+          "upn": "alex@cvi-training.example",
+          "dept": "DEP-AUD",
+          "groups": [
+            "GC-AUD"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-AUD",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-153"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "read",
+              "resource": "R-AUD"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "export",
+              "resource": "R-AUD"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 155
+    }
+  },
+  {
+    "id": "EV-81B676-020",
+    "slot": "E14",
+    "mission": "M05",
+    "title": "Finley session/status/revocation evidence",
+    "captured_revision": 182,
+    "content_hash": "0e8622909132634084db9e3dcd0086b573ea0565ccd30ba3297ad5fefaaf6709",
+    "origin": "simulator_capture",
+    "caption": "After the leaver actions, the old-session test shows DENY for Case Summaries / read and the new sign-in records show failure due to the account being disabled.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-181-1",
+          "seq": 181,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": "managed-finley",
+          "account": "cl-finley",
+          "reasons": [
+            "ACCOUNT_DISABLED"
+          ],
+          "session": "SES-81B676-160",
+          "decision": "deny",
+          "resource": "R-CASE",
+          "revision": 181,
+          "memberships": []
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-163-1",
+          "seq": 163,
+          "time": "2026-09-28T15:43:00Z",
+          "after": {
+            "status": "disabled",
+            "sessionsRevoked": 0,
+            "securityRevision": 2
+          },
+          "before": {
+            "status": "enabled",
+            "securityRevision": 1
+          },
+          "reason": "Disabling AD account per offboarding ticket T503",
+          "result": "accepted",
+          "target": "ad-finley",
+          "ticket": "T503",
+          "changed": [
+            "status",
+            "securityRevision",
+            "sessions"
+          ],
+          "activity": "account_status_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-163"
+        },
+        {
+          "id": "LA-81B676-164-1",
+          "seq": 164,
+          "time": "2026-09-28T15:44:00Z",
+          "after": {
+            "sessionsRevoked": 0,
+            "securityRevision": 3
+          },
+          "before": null,
+          "reason": "Revoking active sessions for offboarded contractor Finley",
+          "result": "accepted",
+          "target": "ad-finley",
+          "ticket": "T503",
+          "changed": [
+            "sessions",
+            "securityRevision"
+          ],
+          "activity": "sessions_revoked",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-164"
+        },
+        {
+          "id": "LA-81B676-169-1",
+          "seq": 169,
+          "time": "2026-09-28T15:49:00Z",
+          "after": {
+            "status": "disabled",
+            "sessionsRevoked": 3,
+            "securityRevision": 2
+          },
+          "before": {
+            "status": "enabled",
+            "securityRevision": 1
+          },
+          "reason": "Disabling Cloud Identity account for Finley per T503",
+          "result": "accepted",
+          "target": "cl-finley",
+          "ticket": "T503",
+          "changed": [
+            "status",
+            "securityRevision",
+            "sessions"
+          ],
+          "activity": "account_status_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-169"
+        },
+        {
+          "id": "LA-81B676-170-1",
+          "seq": 170,
+          "time": "2026-09-28T15:50:00Z",
+          "after": {
+            "sessionsRevoked": 0,
+            "securityRevision": 3
+          },
+          "before": null,
+          "reason": "Revoking Cloud Identity sessions for Finley per T503",
+          "result": "accepted",
+          "target": "cl-finley",
+          "ticket": "T503",
+          "changed": [
+            "sessions",
+            "securityRevision"
+          ],
+          "activity": "sessions_revoked",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-170"
+        }
+      ],
+      "groups": [],
+      "signins": [
+        {
+          "id": "LS-81B676-182-1",
+          "raw": {
+            "user": "finley@cvi-training.example",
+            "reason": "ACCOUNT_DISABLED",
+            "outcome": "failure",
+            "event_id": "LS-81B676-182-1",
+            "time_utc": "2026-09-28T16:02:00Z",
+            "device_id": "managed-finley",
+            "source_ip": "192.0.2.14",
+            "mfa_detail": "not_recorded",
+            "application": "CaseDesk",
+            "correlation_id": "LC-81B676-182",
+            "scenario_location": "Office-A",
+            "authentication_method": "password"
+          },
+          "seq": 182,
+          "account": "cl-finley"
+        }
+      ],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-finley",
+          "mfa": "enrolled",
+          "upn": "finley@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-finley",
+            "key": "P06",
+            "dept": "DEP-SUP",
+            "hrId": "CH-006",
+            "name": "Finley Ross",
+            "cloud": "cl-finley",
+            "status": "contractor_ending"
+          },
+          "status": "disabled",
+          "username": "finley",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [],
+          "effectiveAccess": [],
+          "securityRevision": 4,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 182
+    }
+  },
+  {
+    "id": "EV-81B676-021",
+    "slot": "E15",
+    "mission": "M05",
+    "title": "Failed reset verification, refusal and escalation",
+    "captured_revision": 185,
+    "content_hash": "d2464dff65df80ad1a3e39e14fd59f49462a2b5fed96d5a9fea7a8ffd20c8f39",
+    "origin": "simulator_capture",
+    "caption": "The verification record shows that identity verification for Blair's reset request was refused due to mismatched details. The ticket-status audit records show that ticket T504 was subsequently escalated.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [
+        {
+          "id": "LA-81B676-184-1",
+          "seq": 184,
+          "time": "2026-09-28T16:04:00Z",
+          "after": {
+            "route": "trusted",
+            "outcome": "failed",
+            "hrIdSupplied": "CH-099"
+          },
+          "before": null,
+          "reason": "No directory-confirmed callback has been completed for this request.",
+          "result": "refused",
+          "target": "cl-blair",
+          "ticket": "T504",
+          "changed": [
+            "verification"
+          ],
+          "activity": "verification_completed",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-184"
+        },
+        {
+          "id": "LA-81B676-185-1",
+          "seq": 185,
+          "time": "2026-09-28T16:05:00Z",
+          "after": "escalated",
+          "before": "open",
+          "reason": "What I did: Ran identity verification for password reset request T504 using the caller-supplied ID CH-099 and requester-supplied callback route.\nWhat I checked: Verified that the caller's ID and callback details did not match Blair Chen's official HR record (CH-002), resulting in a verification failure.\nWhy: Escalating the ticket because the unverified request could not be authenticated, preventing unauthorized password resets.",
+          "result": "accepted",
+          "target": "T504",
+          "ticket": "T504",
+          "changed": [
+            "status"
+          ],
+          "activity": "ticket_escalated",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-185"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [],
+      "captured_revision": 185
+    }
+  },
+  {
+    "id": "EV-81B676-022",
+    "slot": "E16",
+    "mission": "M05",
+    "title": "AD DS – Entra – Azure comparison and scoped tests",
+    "captured_revision": 191,
+    "content_hash": "b54eb29b952e66cbaea597a22e82548506d1ade23ebc9ead5474184ecdb19928",
+    "origin": "simulator_capture",
+    "caption": "The assignment audit records scope Blair's permissions to the Training-VM resource group via the assigned Azure reader role. The three resource tests show that Blair is allowed to read Training-VM metadata, but is denied from stopping the Training-VM and from accessing other teams' virtual machines.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-189-1",
+          "seq": 189,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-AZREAD",
+              "group": "GC-AZ",
+              "scope": "RG-LAB",
+              "assignment": "AS-11"
+            }
+          ],
+          "action": "read_metadata",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-188",
+          "decision": "allow",
+          "resource": "R-VM1",
+          "revision": 189,
+          "memberships": [
+            "GC-AZ",
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-190-1",
+          "seq": 190,
+          "mode": "current-access",
+          "paths": [],
+          "action": "stop",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-188",
+          "decision": "deny",
+          "resource": "R-VM1",
+          "revision": 190,
+          "memberships": [
+            "GC-AZ",
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-191-1",
+          "seq": 191,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read_metadata",
+          "device": "managed-blair",
+          "account": "cl-blair",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-188",
+          "decision": "deny",
+          "resource": "R-VM2",
+          "revision": 191,
+          "memberships": [
+            "GC-AZ",
+            "GC-JUN",
+            "GC-READ"
+          ]
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-186-1",
+          "seq": 186,
+          "time": "2026-09-28T16:06:00Z",
+          "after": {
+            "key": "AS-11",
+            "role": "RL-AZREAD",
+            "group": "GC-AZ",
+            "scope": "RG-LAB",
+            "createdSeq": 186
+          },
+          "before": null,
+          "reason": "Add the resource assignment approved in APP-505",
+          "result": "accepted",
+          "target": "GC-AZ",
+          "ticket": "T505",
+          "changed": [
+            "assignments"
+          ],
+          "activity": "role_assignment_changed",
+          "actorKind": "learner",
+          "targetType": "group",
+          "correlation": "LC-81B676-186"
+        },
+        {
+          "id": "LA-81B676-187-1",
+          "seq": 187,
+          "time": "2026-09-28T16:07:00Z",
+          "after": [
+            "GC-AZ",
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "reason": "Training-Resource-Readers for resource group RG-LAB",
+          "result": "accepted",
+          "target": "cl-blair",
+          "ticket": "T505",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-187"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-blair",
+          "mfa": "enrolled",
+          "upn": "blair@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-JUN",
+            "GC-READ",
+            "GC-AZ"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-blair",
+            "key": "P02",
+            "dept": "DEP-SUP",
+            "hrId": "CH-002",
+            "name": "Blair Chen",
+            "cloud": "cl-blair",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "blair",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-6",
+            "SES-81B676-24",
+            "SES-81B676-102",
+            "SES-81B676-188"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-LAND",
+                  "group": "GC-JUN",
+                  "scope": "R-LAND",
+                  "assignment": "AS-01"
+                }
+              ],
+              "action": "read",
+              "resource": "R-LAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-READ",
+                  "group": "GC-READ",
+                  "scope": "R-CASE",
+                  "assignment": "AS-02"
+                }
+              ],
+              "action": "read",
+              "resource": "R-CASE"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AZREAD",
+                  "group": "GC-AZ",
+                  "scope": "RG-LAB",
+                  "assignment": "AS-11"
+                }
+              ],
+              "action": "read_metadata",
+              "resource": "R-VM1"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 191
+    }
+  },
+  {
+    "id": "EV-81B676-023",
+    "slot": "E13",
+    "mission": "M05",
+    "title": "Alex before/after access and changes",
+    "captured_revision": 192,
+    "content_hash": "94568e2bec52591bdff72bb277e937ef95067e393cbf87881cc7fe36e80c89c2",
+    "origin": "simulator_capture",
+    "caption": "At this point in Alex’s move, the account snapshots and tests show Alex's initial enabled status and baseline access permissions across Active Directory and Cloud Identity prior to any department transfer changes. The changes recorded are baseline access evaluations before executing ticket T502.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-139-1",
+          "seq": 139,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-RESP",
+              "scope": "R-ADRESP"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "ad-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-2",
+          "decision": "allow",
+          "resource": "R-ADRESP",
+          "revision": 139,
+          "memberships": [
+            "GA-ALL",
+            "GA-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-142-1",
+          "seq": 142,
+          "mode": "current-access",
+          "paths": [],
+          "action": "read",
+          "device": null,
+          "account": "cl-alex",
+          "reasons": [
+            "NO_VALID_SESSION"
+          ],
+          "session": null,
+          "decision": "deny",
+          "resource": "R-QUEUE",
+          "revision": 142,
+          "memberships": [
+            "GC-RESP"
+          ]
+        },
+        {
+          "id": "AT-81B676-149-1",
+          "seq": 149,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-AUD",
+              "scope": "R-ADAUD"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "ad-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-147",
+          "decision": "allow",
+          "resource": "R-ADAUD",
+          "revision": 149,
+          "memberships": [
+            "GA-ALL",
+            "GA-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-150-1",
+          "seq": 150,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "acl",
+              "group": "GA-ALL",
+              "scope": "R-HAND"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "ad-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-147",
+          "decision": "allow",
+          "resource": "R-HAND",
+          "revision": 150,
+          "memberships": [
+            "GA-ALL",
+            "GA-AUD"
+          ]
+        },
+        {
+          "id": "AT-81B676-155-1",
+          "seq": 155,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-AUD",
+              "group": "GC-AUD",
+              "scope": "R-AUD",
+              "assignment": "AS-05"
+            }
+          ],
+          "action": "read",
+          "device": "managed-alex",
+          "account": "cl-alex",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-153",
+          "decision": "allow",
+          "resource": "R-AUD",
+          "revision": 155,
+          "memberships": [
+            "GC-AUD"
+          ]
+        }
+      ],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": "CN=Alex Morgan,OU=Audit,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+          "ou": "OU-AUD",
+          "dir": "AD",
+          "key": "ad-alex",
+          "mfa": "not_in_scope",
+          "upn": "alex@ad.cloudheights.example",
+          "dept": "DEP-AUD",
+          "groups": [
+            "GA-ALL",
+            "GA-AUD"
+          ],
+          "locked": false,
+          "ouName": "Audit",
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-AUD",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-2",
+            "SES-81B676-147"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-ALL",
+                  "scope": "R-HAND"
+                }
+              ],
+              "action": "read",
+              "resource": "R-HAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "acl",
+                  "group": "GA-AUD",
+                  "scope": "R-ADAUD"
+                }
+              ],
+              "action": "read",
+              "resource": "R-ADAUD"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        },
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-alex",
+          "mfa": "enrolled",
+          "upn": "alex@cvi-training.example",
+          "dept": "DEP-AUD",
+          "groups": [
+            "GC-AUD"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-alex",
+            "key": "P01",
+            "dept": "DEP-AUD",
+            "hrId": "CH-001",
+            "name": "Alex Morgan",
+            "cloud": "cl-alex",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "alex",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-153"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "read",
+              "resource": "R-AUD"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-AUD",
+                  "group": "GC-AUD",
+                  "scope": "R-AUD",
+                  "assignment": "AS-05"
+                }
+              ],
+              "action": "export",
+              "resource": "R-AUD"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 1
+        }
+      ],
+      "historical": [],
+      "captured_revision": 192
+    }
+  },
+  {
+    "id": "EV-81B676-024",
+    "slot": "E12",
+    "mission": "M05",
+    "title": "Jamie joiner chain",
+    "captured_revision": 192,
+    "content_hash": "14f4fad6fe5e9210b3303c280f20f25b7453eb1cdbaffd90844de32e4bfca1d2",
+    "origin": "simulator_capture",
+    "caption": "Jamie’s joiner records show the successful creation of the Cloud Identity account, identity verification, MFA enrollment, status enablement, credential change, and group membership assignment. The access tests record Jamie's authorized ability to read case summaries and the appropriate denial for case updates.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [
+        {
+          "id": "AT-81B676-136-1",
+          "seq": 136,
+          "mode": "current-access",
+          "paths": [
+            {
+              "kind": "role",
+              "role": "RL-READ",
+              "group": "GC-READ",
+              "scope": "R-CASE",
+              "assignment": "AS-02"
+            }
+          ],
+          "action": "read",
+          "device": "managed-jamie",
+          "account": "cl-jamie",
+          "reasons": [
+            "ALLOW"
+          ],
+          "session": "SES-81B676-131",
+          "decision": "allow",
+          "resource": "R-CASE",
+          "revision": 136,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        },
+        {
+          "id": "AT-81B676-137-1",
+          "seq": 137,
+          "mode": "current-access",
+          "paths": [],
+          "action": "update",
+          "device": "managed-jamie",
+          "account": "cl-jamie",
+          "reasons": [
+            "NO_MATCHING_GRANT"
+          ],
+          "session": "SES-81B676-131",
+          "decision": "deny",
+          "resource": "R-CASE",
+          "revision": 137,
+          "memberships": [
+            "GC-JUN",
+            "GC-READ"
+          ]
+        }
+      ],
+      "audits": [
+        {
+          "id": "LA-81B676-39-1",
+          "seq": 39,
+          "time": "2026-09-28T13:39:00Z",
+          "after": {
+            "dn": null,
+            "ou": null,
+            "dir": "CLOUD",
+            "key": "cl-jamie",
+            "mfa": "not_enrolled",
+            "upn": "jamie@cvi-training.example",
+            "dept": "DEP-SUP",
+            "locked": false,
+            "person": "P08",
+            "status": "disabled",
+            "username": "jamie",
+            "mustChange": true,
+            "failedCount": 0,
+            "securityRevision": 1,
+            "credentialVersion": 1
+          },
+          "before": null,
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "account"
+          ],
+          "activity": "user_created",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-39"
+        },
+        {
+          "id": "LA-81B676-126-1",
+          "seq": 126,
+          "time": "2026-09-28T15:06:00Z",
+          "after": {
+            "route": "trusted",
+            "outcome": "passed",
+            "hrIdSupplied": "CH-008"
+          },
+          "before": null,
+          "reason": "Trusted callback and matching HR ID.",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "verification"
+          ],
+          "activity": "verification_completed",
+          "actorKind": "learner",
+          "targetType": "ticket",
+          "correlation": "LC-81B676-126"
+        },
+        {
+          "id": "LA-81B676-127-1",
+          "seq": 127,
+          "time": "2026-09-28T15:07:00Z",
+          "after": {
+            "mfa": "enrolled"
+          },
+          "before": {
+            "mfa": "not_enrolled"
+          },
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "mfa"
+          ],
+          "activity": "mfa_enrolled",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-127"
+        },
+        {
+          "id": "LA-81B676-128-1",
+          "seq": 128,
+          "time": "2026-09-28T15:08:00Z",
+          "after": {
+            "status": "enabled",
+            "sessionsRevoked": 0,
+            "securityRevision": 1
+          },
+          "before": {
+            "status": "disabled",
+            "securityRevision": 1
+          },
+          "reason": "T501 Finish Jamie's cloud onboarding",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "status"
+          ],
+          "activity": "account_status_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-128"
+        },
+        {
+          "id": "LA-81B676-130-1",
+          "seq": 130,
+          "time": "2026-09-28T15:10:00Z",
+          "after": {
+            "mustChange": false,
+            "credentialVersion": 2
+          },
+          "before": {
+            "mustChange": true,
+            "credentialVersion": 1
+          },
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": null,
+          "changed": [
+            "credentialVersion",
+            "mustChange"
+          ],
+          "activity": "credential_changed",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-130"
+        },
+        {
+          "id": "LA-81B676-132-1",
+          "seq": 132,
+          "time": "2026-09-28T15:12:00Z",
+          "after": [
+            "GC-JUN"
+          ],
+          "before": [],
+          "reason": "Finish Jamie's cloud onboarding",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-132"
+        },
+        {
+          "id": "LA-81B676-133-1",
+          "seq": 133,
+          "time": "2026-09-28T15:13:00Z",
+          "after": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-JUN"
+          ],
+          "reason": "Finish Jamie's cloud onboarding",
+          "result": "accepted",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [
+            "memberships"
+          ],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-133"
+        },
+        {
+          "id": "LA-81B676-135-1",
+          "seq": 135,
+          "time": "2026-09-28T15:15:00Z",
+          "after": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "before": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "reason": "Finish Jamie's cloud onboarding",
+          "result": "no_op",
+          "target": "cl-jamie",
+          "ticket": "T501",
+          "changed": [],
+          "activity": "group_member_added",
+          "actorKind": "learner",
+          "targetType": "account",
+          "correlation": "LC-81B676-135"
+        }
+      ],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [
+        {
+          "dn": null,
+          "ou": null,
+          "dir": "CLOUD",
+          "key": "cl-jamie",
+          "mfa": "enrolled",
+          "upn": "jamie@cvi-training.example",
+          "dept": "DEP-SUP",
+          "groups": [
+            "GC-JUN",
+            "GC-READ"
+          ],
+          "locked": false,
+          "ouName": null,
+          "person": {
+            "ad": "ad-jamie",
+            "key": "P08",
+            "dept": "DEP-SUP",
+            "hrId": "CH-008",
+            "name": "Jamie Ellis",
+            "cloud": "cl-jamie",
+            "status": "active"
+          },
+          "status": "enabled",
+          "username": "jamie",
+          "mustChange": false,
+          "failedCount": 0,
+          "activeSessions": [
+            "SES-81B676-131"
+          ],
+          "effectiveAccess": [
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-LAND",
+                  "group": "GC-JUN",
+                  "scope": "R-LAND",
+                  "assignment": "AS-01"
+                }
+              ],
+              "action": "read",
+              "resource": "R-LAND"
+            },
+            {
+              "paths": [
+                {
+                  "kind": "role",
+                  "role": "RL-READ",
+                  "group": "GC-READ",
+                  "scope": "R-CASE",
+                  "assignment": "AS-02"
+                }
+              ],
+              "action": "read",
+              "resource": "R-CASE"
+            }
+          ],
+          "securityRevision": 1,
+          "credentialVersion": 2
+        }
+      ],
+      "historical": [],
+      "captured_revision": 192
+    }
+  },
+  {
+    "id": "EV-81B676-025",
+    "slot": "E17",
+    "mission": "M06",
+    "title": "Two distinct findings with raw-event references and correlation",
+    "captured_revision": 193,
+    "content_hash": "e8f89c8f79f1eaa4674345645ef4ec8bca0816fffabcf996a6acecff53f76a4f",
+    "origin": "simulator_capture",
+    "caption": "These records support my observation that historical sign-in and audit events exhibit correlated administrative actions and session continuations across distinct timestamps. Their correlation shows temporal relationships between authentication attempts and group modifications, but does not establish the underlying intent or external human factors behind those events.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S002",
+          "time_utc": "2026-09-21T13:01:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C002",
+          "scenario_location": "Office-A",
+          "authentication_method": "password"
+        },
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S003",
+          "time_utc": "2026-09-21T13:02:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "challenged_now",
+          "application": "CaseDesk",
+          "correlation_id": "C003",
+          "scenario_location": "Office-A",
+          "authentication_method": "password_plus_mfa"
+        },
+        {
+          "user": "alex@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S010",
+          "time_utc": "2026-09-21T14:10:00Z",
+          "device_id": "managed-alex",
+          "source_ip": "192.0.2.10",
+          "mfa_detail": "satisfied_earlier",
+          "application": "CaseDesk",
+          "correlation_id": "C010",
+          "scenario_location": "Office-A",
+          "authentication_method": "existing_session"
+        },
+        {
+          "user": "alex@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S011",
+          "time_utc": "2026-09-21T14:12:00Z",
+          "device_id": "managed-alex",
+          "source_ip": "198.51.100.20",
+          "mfa_detail": "satisfied_earlier",
+          "application": "CaseDesk",
+          "correlation_id": "C011",
+          "scenario_location": "Remote-C",
+          "authentication_method": "existing_session"
+        }
+      ],
+      "captured_revision": 193
+    }
+  },
+  {
+    "id": "EV-81B676-026",
+    "slot": "E18",
+    "mission": "M06",
+    "title": "Benign/ambiguous comparison",
+    "captured_revision": 193,
+    "content_hash": "42ce353a65fd10205425d54ba2a119c2fa4d4dbca9a2de017b04f304bf2b2b78",
+    "origin": "simulator_capture",
+    "caption": "These records show an initial authentication failure due to an incorrect password followed immediately by a successful sign-in attempt. The information is limited because it captures only authentication outcomes without providing context on whether the initial failure was a simple typographical error or indicative of suspicious activity.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S002",
+          "time_utc": "2026-09-21T13:01:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C002",
+          "scenario_location": "Office-A",
+          "authentication_method": "password"
+        },
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S003",
+          "time_utc": "2026-09-21T13:02:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "challenged_now",
+          "application": "CaseDesk",
+          "correlation_id": "C003",
+          "scenario_location": "Office-A",
+          "authentication_method": "password_plus_mfa"
+        }
+      ],
+      "captured_revision": 193
+    }
+  },
+  {
+    "id": "EV-81B676-027",
+    "slot": "E17",
+    "mission": "M06",
+    "title": "Two distinct findings with raw-event references and correlation",
+    "captured_revision": 202,
+    "content_hash": "a7a03696284c506a5b8a92b3c5c9bc05d02d2c7859b3510f5cd7d5c032b5b803",
+    "origin": "simulator_capture",
+    "caption": "These records support my observation that multiple failed authentication attempts preceded a successful sign-in on the target account. Their correlation shows event sequencing and administrative changes, but does not establish user intent.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [
+        {
+          "user": "alex@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S001",
+          "time_utc": "2026-09-21T13:00:00Z",
+          "device_id": "managed-alex",
+          "source_ip": "192.0.2.10",
+          "mfa_detail": "challenged_now",
+          "application": "CaseDesk",
+          "correlation_id": "C001",
+          "scenario_location": "Office-A",
+          "authentication_method": "password_plus_mfa"
+        },
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S002",
+          "time_utc": "2026-09-21T13:01:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C002",
+          "scenario_location": "Office-A",
+          "authentication_method": "password"
+        },
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S003",
+          "time_utc": "2026-09-21T13:02:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "challenged_now",
+          "application": "CaseDesk",
+          "correlation_id": "C003",
+          "scenario_location": "Office-A",
+          "authentication_method": "password_plus_mfa"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S004",
+          "time_utc": "2026-09-21T14:00:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C004",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S005",
+          "time_utc": "2026-09-21T14:00:30Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C005",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S006",
+          "time_utc": "2026-09-21T14:01:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C006",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S007",
+          "time_utc": "2026-09-21T14:01:30Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C007",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S008",
+          "time_utc": "2026-09-21T14:02:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C008",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S009",
+          "time_utc": "2026-09-21T14:03:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "no_challenge_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C009",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "actor": "helpdesk@cvi-training.example",
+          "result": "success",
+          "target": "blair@cvi-training.example",
+          "activity": "group_member_added",
+          "event_id": "A001",
+          "time_utc": "2026-09-21T13:10:00Z",
+          "after_value": "Junior-Analysts",
+          "before_value": "none",
+          "correlation_id": "not_available",
+          "approval_ticket": "CHG-1101"
+        },
+        {
+          "actor": "casey@cvi-training.example",
+          "result": "success",
+          "target": "casey@cvi-training.example",
+          "activity": "group_member_added",
+          "event_id": "A002",
+          "time_utc": "2026-09-21T14:04:00Z",
+          "after_value": "Privileged-Operators",
+          "before_value": "none",
+          "correlation_id": "C009",
+          "approval_ticket": "none_recorded"
+        },
+        {
+          "actor": "helpdesk@cvi-training.example",
+          "result": "success",
+          "target": "alex@cvi-training.example",
+          "activity": "group_member_removed",
+          "event_id": "A003",
+          "time_utc": "2026-09-21T14:15:00Z",
+          "after_value": "none",
+          "before_value": "Old-Response-Team",
+          "correlation_id": "not_available",
+          "approval_ticket": "CHG-1102"
+        },
+        {
+          "actor": "helpdesk@cvi-training.example",
+          "result": "refused",
+          "target": "blair@cvi-training.example",
+          "activity": "password_reset_request",
+          "event_id": "A004",
+          "time_utc": "2026-09-21T14:25:00Z",
+          "after_value": "unchanged",
+          "before_value": "unchanged",
+          "correlation_id": "not_available",
+          "approval_ticket": "REQ-1103"
+        }
+      ],
+      "captured_revision": 202
+    }
+  },
+  {
+    "id": "EV-81B676-028",
+    "slot": "E19",
+    "mission": "M06",
+    "title": "Completed case file / versioned export",
+    "captured_revision": 202,
+    "content_hash": "a7a03696284c506a5b8a92b3c5c9bc05d02d2c7859b3510f5cd7d5c032b5b803",
+    "origin": "simulator_capture",
+    "caption": "My downloaded Case File references these records to support the analysis of authentication anomalies and administrative group modifications.",
+    "snapshot": {
+      "seed": "chic-w11-v1",
+      "tests": [],
+      "audits": [],
+      "groups": [],
+      "signins": [],
+      "tickets": [],
+      "accounts": [],
+      "historical": [
+        {
+          "user": "alex@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S001",
+          "time_utc": "2026-09-21T13:00:00Z",
+          "device_id": "managed-alex",
+          "source_ip": "192.0.2.10",
+          "mfa_detail": "challenged_now",
+          "application": "CaseDesk",
+          "correlation_id": "C001",
+          "scenario_location": "Office-A",
+          "authentication_method": "password_plus_mfa"
+        },
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S002",
+          "time_utc": "2026-09-21T13:01:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C002",
+          "scenario_location": "Office-A",
+          "authentication_method": "password"
+        },
+        {
+          "user": "blair@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S003",
+          "time_utc": "2026-09-21T13:02:00Z",
+          "device_id": "managed-blair",
+          "source_ip": "192.0.2.11",
+          "mfa_detail": "challenged_now",
+          "application": "CaseDesk",
+          "correlation_id": "C003",
+          "scenario_location": "Office-A",
+          "authentication_method": "password_plus_mfa"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S004",
+          "time_utc": "2026-09-21T14:00:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C004",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S005",
+          "time_utc": "2026-09-21T14:00:30Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C005",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S006",
+          "time_utc": "2026-09-21T14:01:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C006",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S007",
+          "time_utc": "2026-09-21T14:01:30Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C007",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "incorrect_password",
+          "outcome": "failure",
+          "event_id": "S008",
+          "time_utc": "2026-09-21T14:02:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "not_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C008",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "user": "casey@cvi-training.example",
+          "reason": "accepted",
+          "outcome": "success",
+          "event_id": "S009",
+          "time_utc": "2026-09-21T14:03:00Z",
+          "device_id": "unknown-device",
+          "source_ip": "203.0.113.77",
+          "mfa_detail": "no_challenge_recorded",
+          "application": "CaseDesk",
+          "correlation_id": "C009",
+          "scenario_location": "Remote-B",
+          "authentication_method": "password"
+        },
+        {
+          "actor": "helpdesk@cvi-training.example",
+          "result": "success",
+          "target": "blair@cvi-training.example",
+          "activity": "group_member_added",
+          "event_id": "A001",
+          "time_utc": "2026-09-21T13:10:00Z",
+          "after_value": "Junior-Analysts",
+          "before_value": "none",
+          "correlation_id": "not_available",
+          "approval_ticket": "CHG-1101"
+        },
+        {
+          "actor": "casey@cvi-training.example",
+          "result": "success",
+          "target": "casey@cvi-training.example",
+          "activity": "group_member_added",
+          "event_id": "A002",
+          "time_utc": "2026-09-21T14:04:00Z",
+          "after_value": "Privileged-Operators",
+          "before_value": "none",
+          "correlation_id": "C009",
+          "approval_ticket": "none_recorded"
+        },
+        {
+          "actor": "helpdesk@cvi-training.example",
+          "result": "success",
+          "target": "alex@cvi-training.example",
+          "activity": "group_member_removed",
+          "event_id": "A003",
+          "time_utc": "2026-09-21T14:15:00Z",
+          "after_value": "none",
+          "before_value": "Old-Response-Team",
+          "correlation_id": "not_available",
+          "approval_ticket": "CHG-1102"
+        },
+        {
+          "actor": "helpdesk@cvi-training.example",
+          "result": "refused",
+          "target": "blair@cvi-training.example",
+          "activity": "password_reset_request",
+          "event_id": "A004",
+          "time_utc": "2026-09-21T14:25:00Z",
+          "after_value": "unchanged",
+          "before_value": "unchanged",
+          "correlation_id": "not_available",
+          "approval_ticket": "REQ-1103"
+        }
+      ],
+      "captured_revision": 202
+    }
+  }
+]

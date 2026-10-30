@@ -1,1 +1,6025 @@
-
+{
+  "source": "LIVE — your simulated activity (fictional)",
+  "signins": [
+    {
+      "id": "LS-81B676-2-1",
+      "raw": {
+        "user": "alex@ad.cloudheights.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-2-1",
+        "time_utc": "2026-09-28T13:02:00Z",
+        "device_id": "managed-alex",
+        "source_ip": "192.0.2.10",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-2",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 2,
+      "account": "ad-alex"
+    },
+    {
+      "id": "LS-81B676-6-1",
+      "raw": {
+        "user": "blair@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-6-1",
+        "time_utc": "2026-09-28T13:06:00Z",
+        "device_id": "managed-blair",
+        "source_ip": "192.0.2.11",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-6",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 6,
+      "account": "cl-blair"
+    },
+    {
+      "id": "LS-81B676-8-1",
+      "raw": {
+        "user": "finley@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-8-1",
+        "time_utc": "2026-09-28T13:08:00Z",
+        "device_id": "managed-finley",
+        "source_ip": "192.0.2.14",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-8",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 8,
+      "account": "cl-finley"
+    },
+    {
+      "id": "LS-81B676-11-1",
+      "raw": {
+        "user": "finley@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-11-1",
+        "time_utc": "2026-09-28T13:11:00Z",
+        "device_id": "managed-finley",
+        "source_ip": "192.0.2.14",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-11",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 11,
+      "account": "cl-finley"
+    },
+    {
+      "id": "LS-81B676-24-1",
+      "raw": {
+        "user": "blair@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-24-1",
+        "time_utc": "2026-09-28T13:24:00Z",
+        "device_id": "managed-blair",
+        "source_ip": "192.0.2.11",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-24",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 24,
+      "account": "cl-blair"
+    },
+    {
+      "id": "LS-81B676-42-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-42-1",
+        "time_utc": "2026-09-28T13:42:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-42",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 42,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-48-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-48-1",
+        "time_utc": "2026-09-28T13:48:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-48",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 48,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-53-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "CREDENTIAL_CHANGE_REQUIRED",
+        "outcome": "challenge",
+        "event_id": "LS-81B676-53-1",
+        "time_utc": "2026-09-28T13:53:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-53",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 53,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-54-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "CREDENTIAL_CHANGE_REQUIRED",
+        "outcome": "challenge",
+        "event_id": "LS-81B676-54-1",
+        "time_utc": "2026-09-28T13:54:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-54",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 54,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-55-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "CREDENTIAL_CHANGE_REQUIRED",
+        "outcome": "challenge",
+        "event_id": "LS-81B676-55-1",
+        "time_utc": "2026-09-28T13:55:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-55",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 55,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-57-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-57-1",
+        "time_utc": "2026-09-28T13:57:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-57",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 57,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-59-1",
+      "raw": {
+        "user": "jamie@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-59-1",
+        "time_utc": "2026-09-28T13:59:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-59",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 59,
+      "account": "cl-jamie"
+    },
+    {
+      "id": "LS-81B676-62-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-62-1",
+        "time_utc": "2026-09-28T14:02:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-62",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 62,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-75-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "CREDENTIAL_CHANGE_REQUIRED",
+        "outcome": "challenge",
+        "event_id": "LS-81B676-75-1",
+        "time_utc": "2026-09-28T14:15:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-75",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 75,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-80-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "CREDENTIAL_CHANGE_REQUIRED",
+        "outcome": "challenge",
+        "event_id": "LS-81B676-80-1",
+        "time_utc": "2026-09-28T14:20:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-80",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 80,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-82-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "INVALID_CREDENTIAL",
+        "outcome": "failure",
+        "event_id": "LS-81B676-82-1",
+        "time_utc": "2026-09-28T14:22:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-82",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 82,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-83-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "INVALID_CREDENTIAL",
+        "outcome": "failure",
+        "event_id": "LS-81B676-83-1",
+        "time_utc": "2026-09-28T14:23:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-83",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 83,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-85-1",
+      "raw": {
+        "user": "jamie@ad.cloudheights.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-85-1",
+        "time_utc": "2026-09-28T14:25:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-85",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 85,
+      "account": "ad-jamie"
+    },
+    {
+      "id": "LS-81B676-87-1",
+      "raw": {
+        "user": "drew@ad.cloudheights.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-87-1",
+        "time_utc": "2026-09-28T14:27:00Z",
+        "device_id": "unknown-device",
+        "source_ip": "203.0.113.77",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-87",
+        "scenario_location": "Remote-B",
+        "authentication_method": "password"
+      },
+      "seq": 87,
+      "account": "ad-drew"
+    },
+    {
+      "id": "LS-81B676-102-1",
+      "raw": {
+        "user": "blair@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-102-1",
+        "time_utc": "2026-09-28T14:42:00Z",
+        "device_id": "managed-blair",
+        "source_ip": "192.0.2.11",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-102",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 102,
+      "account": "cl-blair"
+    },
+    {
+      "id": "LS-81B676-105-1",
+      "raw": {
+        "user": "casey@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-105-1",
+        "time_utc": "2026-09-28T14:45:00Z",
+        "device_id": "managed-casey",
+        "source_ip": "192.0.2.12",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-105",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 105,
+      "account": "cl-casey"
+    },
+    {
+      "id": "LS-81B676-110-1",
+      "raw": {
+        "user": "emi@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-110-1",
+        "time_utc": "2026-09-28T14:50:00Z",
+        "device_id": "managed-emi",
+        "source_ip": "192.0.2.13",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-110",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 110,
+      "account": "cl-emi"
+    },
+    {
+      "id": "LS-81B676-118-1",
+      "raw": {
+        "user": "casey@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-118-1",
+        "time_utc": "2026-09-28T14:58:00Z",
+        "device_id": "managed-casey",
+        "source_ip": "192.0.2.12",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-118",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 118,
+      "account": "cl-casey"
+    },
+    {
+      "id": "LS-81B676-129-1",
+      "raw": {
+        "user": "jamie@cvi-training.example",
+        "reason": "CREDENTIAL_CHANGE_REQUIRED",
+        "outcome": "challenge",
+        "event_id": "LS-81B676-129-1",
+        "time_utc": "2026-09-28T15:09:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-129",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 129,
+      "account": "cl-jamie"
+    },
+    {
+      "id": "LS-81B676-131-1",
+      "raw": {
+        "user": "jamie@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-131-1",
+        "time_utc": "2026-09-28T15:11:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-131",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 131,
+      "account": "cl-jamie"
+    },
+    {
+      "id": "LS-81B676-147-1",
+      "raw": {
+        "user": "alex@ad.cloudheights.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-147-1",
+        "time_utc": "2026-09-28T15:27:00Z",
+        "device_id": "managed-alex",
+        "source_ip": "192.0.2.10",
+        "mfa_detail": "not_recorded",
+        "application": "AD-Logon (simulated)",
+        "correlation_id": "LC-81B676-147",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 147,
+      "account": "ad-alex"
+    },
+    {
+      "id": "LS-81B676-153-1",
+      "raw": {
+        "user": "alex@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-153-1",
+        "time_utc": "2026-09-28T15:33:00Z",
+        "device_id": "managed-alex",
+        "source_ip": "192.0.2.10",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-153",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 153,
+      "account": "cl-alex"
+    },
+    {
+      "id": "LS-81B676-160-1",
+      "raw": {
+        "user": "finley@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-160-1",
+        "time_utc": "2026-09-28T15:40:00Z",
+        "device_id": "managed-finley",
+        "source_ip": "192.0.2.14",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-160",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 160,
+      "account": "cl-finley"
+    },
+    {
+      "id": "LS-81B676-182-1",
+      "raw": {
+        "user": "finley@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-182-1",
+        "time_utc": "2026-09-28T16:02:00Z",
+        "device_id": "managed-finley",
+        "source_ip": "192.0.2.14",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-182",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 182,
+      "account": "cl-finley"
+    },
+    {
+      "id": "LS-81B676-188-1",
+      "raw": {
+        "user": "blair@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-188-1",
+        "time_utc": "2026-09-28T16:08:00Z",
+        "device_id": "managed-blair",
+        "source_ip": "192.0.2.11",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-188",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 188,
+      "account": "cl-blair"
+    },
+    {
+      "id": "LS-81B676-194-1",
+      "raw": {
+        "user": "alex@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-194-1",
+        "time_utc": "2026-09-28T16:14:00Z",
+        "device_id": "managed-alex",
+        "source_ip": "192.0.2.10",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-194",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 194,
+      "account": "cl-alex"
+    },
+    {
+      "id": "LS-81B676-195-1",
+      "raw": {
+        "user": "blair@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-195-1",
+        "time_utc": "2026-09-28T16:15:00Z",
+        "device_id": "managed-blair",
+        "source_ip": "192.0.2.11",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-195",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 195,
+      "account": "cl-blair"
+    },
+    {
+      "id": "LS-81B676-196-1",
+      "raw": {
+        "user": "blair@cvi-training.example",
+        "reason": "accepted",
+        "outcome": "success",
+        "event_id": "LS-81B676-196-1",
+        "time_utc": "2026-09-28T16:16:00Z",
+        "device_id": "managed-casey",
+        "source_ip": "192.0.2.12",
+        "mfa_detail": "challenged_now",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-196",
+        "scenario_location": "Office-A",
+        "authentication_method": "password_plus_mfa"
+      },
+      "seq": 196,
+      "account": "cl-blair"
+    },
+    {
+      "id": "LS-81B676-197-1",
+      "raw": {
+        "user": "drew@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-197-1",
+        "time_utc": "2026-09-28T16:17:00Z",
+        "device_id": "managed-emi",
+        "source_ip": "192.0.2.13",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-197",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 197,
+      "account": "cl-drew"
+    },
+    {
+      "id": "LS-81B676-198-1",
+      "raw": {
+        "user": "drew@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-198-1",
+        "time_utc": "2026-09-28T16:18:00Z",
+        "device_id": "managed-finley",
+        "source_ip": "192.0.2.14",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-198",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 198,
+      "account": "cl-drew"
+    },
+    {
+      "id": "LS-81B676-199-1",
+      "raw": {
+        "user": "drew@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-199-1",
+        "time_utc": "2026-09-28T16:19:00Z",
+        "device_id": "managed-helpdesk",
+        "source_ip": "192.0.2.15",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-199",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 199,
+      "account": "cl-drew"
+    },
+    {
+      "id": "LS-81B676-200-1",
+      "raw": {
+        "user": "drew@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-200-1",
+        "time_utc": "2026-09-28T16:20:00Z",
+        "device_id": "managed-jamie",
+        "source_ip": "192.0.2.16",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-200",
+        "scenario_location": "Office-A",
+        "authentication_method": "password"
+      },
+      "seq": 200,
+      "account": "cl-drew"
+    },
+    {
+      "id": "LS-81B676-201-1",
+      "raw": {
+        "user": "drew@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-201-1",
+        "time_utc": "2026-09-28T16:21:00Z",
+        "device_id": "unknown-device",
+        "source_ip": "203.0.113.77",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-201",
+        "scenario_location": "Remote-B",
+        "authentication_method": "password"
+      },
+      "seq": 201,
+      "account": "cl-drew"
+    },
+    {
+      "id": "LS-81B676-202-1",
+      "raw": {
+        "user": "drew@cvi-training.example",
+        "reason": "ACCOUNT_DISABLED",
+        "outcome": "failure",
+        "event_id": "LS-81B676-202-1",
+        "time_utc": "2026-09-28T16:22:00Z",
+        "device_id": "unmanaged-personal",
+        "source_ip": "203.0.113.90",
+        "mfa_detail": "not_recorded",
+        "application": "CaseDesk",
+        "correlation_id": "LC-81B676-202",
+        "scenario_location": "Remote-B",
+        "authentication_method": "password"
+      },
+      "seq": 202,
+      "account": "cl-drew"
+    }
+  ],
+  "audits": [
+    {
+      "id": "LA-81B676-1-2",
+      "seq": 1,
+      "time": "2026-09-28T13:01:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-1-1",
+        "action": "read",
+        "account": "ad-alex",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-1"
+    },
+    {
+      "id": "LA-81B676-3-2",
+      "seq": 3,
+      "time": "2026-09-28T13:03:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-3-1",
+        "action": "read",
+        "account": "ad-alex",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ADAUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-3"
+    },
+    {
+      "id": "LA-81B676-4-2",
+      "seq": 4,
+      "time": "2026-09-28T13:04:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-4-1",
+        "action": "read",
+        "account": "ad-alex",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-4"
+    },
+    {
+      "id": "LA-81B676-5-2",
+      "seq": 5,
+      "time": "2026-09-28T13:05:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-5-1",
+        "action": "read",
+        "account": "cl-alex",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-5"
+    },
+    {
+      "id": "LA-81B676-7-2",
+      "seq": 7,
+      "time": "2026-09-28T13:07:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-7-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-7"
+    },
+    {
+      "id": "LA-81B676-9-2",
+      "seq": 9,
+      "time": "2026-09-28T13:09:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-9-1",
+        "action": "read",
+        "account": "cl-finley",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-9"
+    },
+    {
+      "id": "LA-81B676-10-2",
+      "seq": 10,
+      "time": "2026-09-28T13:10:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-10-1",
+        "action": "read",
+        "account": "cl-drew",
+        "reasons": [
+          "ACCOUNT_DISABLED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-10"
+    },
+    {
+      "id": "LA-81B676-12-2",
+      "seq": 12,
+      "time": "2026-09-28T13:12:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-12-1",
+        "action": "read",
+        "account": "cl-finley",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-12"
+    },
+    {
+      "id": "LA-81B676-13-1",
+      "seq": 13,
+      "time": "2026-09-28T13:13:00Z",
+      "after": {
+        "members": [],
+        "assignments": []
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-OLD",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-13"
+    },
+    {
+      "id": "LA-81B676-14-1",
+      "seq": 14,
+      "time": "2026-09-28T13:14:00Z",
+      "after": {
+        "members": [
+          "cl-helpdesk"
+        ],
+        "assignments": [
+          "RL-HELP@R-DIR"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-HELP",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-14"
+    },
+    {
+      "id": "LA-81B676-15-1",
+      "seq": 15,
+      "time": "2026-09-28T13:15:00Z",
+      "after": {
+        "members": [
+          "cl-casey"
+        ],
+        "assignments": [
+          "RL-PRIV@R-CASE",
+          "RL-PRIV@R-QUEUE",
+          "RL-PRIV@R-AUD",
+          "RL-PRIV@R-DIR"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-PRIV",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-15"
+    },
+    {
+      "id": "LA-81B676-16-1",
+      "seq": 16,
+      "time": "2026-09-28T13:16:00Z",
+      "after": {
+        "members": [],
+        "assignments": []
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-AZ",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-16"
+    },
+    {
+      "id": "LA-81B676-17-1",
+      "seq": 17,
+      "time": "2026-09-28T13:17:00Z",
+      "after": {
+        "members": [
+          "cl-blair"
+        ],
+        "assignments": [
+          "RL-LAND@R-LAND"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-JUN",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-17"
+    },
+    {
+      "id": "LA-81B676-18-1",
+      "seq": 18,
+      "time": "2026-09-28T13:18:00Z",
+      "after": {
+        "members": [
+          "cl-alex"
+        ],
+        "assignments": [
+          "RL-RESP@R-QUEUE",
+          "RL-RESP@R-ABAC"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-RESP",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-18"
+    },
+    {
+      "id": "LA-81B676-19-1",
+      "seq": 19,
+      "time": "2026-09-28T13:19:00Z",
+      "after": {
+        "members": [
+          "cl-alex"
+        ],
+        "assignments": [
+          "RL-RESP@R-QUEUE",
+          "RL-RESP@R-ABAC"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-RESP",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-19"
+    },
+    {
+      "id": "LA-81B676-20-2",
+      "seq": 20,
+      "time": "2026-09-28T13:20:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-20-1",
+        "action": "read",
+        "account": "cl-alex",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-20"
+    },
+    {
+      "id": "LA-81B676-21-1",
+      "seq": 21,
+      "time": "2026-09-28T13:21:00Z",
+      "after": {
+        "members": [
+          "cl-helpdesk"
+        ],
+        "assignments": [
+          "RL-HELP@R-DIR"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-HELP",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-21"
+    },
+    {
+      "id": "LA-81B676-22-1",
+      "seq": 22,
+      "time": "2026-09-28T13:22:00Z",
+      "after": {
+        "members": [
+          "cl-casey"
+        ],
+        "assignments": [
+          "RL-PRIV@R-CASE",
+          "RL-PRIV@R-QUEUE",
+          "RL-PRIV@R-AUD",
+          "RL-PRIV@R-DIR"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-PRIV",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-22"
+    },
+    {
+      "id": "LA-81B676-23-1",
+      "seq": 23,
+      "time": "2026-09-28T13:23:00Z",
+      "after": {
+        "members": [
+          "cl-alex"
+        ],
+        "assignments": [
+          "RL-RESP@R-QUEUE",
+          "RL-RESP@R-ABAC"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-RESP",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-23"
+    },
+    {
+      "id": "LA-81B676-25-2",
+      "seq": 25,
+      "time": "2026-09-28T13:25:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-25-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-25"
+    },
+    {
+      "id": "LA-81B676-26-2",
+      "seq": 26,
+      "time": "2026-09-28T13:26:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-26-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "DIRECTORY_MISMATCH"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-26"
+    },
+    {
+      "id": "LA-81B676-27-2",
+      "seq": 27,
+      "time": "2026-09-28T13:27:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-27-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "DIRECTORY_MISMATCH"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-27"
+    },
+    {
+      "id": "LA-81B676-28-2",
+      "seq": 28,
+      "time": "2026-09-28T13:28:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-28-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "DIRECTORY_MISMATCH"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-28"
+    },
+    {
+      "id": "LA-81B676-29-1",
+      "seq": 29,
+      "time": "2026-09-28T13:29:00Z",
+      "after": null,
+      "before": null,
+      "reason": "Assignment already exists",
+      "result": "no_op",
+      "target": "GC-READ",
+      "ticket": "T201",
+      "changed": [],
+      "activity": "role_assignment_changed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-29"
+    },
+    {
+      "id": "LA-81B676-30-2",
+      "seq": 30,
+      "time": "2026-09-28T13:30:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-30-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "DIRECTORY_MISMATCH"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-30"
+    },
+    {
+      "id": "LA-81B676-31-1",
+      "seq": 31,
+      "time": "2026-09-28T13:31:00Z",
+      "after": null,
+      "before": null,
+      "reason": "Assignment already exists",
+      "result": "no_op",
+      "target": "GC-READ",
+      "ticket": "T201",
+      "changed": [],
+      "activity": "role_assignment_changed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-31"
+    },
+    {
+      "id": "LA-81B676-32-2",
+      "seq": 32,
+      "time": "2026-09-28T13:32:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-32-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-32"
+    },
+    {
+      "id": "LA-81B676-33-1",
+      "seq": 33,
+      "time": "2026-09-28T13:33:00Z",
+      "after": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "before": [
+        "GC-JUN"
+      ],
+      "reason": "",
+      "result": "accepted",
+      "target": "cl-blair",
+      "ticket": "T201",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-33"
+    },
+    {
+      "id": "LA-81B676-34-2",
+      "seq": 34,
+      "time": "2026-09-28T13:34:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-34-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-34"
+    },
+    {
+      "id": "LA-81B676-35-2",
+      "seq": 35,
+      "time": "2026-09-28T13:35:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-35-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-35"
+    },
+    {
+      "id": "LA-81B676-36-2",
+      "seq": 36,
+      "time": "2026-09-28T13:36:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-36-1",
+        "action": "update",
+        "account": "cl-blair",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-36"
+    },
+    {
+      "id": "LA-81B676-37-1",
+      "seq": 37,
+      "time": "2026-09-28T13:37:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "What I did: Added account cl-blair to the Case-Readers group (GC-READ), granting read-only access to Case Summaries as approved in APP-201.\nWhat I checked: Verified via access tests that cl-blair successfully received an ALLOW decision for Case Summaries /read while update access (/update) correctly remained DENIED.\nWhy: Blair needs read access to perform her junior analyst duties without receiving unauthorized editing privileges.",
+      "result": "accepted",
+      "target": "T201",
+      "ticket": "T201",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-37"
+    },
+    {
+      "id": "LA-81B676-38-1",
+      "seq": 38,
+      "time": "2026-09-28T13:38:00Z",
+      "after": {
+        "dn": "CN=Jamie Ellis,OU=Support,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+        "ou": "OU-SUP",
+        "dir": "AD",
+        "key": "ad-jamie",
+        "mfa": "not_in_scope",
+        "upn": "jamie@ad.cloudheights.example",
+        "dept": "DEP-SUP",
+        "locked": false,
+        "person": "P08",
+        "status": "disabled",
+        "username": "jamie",
+        "mustChange": true,
+        "failedCount": 0,
+        "securityRevision": 1,
+        "credentialVersion": 1
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T301",
+      "changed": [
+        "account"
+      ],
+      "activity": "user_created",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-38"
+    },
+    {
+      "id": "LA-81B676-39-1",
+      "seq": 39,
+      "time": "2026-09-28T13:39:00Z",
+      "after": {
+        "dn": null,
+        "ou": null,
+        "dir": "CLOUD",
+        "key": "cl-jamie",
+        "mfa": "not_enrolled",
+        "upn": "jamie@cvi-training.example",
+        "dept": "DEP-SUP",
+        "locked": false,
+        "person": "P08",
+        "status": "disabled",
+        "username": "jamie",
+        "mustChange": true,
+        "failedCount": 0,
+        "securityRevision": 1,
+        "credentialVersion": 1
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [
+        "account"
+      ],
+      "activity": "user_created",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-39"
+    },
+    {
+      "id": "LA-81B676-40-1",
+      "seq": 40,
+      "time": "2026-09-28T13:40:00Z",
+      "after": [
+        "GA-ALL"
+      ],
+      "before": [],
+      "reason": "Onboarding",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T301",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-40"
+    },
+    {
+      "id": "LA-81B676-41-1",
+      "seq": 41,
+      "time": "2026-09-28T13:41:00Z",
+      "after": [
+        "GA-ALL",
+        "GA-SUP"
+      ],
+      "before": [
+        "GA-ALL"
+      ],
+      "reason": "Onboarding",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T301",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-41"
+    },
+    {
+      "id": "LA-81B676-43-2",
+      "seq": 43,
+      "time": "2026-09-28T13:43:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-43-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ACCOUNT_DISABLED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-43"
+    },
+    {
+      "id": "LA-81B676-44-2",
+      "seq": 44,
+      "time": "2026-09-28T13:44:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-44-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ACCOUNT_DISABLED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-44"
+    },
+    {
+      "id": "LA-81B676-45-1",
+      "seq": 45,
+      "time": "2026-09-28T13:45:00Z",
+      "after": {
+        "route": "trusted",
+        "outcome": "passed",
+        "hrIdSupplied": "CH-008"
+      },
+      "before": null,
+      "reason": "Trusted callback and matching HR ID.",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-45"
+    },
+    {
+      "id": "LA-81B676-46-1",
+      "seq": 46,
+      "time": "2026-09-28T13:46:00Z",
+      "after": {
+        "route": "trusted",
+        "outcome": "passed",
+        "hrIdSupplied": "CH-008"
+      },
+      "before": null,
+      "reason": "Trusted callback and matching HR ID.",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-46"
+    },
+    {
+      "id": "LA-81B676-47-2",
+      "seq": 47,
+      "time": "2026-09-28T13:47:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-47-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ACCOUNT_DISABLED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-47"
+    },
+    {
+      "id": "LA-81B676-49-1",
+      "seq": 49,
+      "time": "2026-09-28T13:49:00Z",
+      "after": {
+        "route": "trusted",
+        "outcome": "passed",
+        "hrIdSupplied": "CH-008"
+      },
+      "before": null,
+      "reason": "Trusted callback and matching HR ID.",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-49"
+    },
+    {
+      "id": "LA-81B676-50-1",
+      "seq": 50,
+      "time": "2026-09-28T13:50:00Z",
+      "after": {
+        "locked": false,
+        "mustChange": true,
+        "failedCount": 0,
+        "sessionsRevoked": 0,
+        "securityRevision": 2,
+        "credentialVersion": 2
+      },
+      "before": {
+        "locked": false,
+        "mustChange": true,
+        "failedCount": 0,
+        "securityRevision": 1,
+        "credentialVersion": 1
+      },
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "credentialVersion",
+        "mustChange",
+        "locked",
+        "failedCount",
+        "securityRevision",
+        "sessions"
+      ],
+      "activity": "password_reset",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-50"
+    },
+    {
+      "id": "LA-81B676-51-1",
+      "seq": 51,
+      "time": "2026-09-28T13:51:00Z",
+      "after": {
+        "status": "enabled",
+        "sessionsRevoked": 0,
+        "securityRevision": 2
+      },
+      "before": {
+        "status": "disabled",
+        "securityRevision": 2
+      },
+      "reason": "",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T301",
+      "changed": [
+        "status"
+      ],
+      "activity": "account_status_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-51"
+    },
+    {
+      "id": "LA-81B676-52-2",
+      "seq": 52,
+      "time": "2026-09-28T13:52:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-52-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-52"
+    },
+    {
+      "id": "LA-81B676-56-1",
+      "seq": 56,
+      "time": "2026-09-28T13:56:00Z",
+      "after": {
+        "mustChange": false,
+        "credentialVersion": 3
+      },
+      "before": {
+        "mustChange": true,
+        "credentialVersion": 2
+      },
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": null,
+      "changed": [
+        "credentialVersion",
+        "mustChange"
+      ],
+      "activity": "credential_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-56"
+    },
+    {
+      "id": "LA-81B676-58-2",
+      "seq": 58,
+      "time": "2026-09-28T13:58:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-58-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-58"
+    },
+    {
+      "id": "LA-81B676-60-2",
+      "seq": 60,
+      "time": "2026-09-28T14:00:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-60-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-60"
+    },
+    {
+      "id": "LA-81B676-61-1",
+      "seq": 61,
+      "time": "2026-09-28T14:01:00Z",
+      "after": {
+        "status": "enabled",
+        "securityRevision": 2
+      },
+      "before": {
+        "status": "enabled",
+        "securityRevision": 2
+      },
+      "reason": "T301",
+      "result": "no_op",
+      "target": "ad-jamie",
+      "ticket": "T301",
+      "changed": [],
+      "activity": "account_status_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-61"
+    },
+    {
+      "id": "LA-81B676-63-1",
+      "seq": 63,
+      "time": "2026-09-28T14:03:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "Created the Active Directory account for Jamie Ellis (ad-jamie), assigned required group memberships, and executed the authorized validation sequence (disabling and re-enabling the account status).\n\nVerified the account creation snapshot, confirmed group assignments, reviewed audit logs for simulator actions (#38, #40, #41, #51, #61), and tested access before and after the status changes.\n\nTo ensure Jamie's account was built correctly, placed in the appropriate organizational unit, provisioned with correct group access, and validated safely against directory security policies before closing the ticket.",
+      "result": "accepted",
+      "target": "T301",
+      "ticket": "T301",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-63"
+    },
+    {
+      "id": "LA-81B676-64-1",
+      "seq": 64,
+      "time": "2026-09-28T14:04:00Z",
+      "after": {
+        "route": "trusted",
+        "outcome": "passed",
+        "hrIdSupplied": "CH-008"
+      },
+      "before": null,
+      "reason": "Trusted callback and matching HR ID.",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-64"
+    },
+    {
+      "id": "LA-81B676-65-1",
+      "seq": 65,
+      "time": "2026-09-28T14:05:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "Created the Active Directory account for Jamie Ellis (ad-jamie), assigned required group memberships, and executed the authorized validation sequence (disabling and re-enabling the account status).\n\nVerified the account creation snapshot, confirmed group assignments, reviewed audit logs for simulator actions (#38, #40, #41, #51, #61), and tested access before and after the status changes.\n\nTo ensure Jamie's account was built correctly, placed in the appropriate organizational unit, provisioned with correct group access, and validated safely against directory security policies before closing the ticket.",
+      "result": "accepted",
+      "target": "T302",
+      "ticket": "T302",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-65"
+    },
+    {
+      "id": "LA-81B676-66-1",
+      "seq": 66,
+      "time": "2026-09-28T14:06:00Z",
+      "after": "resolved",
+      "before": "resolved",
+      "reason": "Created the Active Directory account for Jamie Ellis (ad-jamie), assigned required group memberships, and executed the authorized validation sequence (disabling and re-enabling the account status).\n\nVerified the account creation snapshot, confirmed group assignments, reviewed audit logs for simulator actions (#38, #40, #41, #51, #61), and tested access before and after the status changes.\n\nTo ensure Jamie's account was built correctly, placed in the appropriate organizational unit, provisioned with correct group access, and validated safely against directory security policies before closing the ticket.",
+      "result": "accepted",
+      "target": "T302",
+      "ticket": "T302",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-66"
+    },
+    {
+      "id": "LA-81B676-67-1",
+      "seq": 67,
+      "time": "2026-09-28T14:07:00Z",
+      "after": "resolved",
+      "before": "resolved",
+      "reason": "What I did: Performed identity verification using HR ID CH-008 via the directory-confirmed callback route, then executed the initial password reset and credential configuration for Jamie's Active Directory account (ad-jamie).\n\nWhat I checked: Verified that the HR records matched, reviewed the verification pass status, and confirmed the credential reset audit events (#45, #46, #49, #50, #64) were successfully recorded.\n\nWhy: To ensure the joiner's identity was securely authenticated before performing a sensitive credential reset in compliance with the approved scope of T302.",
+      "result": "accepted",
+      "target": "T302",
+      "ticket": "T302",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-67"
+    },
+    {
+      "id": "LA-81B676-68-2",
+      "seq": 68,
+      "time": "2026-09-28T14:08:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-68-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-68"
+    },
+    {
+      "id": "LA-81B676-69-1",
+      "seq": 69,
+      "time": "2026-09-28T14:09:00Z",
+      "after": [
+        "GA-ALL",
+        "GA-SUP"
+      ],
+      "before": [
+        "GA-ALL",
+        "GA-SUP"
+      ],
+      "reason": "",
+      "result": "no_op",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-69"
+    },
+    {
+      "id": "LA-81B676-70-1",
+      "seq": 70,
+      "time": "2026-09-28T14:10:00Z",
+      "after": [
+        "GA-ALL",
+        "GA-SUP"
+      ],
+      "before": [
+        "GA-ALL",
+        "GA-SUP"
+      ],
+      "reason": "",
+      "result": "no_op",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-70"
+    },
+    {
+      "id": "LA-81B676-71-1",
+      "seq": 71,
+      "time": "2026-09-28T14:11:00Z",
+      "after": {
+        "status": "disabled",
+        "sessionsRevoked": 2,
+        "securityRevision": 3
+      },
+      "before": {
+        "status": "enabled",
+        "securityRevision": 2
+      },
+      "reason": "T301",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "status",
+        "securityRevision",
+        "sessions"
+      ],
+      "activity": "account_status_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-71"
+    },
+    {
+      "id": "LA-81B676-72-2",
+      "seq": 72,
+      "time": "2026-09-28T14:12:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-72-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ACCOUNT_DISABLED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-72"
+    },
+    {
+      "id": "LA-81B676-73-1",
+      "seq": 73,
+      "time": "2026-09-28T14:13:00Z",
+      "after": {
+        "status": "enabled",
+        "sessionsRevoked": 0,
+        "securityRevision": 3
+      },
+      "before": {
+        "status": "disabled",
+        "securityRevision": 3
+      },
+      "reason": "T301",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "status"
+      ],
+      "activity": "account_status_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-73"
+    },
+    {
+      "id": "LA-81B676-74-1",
+      "seq": 74,
+      "time": "2026-09-28T14:14:00Z",
+      "after": {
+        "locked": false,
+        "mustChange": true,
+        "failedCount": 0,
+        "sessionsRevoked": 0,
+        "securityRevision": 4,
+        "credentialVersion": 4
+      },
+      "before": {
+        "locked": false,
+        "mustChange": false,
+        "failedCount": 0,
+        "securityRevision": 3,
+        "credentialVersion": 3
+      },
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "credentialVersion",
+        "mustChange",
+        "locked",
+        "failedCount",
+        "securityRevision",
+        "sessions"
+      ],
+      "activity": "password_reset",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-74"
+    },
+    {
+      "id": "LA-81B676-76-1",
+      "seq": 76,
+      "time": "2026-09-28T14:16:00Z",
+      "after": {
+        "route": "request_only",
+        "outcome": "failed",
+        "hrIdSupplied": "CH-008"
+      },
+      "before": null,
+      "reason": "Request-only details are not trusted verification.",
+      "result": "refused",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-76"
+    },
+    {
+      "id": "LA-81B676-77-1",
+      "seq": 77,
+      "time": "2026-09-28T14:17:00Z",
+      "after": {
+        "route": "trusted",
+        "outcome": "passed",
+        "hrIdSupplied": "CH-008"
+      },
+      "before": null,
+      "reason": "Trusted callback and matching HR ID.",
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-77"
+    },
+    {
+      "id": "LA-81B676-78-1",
+      "seq": 78,
+      "time": "2026-09-28T14:18:00Z",
+      "after": {
+        "members": [
+          "cl-blair"
+        ],
+        "assignments": [
+          "RL-LAND@R-LAND"
+        ]
+      },
+      "before": null,
+      "reason": "",
+      "result": "no_op",
+      "target": "GC-JUN",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-78"
+    },
+    {
+      "id": "LA-81B676-79-1",
+      "seq": 79,
+      "time": "2026-09-28T14:19:00Z",
+      "after": {
+        "locked": false,
+        "mustChange": true,
+        "failedCount": 0,
+        "sessionsRevoked": 0,
+        "securityRevision": 5,
+        "credentialVersion": 5
+      },
+      "before": {
+        "locked": false,
+        "mustChange": true,
+        "failedCount": 0,
+        "securityRevision": 4,
+        "credentialVersion": 4
+      },
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": "T302",
+      "changed": [
+        "credentialVersion",
+        "mustChange",
+        "locked",
+        "failedCount",
+        "securityRevision",
+        "sessions"
+      ],
+      "activity": "password_reset",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-79"
+    },
+    {
+      "id": "LA-81B676-81-1",
+      "seq": 81,
+      "time": "2026-09-28T14:21:00Z",
+      "after": {
+        "mustChange": false,
+        "credentialVersion": 6
+      },
+      "before": {
+        "mustChange": true,
+        "credentialVersion": 5
+      },
+      "result": "accepted",
+      "target": "ad-jamie",
+      "ticket": null,
+      "changed": [
+        "credentialVersion",
+        "mustChange"
+      ],
+      "activity": "credential_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-81"
+    },
+    {
+      "id": "LA-81B676-84-2",
+      "seq": 84,
+      "time": "2026-09-28T14:24:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-84-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-84"
+    },
+    {
+      "id": "LA-81B676-86-2",
+      "seq": 86,
+      "time": "2026-09-28T14:26:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-86-1",
+        "action": "read",
+        "account": "ad-drew",
+        "reasons": [
+          "ACCOUNT_DISABLED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-86"
+    },
+    {
+      "id": "LA-81B676-88-2",
+      "seq": 88,
+      "time": "2026-09-28T14:28:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-88-1",
+        "action": "read",
+        "account": "ad-jamie",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-88"
+    },
+    {
+      "id": "LA-81B676-89-1",
+      "seq": 89,
+      "time": "2026-09-28T14:29:00Z",
+      "after": {
+        "members": [
+          "cl-blair"
+        ],
+        "assignments": [
+          "RL-LAND@R-LAND"
+        ]
+      },
+      "before": null,
+      "reason": "GC-JUN",
+      "result": "no_op",
+      "target": "GC-JUN",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-89"
+    },
+    {
+      "id": "LA-81B676-90-2",
+      "seq": 90,
+      "time": "2026-09-28T14:30:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-90-1",
+        "action": "read",
+        "account": "ad-casey",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-90"
+    },
+    {
+      "id": "LA-81B676-91-2",
+      "seq": 91,
+      "time": "2026-09-28T14:31:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-91-1",
+        "action": "read",
+        "account": "ad-blair",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-91"
+    },
+    {
+      "id": "LA-81B676-92-2",
+      "seq": 92,
+      "time": "2026-09-28T14:32:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-92-1",
+        "action": "read",
+        "account": "ad-casey",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-92"
+    },
+    {
+      "id": "LA-81B676-93-1",
+      "seq": 93,
+      "time": "2026-09-28T14:33:00Z",
+      "after": {
+        "members": [
+          "cl-blair"
+        ],
+        "assignments": [
+          "RL-LAND@R-LAND"
+        ]
+      },
+      "before": null,
+      "reason": "Junior-Analysts group scoped to landing page and case review per T401",
+      "result": "no_op",
+      "target": "GC-JUN",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-93"
+    },
+    {
+      "id": "LA-81B676-94-1",
+      "seq": 94,
+      "time": "2026-09-28T14:34:00Z",
+      "after": {
+        "members": [
+          "cl-blair"
+        ],
+        "assignments": [
+          "RL-LAND@R-LAND"
+        ]
+      },
+      "before": null,
+      "reason": "Junior-Analysts group scoped to landing page and case review per T401",
+      "result": "no_op",
+      "target": "GC-JUN",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-94"
+    },
+    {
+      "id": "LA-81B676-95-1",
+      "seq": 95,
+      "time": "2026-09-28T14:35:00Z",
+      "after": [],
+      "before": [
+        "GC-PRIV"
+      ],
+      "reason": "T402",
+      "result": "accepted",
+      "target": "cl-casey",
+      "ticket": "T402",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-95"
+    },
+    {
+      "id": "LA-81B676-96-1",
+      "seq": 96,
+      "time": "2026-09-28T14:36:00Z",
+      "after": [
+        "GC-RESP"
+      ],
+      "before": [],
+      "reason": "T402",
+      "result": "accepted",
+      "target": "cl-casey",
+      "ticket": "T402",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-96"
+    },
+    {
+      "id": "LA-81B676-97-1",
+      "seq": 97,
+      "time": "2026-09-28T14:37:00Z",
+      "after": [
+        "GC-RESP"
+      ],
+      "before": [
+        "GC-RESP"
+      ],
+      "reason": "T402",
+      "result": "no_op",
+      "target": "cl-casey",
+      "ticket": "T402",
+      "changed": [],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-97"
+    },
+    {
+      "id": "LA-81B676-98-1",
+      "seq": 98,
+      "time": "2026-09-28T14:38:00Z",
+      "after": {
+        "members": [
+          "cl-alex",
+          "cl-casey"
+        ],
+        "assignments": [
+          "RL-RESP@R-QUEUE",
+          "RL-RESP@R-ABAC"
+        ]
+      },
+      "before": null,
+      "reason": "Response-Operators group scoped to response queue and internal response note per T402",
+      "result": "no_op",
+      "target": "GC-RESP",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-98"
+    },
+    {
+      "id": "LA-81B676-99-1",
+      "seq": 99,
+      "time": "2026-09-28T14:39:00Z",
+      "after": {
+        "members": [],
+        "assignments": [
+          "RL-AUD@R-AUD"
+        ]
+      },
+      "before": null,
+      "reason": "reviewed",
+      "result": "no_op",
+      "target": "GC-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-99"
+    },
+    {
+      "id": "LA-81B676-100-1",
+      "seq": 100,
+      "time": "2026-09-28T14:40:00Z",
+      "after": [
+        "GC-AUD"
+      ],
+      "before": [],
+      "reason": "T403",
+      "result": "accepted",
+      "target": "cl-emi",
+      "ticket": "T403",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-100"
+    },
+    {
+      "id": "LA-81B676-101-1",
+      "seq": 101,
+      "time": "2026-09-28T14:41:00Z",
+      "after": {
+        "members": [
+          "cl-emi"
+        ],
+        "assignments": [
+          "RL-AUD@R-AUD"
+        ]
+      },
+      "before": null,
+      "reason": "Audit-Reviewers group scoped to read and export audit evidence per T403",
+      "result": "no_op",
+      "target": "GC-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "configuration_reviewed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-101"
+    },
+    {
+      "id": "LA-81B676-103-2",
+      "seq": 103,
+      "time": "2026-09-28T14:43:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-103-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-103"
+    },
+    {
+      "id": "LA-81B676-104-2",
+      "seq": 104,
+      "time": "2026-09-28T14:44:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-104-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-104"
+    },
+    {
+      "id": "LA-81B676-106-2",
+      "seq": 106,
+      "time": "2026-09-28T14:46:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-106-1",
+        "action": "read",
+        "account": "cl-casey",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-QUEUE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-106"
+    },
+    {
+      "id": "LA-81B676-107-2",
+      "seq": 107,
+      "time": "2026-09-28T14:47:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-107-1",
+        "action": "update",
+        "account": "cl-casey",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-QUEUE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-107"
+    },
+    {
+      "id": "LA-81B676-108-2",
+      "seq": 108,
+      "time": "2026-09-28T14:48:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-108-1",
+        "action": "delete",
+        "account": "cl-casey",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-108"
+    },
+    {
+      "id": "LA-81B676-109-2",
+      "seq": 109,
+      "time": "2026-09-28T14:49:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-109-1",
+        "action": "manage_sensitive_groups",
+        "account": "cl-casey",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-DIR",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-109"
+    },
+    {
+      "id": "LA-81B676-111-2",
+      "seq": 111,
+      "time": "2026-09-28T14:51:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-111-1",
+        "action": "read",
+        "account": "cl-emi",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-111"
+    },
+    {
+      "id": "LA-81B676-112-2",
+      "seq": 112,
+      "time": "2026-09-28T14:52:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-112-1",
+        "action": "export",
+        "account": "cl-emi",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-112"
+    },
+    {
+      "id": "LA-81B676-113-2",
+      "seq": 113,
+      "time": "2026-09-28T14:53:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-113-1",
+        "action": "delete",
+        "account": "cl-emi",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-113"
+    },
+    {
+      "id": "LA-81B676-114-1",
+      "seq": 114,
+      "time": "2026-09-28T14:54:00Z",
+      "after": [
+        "GC-AUD",
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "before": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "reason": "temporary audit-reviewers experiment",
+      "result": "accepted",
+      "target": "cl-blair",
+      "ticket": "T401",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-114"
+    },
+    {
+      "id": "LA-81B676-115-2",
+      "seq": 115,
+      "time": "2026-09-28T14:55:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-115-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-115"
+    },
+    {
+      "id": "LA-81B676-116-1",
+      "seq": 116,
+      "time": "2026-09-28T14:56:00Z",
+      "after": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "before": [
+        "GC-AUD",
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "reason": "removing temporary audit-reviewers membership",
+      "result": "accepted",
+      "target": "cl-blair",
+      "ticket": "T401",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-116"
+    },
+    {
+      "id": "LA-81B676-117-2",
+      "seq": 117,
+      "time": "2026-09-28T14:57:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-117-1",
+        "action": "read",
+        "account": "cl-blair",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-117"
+    },
+    {
+      "id": "LA-81B676-119-2",
+      "seq": 119,
+      "time": "2026-09-28T14:59:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-119-1",
+        "action": "read",
+        "account": "cl-casey",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ABAC",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-119"
+    },
+    {
+      "id": "LA-81B676-120-2",
+      "seq": 120,
+      "time": "2026-09-28T15:00:00Z",
+      "after": {
+        "mode": "abac-what-if",
+        "test": "AT-81B676-120-1",
+        "action": "read",
+        "account": "cl-casey",
+        "reasons": [
+          "ABAC_CONDITION_FAILED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ABAC",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-120"
+    },
+    {
+      "id": "LA-81B676-121-2",
+      "seq": 121,
+      "time": "2026-09-28T15:01:00Z",
+      "after": {
+        "mode": "abac-what-if",
+        "test": "AT-81B676-121-1",
+        "action": "read",
+        "account": "cl-casey",
+        "reasons": [
+          "ABAC_CONDITION_FAILED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ABAC",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-121"
+    },
+    {
+      "id": "LA-81B676-122-2",
+      "seq": 122,
+      "time": "2026-09-28T15:02:00Z",
+      "after": {
+        "mode": "abac-what-if",
+        "test": "AT-81B676-122-1",
+        "action": "read",
+        "account": "cl-casey",
+        "reasons": [
+          "ABAC_CONDITION_FAILED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ABAC",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-122"
+    },
+    {
+      "id": "LA-81B676-123-1",
+      "seq": 123,
+      "time": "2026-09-28T15:03:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "Checked Blair's junior analyst access requirements against ticket T401. Verified that Blair has read-only access to case summaries and removed any excess or temporary permissions to adhere to the approved scope and least privilege.",
+      "result": "accepted",
+      "target": "T401",
+      "ticket": "T401",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-123"
+    },
+    {
+      "id": "LA-81B676-124-1",
+      "seq": 124,
+      "time": "2026-09-28T15:04:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "Checked Blair's junior analyst access requirements against ticket T401. Verified that Blair has read-only access to case summaries and removed any excess or temporary permissions to adhere to the approved scope and least privilege.",
+      "result": "accepted",
+      "target": "T402",
+      "ticket": "T402",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-124"
+    },
+    {
+      "id": "LA-81B676-125-1",
+      "seq": 125,
+      "time": "2026-09-28T15:05:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "Checked Emi's audit reviewer access against ticket T403 and the attached APP-403 approval. Verified that Emi has proper audit review, read, and export privileges, while confirming unauthorized destructive permissions (such as delete) remain blocked in accordance with approved scope and least privilege.",
+      "result": "accepted",
+      "target": "T403",
+      "ticket": "T403",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-125"
+    },
+    {
+      "id": "LA-81B676-126-1",
+      "seq": 126,
+      "time": "2026-09-28T15:06:00Z",
+      "after": {
+        "route": "trusted",
+        "outcome": "passed",
+        "hrIdSupplied": "CH-008"
+      },
+      "before": null,
+      "reason": "Trusted callback and matching HR ID.",
+      "result": "accepted",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-126"
+    },
+    {
+      "id": "LA-81B676-127-1",
+      "seq": 127,
+      "time": "2026-09-28T15:07:00Z",
+      "after": {
+        "mfa": "enrolled"
+      },
+      "before": {
+        "mfa": "not_enrolled"
+      },
+      "result": "accepted",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [
+        "mfa"
+      ],
+      "activity": "mfa_enrolled",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-127"
+    },
+    {
+      "id": "LA-81B676-128-1",
+      "seq": 128,
+      "time": "2026-09-28T15:08:00Z",
+      "after": {
+        "status": "enabled",
+        "sessionsRevoked": 0,
+        "securityRevision": 1
+      },
+      "before": {
+        "status": "disabled",
+        "securityRevision": 1
+      },
+      "reason": "T501 Finish Jamie's cloud onboarding",
+      "result": "accepted",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [
+        "status"
+      ],
+      "activity": "account_status_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-128"
+    },
+    {
+      "id": "LA-81B676-130-1",
+      "seq": 130,
+      "time": "2026-09-28T15:10:00Z",
+      "after": {
+        "mustChange": false,
+        "credentialVersion": 2
+      },
+      "before": {
+        "mustChange": true,
+        "credentialVersion": 1
+      },
+      "result": "accepted",
+      "target": "cl-jamie",
+      "ticket": null,
+      "changed": [
+        "credentialVersion",
+        "mustChange"
+      ],
+      "activity": "credential_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-130"
+    },
+    {
+      "id": "LA-81B676-132-1",
+      "seq": 132,
+      "time": "2026-09-28T15:12:00Z",
+      "after": [
+        "GC-JUN"
+      ],
+      "before": [],
+      "reason": "Finish Jamie's cloud onboarding",
+      "result": "accepted",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-132"
+    },
+    {
+      "id": "LA-81B676-133-1",
+      "seq": 133,
+      "time": "2026-09-28T15:13:00Z",
+      "after": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "before": [
+        "GC-JUN"
+      ],
+      "reason": "Finish Jamie's cloud onboarding",
+      "result": "accepted",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-133"
+    },
+    {
+      "id": "LA-81B676-134-1",
+      "seq": 134,
+      "time": "2026-09-28T15:14:00Z",
+      "after": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "before": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "reason": "Finish Jamie's cloud onboarding",
+      "result": "no_op",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-134"
+    },
+    {
+      "id": "LA-81B676-135-1",
+      "seq": 135,
+      "time": "2026-09-28T15:15:00Z",
+      "after": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "before": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "reason": "Finish Jamie's cloud onboarding",
+      "result": "no_op",
+      "target": "cl-jamie",
+      "ticket": "T501",
+      "changed": [],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-135"
+    },
+    {
+      "id": "LA-81B676-136-2",
+      "seq": 136,
+      "time": "2026-09-28T15:16:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-136-1",
+        "action": "read",
+        "account": "cl-jamie",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-136"
+    },
+    {
+      "id": "LA-81B676-137-2",
+      "seq": 137,
+      "time": "2026-09-28T15:17:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-137-1",
+        "action": "update",
+        "account": "cl-jamie",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-137"
+    },
+    {
+      "id": "LA-81B676-138-1",
+      "seq": 138,
+      "time": "2026-09-28T15:18:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "Verified identity via directory-confirmed callback and HR ID (CH-008). Created cloud identity account cl-jamie, completed MFA enrollment, enabled account, and assigned approved group memberships (Junior-Analysts and Case-Readers). Verified successful case read access.",
+      "result": "accepted",
+      "target": "T501",
+      "ticket": "T501",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-138"
+    },
+    {
+      "id": "LA-81B676-139-2",
+      "seq": 139,
+      "time": "2026-09-28T15:19:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-139-1",
+        "action": "read",
+        "account": "ad-alex",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ADRESP",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-139"
+    },
+    {
+      "id": "LA-81B676-140-2",
+      "seq": 140,
+      "time": "2026-09-28T15:20:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-140-1",
+        "action": "read",
+        "account": "cl-alex",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-LAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-140"
+    },
+    {
+      "id": "LA-81B676-141-2",
+      "seq": 141,
+      "time": "2026-09-28T15:21:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-141-1",
+        "action": "read",
+        "account": "cl-alex",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-QUEUE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-141"
+    },
+    {
+      "id": "LA-81B676-142-2",
+      "seq": 142,
+      "time": "2026-09-28T15:22:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-142-1",
+        "action": "read",
+        "account": "cl-alex",
+        "reasons": [
+          "NO_VALID_SESSION"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-QUEUE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-142"
+    },
+    {
+      "id": "LA-81B676-143-1",
+      "seq": 143,
+      "time": "2026-09-28T15:23:00Z",
+      "after": "DEP-AUD",
+      "before": "DEP-RESP",
+      "result": "accepted",
+      "target": "P01",
+      "ticket": "T502",
+      "changed": [
+        "department"
+      ],
+      "activity": "department_changed",
+      "actorKind": "learner",
+      "targetType": "person",
+      "correlation": "LC-81B676-143"
+    },
+    {
+      "id": "LA-81B676-143-2",
+      "seq": 143,
+      "time": "2026-09-28T15:23:00Z",
+      "after": "DEP-AUD",
+      "before": "DEP-RESP",
+      "result": "accepted",
+      "target": "ad-alex",
+      "ticket": "T502",
+      "changed": [
+        "department"
+      ],
+      "activity": "department_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-143"
+    },
+    {
+      "id": "LA-81B676-143-3",
+      "seq": 143,
+      "time": "2026-09-28T15:23:00Z",
+      "after": "DEP-AUD",
+      "before": "DEP-RESP",
+      "result": "accepted",
+      "target": "cl-alex",
+      "ticket": "T502",
+      "changed": [
+        "department"
+      ],
+      "activity": "department_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-143"
+    },
+    {
+      "id": "LA-81B676-144-1",
+      "seq": 144,
+      "time": "2026-09-28T15:24:00Z",
+      "after": {
+        "dn": "CN=Alex Morgan,OU=Response,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+        "ou": "OU-RESP"
+      },
+      "before": {
+        "dn": "CN=Alex Morgan,OU=Response,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+        "ou": "OU-RESP"
+      },
+      "reason": "T502",
+      "result": "no_op",
+      "target": "ad-alex",
+      "ticket": "T502",
+      "changed": [],
+      "activity": "ou_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-144"
+    },
+    {
+      "id": "LA-81B676-145-1",
+      "seq": 145,
+      "time": "2026-09-28T15:25:00Z",
+      "after": [
+        "GA-ALL"
+      ],
+      "before": [
+        "GA-ALL",
+        "GA-RESP"
+      ],
+      "reason": "T502",
+      "result": "accepted",
+      "target": "ad-alex",
+      "ticket": "T502",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-145"
+    },
+    {
+      "id": "LA-81B676-146-1",
+      "seq": 146,
+      "time": "2026-09-28T15:26:00Z",
+      "after": [
+        "GA-ALL",
+        "GA-AUD"
+      ],
+      "before": [
+        "GA-ALL"
+      ],
+      "reason": "T502",
+      "result": "accepted",
+      "target": "ad-alex",
+      "ticket": "T502",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-146"
+    },
+    {
+      "id": "LA-81B676-148-2",
+      "seq": 148,
+      "time": "2026-09-28T15:28:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-148-1",
+        "action": "read",
+        "account": "ad-alex",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ADRESP",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-148"
+    },
+    {
+      "id": "LA-81B676-149-2",
+      "seq": 149,
+      "time": "2026-09-28T15:29:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-149-1",
+        "action": "read",
+        "account": "ad-alex",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-ADAUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-149"
+    },
+    {
+      "id": "LA-81B676-150-2",
+      "seq": 150,
+      "time": "2026-09-28T15:30:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-150-1",
+        "action": "read",
+        "account": "ad-alex",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-HAND",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-150"
+    },
+    {
+      "id": "LA-81B676-151-1",
+      "seq": 151,
+      "time": "2026-09-28T15:31:00Z",
+      "after": [],
+      "before": [
+        "GC-RESP"
+      ],
+      "reason": "T502",
+      "result": "accepted",
+      "target": "cl-alex",
+      "ticket": "T502",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-151"
+    },
+    {
+      "id": "LA-81B676-152-1",
+      "seq": 152,
+      "time": "2026-09-28T15:32:00Z",
+      "after": [
+        "GC-AUD"
+      ],
+      "before": [],
+      "reason": "T502",
+      "result": "accepted",
+      "target": "cl-alex",
+      "ticket": "T502",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-152"
+    },
+    {
+      "id": "LA-81B676-154-2",
+      "seq": 154,
+      "time": "2026-09-28T15:34:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-154-1",
+        "action": "read",
+        "account": "cl-alex",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-QUEUE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-154"
+    },
+    {
+      "id": "LA-81B676-155-2",
+      "seq": 155,
+      "time": "2026-09-28T15:35:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-155-1",
+        "action": "read",
+        "account": "cl-alex",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-155"
+    },
+    {
+      "id": "LA-81B676-156-1",
+      "seq": 156,
+      "time": "2026-09-28T15:36:00Z",
+      "after": [
+        "GA-ALL",
+        "GA-AUD"
+      ],
+      "before": [
+        "GA-ALL",
+        "GA-AUD"
+      ],
+      "reason": "",
+      "result": "no_op",
+      "target": "ad-alex",
+      "ticket": "T502",
+      "changed": [],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-156"
+    },
+    {
+      "id": "LA-81B676-157-1",
+      "seq": 157,
+      "time": "2026-09-28T15:37:00Z",
+      "after": {
+        "dn": "CN=Alex Morgan,OU=Audit,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+        "ou": "OU-AUD"
+      },
+      "before": {
+        "dn": "CN=Alex Morgan,OU=Response,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+        "ou": "OU-RESP"
+      },
+      "reason": "",
+      "result": "accepted",
+      "target": "ad-alex",
+      "ticket": "T502",
+      "changed": [
+        "ou",
+        "dn"
+      ],
+      "activity": "ou_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-157"
+    },
+    {
+      "id": "LA-81B676-158-1",
+      "seq": 158,
+      "time": "2026-09-28T15:38:00Z",
+      "after": "DEP-AUD",
+      "before": "DEP-AUD",
+      "result": "no_op",
+      "target": "P01",
+      "ticket": "T502",
+      "changed": [],
+      "activity": "department_changed",
+      "actorKind": "learner",
+      "targetType": "person",
+      "correlation": "LC-81B676-158"
+    },
+    {
+      "id": "LA-81B676-158-2",
+      "seq": 158,
+      "time": "2026-09-28T15:38:00Z",
+      "after": "DEP-AUD",
+      "before": "DEP-AUD",
+      "result": "no_op",
+      "target": "ad-alex",
+      "ticket": "T502",
+      "changed": [],
+      "activity": "department_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-158"
+    },
+    {
+      "id": "LA-81B676-158-3",
+      "seq": 158,
+      "time": "2026-09-28T15:38:00Z",
+      "after": "DEP-AUD",
+      "before": "DEP-AUD",
+      "result": "no_op",
+      "target": "cl-alex",
+      "ticket": "T502",
+      "changed": [],
+      "activity": "department_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-158"
+    },
+    {
+      "id": "LA-81B676-159-1",
+      "seq": 159,
+      "time": "2026-09-28T15:39:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "What I did: Transferred Alex Morgan from the Response department to Audit across HR, Active Directory (ad-alex), and Cloud Identity (cl-alex), moved the AD account to the Audit OU, removed old operational group memberships (Response-Team / Response-Operators), added new audit memberships (Audit-Team / Audit-Reviewers), preserved staff handbook access, and successfully ran post-change access tests verifying allowed access to audit resources and denied access to response queues.\nWhat I checked: Verified HR transfer notice HR-502 and Audit lead approval APP-502 against the target accounts, checked group membership permissions, and evaluated access test decision reasons.\nWhy: To fully execute and audit Alex's approved organizational mover workflow while maintaining least-privilege security controls.",
+      "result": "accepted",
+      "target": "T502",
+      "ticket": "T502",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-159"
+    },
+    {
+      "id": "LA-81B676-161-2",
+      "seq": 161,
+      "time": "2026-09-28T15:41:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-161-1",
+        "action": "read",
+        "account": "cl-finley",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-161"
+    },
+    {
+      "id": "LA-81B676-162-2",
+      "seq": 162,
+      "time": "2026-09-28T15:42:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-162-1",
+        "action": "read",
+        "account": "cl-finley",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-162"
+    },
+    {
+      "id": "LA-81B676-163-1",
+      "seq": 163,
+      "time": "2026-09-28T15:43:00Z",
+      "after": {
+        "status": "disabled",
+        "sessionsRevoked": 0,
+        "securityRevision": 2
+      },
+      "before": {
+        "status": "enabled",
+        "securityRevision": 1
+      },
+      "reason": "Disabling AD account per offboarding ticket T503",
+      "result": "accepted",
+      "target": "ad-finley",
+      "ticket": "T503",
+      "changed": [
+        "status",
+        "securityRevision",
+        "sessions"
+      ],
+      "activity": "account_status_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-163"
+    },
+    {
+      "id": "LA-81B676-164-1",
+      "seq": 164,
+      "time": "2026-09-28T15:44:00Z",
+      "after": {
+        "sessionsRevoked": 0,
+        "securityRevision": 3
+      },
+      "before": null,
+      "reason": "Revoking active sessions for offboarded contractor Finley",
+      "result": "accepted",
+      "target": "ad-finley",
+      "ticket": "T503",
+      "changed": [
+        "sessions",
+        "securityRevision"
+      ],
+      "activity": "sessions_revoked",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-164"
+    },
+    {
+      "id": "LA-81B676-165-1",
+      "seq": 165,
+      "time": "2026-09-28T15:45:00Z",
+      "after": [
+        "GA-ALL"
+      ],
+      "before": [
+        "GA-ALL",
+        "GA-SUP"
+      ],
+      "reason": "Removing Finley membership per offboarding ticket T503",
+      "result": "accepted",
+      "target": "ad-finley",
+      "ticket": "T503",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-165"
+    },
+    {
+      "id": "LA-81B676-166-1",
+      "seq": 166,
+      "time": "2026-09-28T15:46:00Z",
+      "after": [],
+      "before": [
+        "GA-ALL"
+      ],
+      "reason": "Removing Finley membership per offboarding ticket T503",
+      "result": "accepted",
+      "target": "ad-finley",
+      "ticket": "T503",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-166"
+    },
+    {
+      "id": "LA-81B676-167-1",
+      "seq": 167,
+      "time": "2026-09-28T15:47:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing Finley membership per offboarding ticket T503",
+      "result": "no_op",
+      "target": "ad-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-167"
+    },
+    {
+      "id": "LA-81B676-168-1",
+      "seq": 168,
+      "time": "2026-09-28T15:48:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing Finley membership per offboarding ticket T503",
+      "result": "no_op",
+      "target": "ad-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-168"
+    },
+    {
+      "id": "LA-81B676-169-1",
+      "seq": 169,
+      "time": "2026-09-28T15:49:00Z",
+      "after": {
+        "status": "disabled",
+        "sessionsRevoked": 3,
+        "securityRevision": 2
+      },
+      "before": {
+        "status": "enabled",
+        "securityRevision": 1
+      },
+      "reason": "Disabling Cloud Identity account for Finley per T503",
+      "result": "accepted",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [
+        "status",
+        "securityRevision",
+        "sessions"
+      ],
+      "activity": "account_status_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-169"
+    },
+    {
+      "id": "LA-81B676-170-1",
+      "seq": 170,
+      "time": "2026-09-28T15:50:00Z",
+      "after": {
+        "sessionsRevoked": 0,
+        "securityRevision": 3
+      },
+      "before": null,
+      "reason": "Revoking Cloud Identity sessions for Finley per T503",
+      "result": "accepted",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [
+        "sessions",
+        "securityRevision"
+      ],
+      "activity": "sessions_revoked",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-170"
+    },
+    {
+      "id": "LA-81B676-171-1",
+      "seq": 171,
+      "time": "2026-09-28T15:51:00Z",
+      "after": {
+        "sessionsRevoked": 0,
+        "securityRevision": 4
+      },
+      "before": null,
+      "reason": "Revoking Cloud Identity sessions for Finley per T503",
+      "result": "accepted",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [
+        "sessions",
+        "securityRevision"
+      ],
+      "activity": "sessions_revoked",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-171"
+    },
+    {
+      "id": "LA-81B676-172-1",
+      "seq": 172,
+      "time": "2026-09-28T15:52:00Z",
+      "after": [
+        "GC-READ"
+      ],
+      "before": [
+        "GC-READ"
+      ],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "no_op",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-172"
+    },
+    {
+      "id": "LA-81B676-173-1",
+      "seq": 173,
+      "time": "2026-09-28T15:53:00Z",
+      "after": [],
+      "before": [
+        "GC-READ"
+      ],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "accepted",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-173"
+    },
+    {
+      "id": "LA-81B676-174-1",
+      "seq": 174,
+      "time": "2026-09-28T15:54:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "no_op",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-174"
+    },
+    {
+      "id": "LA-81B676-175-1",
+      "seq": 175,
+      "time": "2026-09-28T15:55:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "no_op",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-175"
+    },
+    {
+      "id": "LA-81B676-176-1",
+      "seq": 176,
+      "time": "2026-09-28T15:56:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "no_op",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-176"
+    },
+    {
+      "id": "LA-81B676-177-1",
+      "seq": 177,
+      "time": "2026-09-28T15:57:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "no_op",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-177"
+    },
+    {
+      "id": "LA-81B676-178-1",
+      "seq": 178,
+      "time": "2026-09-28T15:58:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "no_op",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-178"
+    },
+    {
+      "id": "LA-81B676-179-1",
+      "seq": 179,
+      "time": "2026-09-28T15:59:00Z",
+      "after": [],
+      "before": [],
+      "reason": "Removing remaining Finley membership per T503",
+      "result": "no_op",
+      "target": "cl-finley",
+      "ticket": "T503",
+      "changed": [],
+      "activity": "group_member_removed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-179"
+    },
+    {
+      "id": "LA-81B676-180-1",
+      "seq": 180,
+      "time": "2026-09-28T16:00:00Z",
+      "after": {
+        "dn": "CN=Finley Ross,OU=Disabled Accounts,DC=ad,DC=cloudheights,DC=example",
+        "ou": "OU-DIS"
+      },
+      "before": {
+        "dn": "CN=Finley Ross,OU=Support,OU=Staff,DC=ad,DC=cloudheights,DC=example",
+        "ou": "OU-SUP"
+      },
+      "reason": "Moving Finley AD account to Disabled Accounts OU per T503",
+      "result": "accepted",
+      "target": "ad-finley",
+      "ticket": "T503",
+      "changed": [
+        "ou",
+        "dn"
+      ],
+      "activity": "ou_changed",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-180"
+    },
+    {
+      "id": "LA-81B676-181-2",
+      "seq": 181,
+      "time": "2026-09-28T16:01:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-181-1",
+        "action": "read",
+        "account": "cl-finley",
+        "reasons": [
+          "ACCOUNT_DISABLED"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-CASE",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-181"
+    },
+    {
+      "id": "LA-81B676-183-1",
+      "seq": 183,
+      "time": "2026-09-28T16:03:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "What I did: Disabled both Active Directory (ad-finley) and Cloud Identity (cl-finley) accounts, revoked all active sessions, removed group memberships, and moved the AD account to the Disabled Accounts OU per HR-503.\nWhat I checked: Verified pre-change access, performed post-revocation old-session retests (resulting in DENY), and verified simulated sign-in failures due to disabled status.\nWhy: To fully execute contractor Finley Ross's offboarding approval and ensure zero residual access remains in either directory.",
+      "result": "accepted",
+      "target": "T503",
+      "ticket": "T503",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-183"
+    },
+    {
+      "id": "LA-81B676-184-1",
+      "seq": 184,
+      "time": "2026-09-28T16:04:00Z",
+      "after": {
+        "route": "trusted",
+        "outcome": "failed",
+        "hrIdSupplied": "CH-099"
+      },
+      "before": null,
+      "reason": "No directory-confirmed callback has been completed for this request.",
+      "result": "refused",
+      "target": "cl-blair",
+      "ticket": "T504",
+      "changed": [
+        "verification"
+      ],
+      "activity": "verification_completed",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-184"
+    },
+    {
+      "id": "LA-81B676-185-1",
+      "seq": 185,
+      "time": "2026-09-28T16:05:00Z",
+      "after": "escalated",
+      "before": "open",
+      "reason": "What I did: Ran identity verification for password reset request T504 using the caller-supplied ID CH-099 and requester-supplied callback route.\nWhat I checked: Verified that the caller's ID and callback details did not match Blair Chen's official HR record (CH-002), resulting in a verification failure.\nWhy: Escalating the ticket because the unverified request could not be authenticated, preventing unauthorized password resets.",
+      "result": "accepted",
+      "target": "T504",
+      "ticket": "T504",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_escalated",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-185"
+    },
+    {
+      "id": "LA-81B676-186-1",
+      "seq": 186,
+      "time": "2026-09-28T16:06:00Z",
+      "after": {
+        "key": "AS-11",
+        "role": "RL-AZREAD",
+        "group": "GC-AZ",
+        "scope": "RG-LAB",
+        "createdSeq": 186
+      },
+      "before": null,
+      "reason": "Add the resource assignment approved in APP-505",
+      "result": "accepted",
+      "target": "GC-AZ",
+      "ticket": "T505",
+      "changed": [
+        "assignments"
+      ],
+      "activity": "role_assignment_changed",
+      "actorKind": "learner",
+      "targetType": "group",
+      "correlation": "LC-81B676-186"
+    },
+    {
+      "id": "LA-81B676-187-1",
+      "seq": 187,
+      "time": "2026-09-28T16:07:00Z",
+      "after": [
+        "GC-AZ",
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "before": [
+        "GC-JUN",
+        "GC-READ"
+      ],
+      "reason": "Training-Resource-Readers for resource group RG-LAB",
+      "result": "accepted",
+      "target": "cl-blair",
+      "ticket": "T505",
+      "changed": [
+        "memberships"
+      ],
+      "activity": "group_member_added",
+      "actorKind": "learner",
+      "targetType": "account",
+      "correlation": "LC-81B676-187"
+    },
+    {
+      "id": "LA-81B676-189-2",
+      "seq": 189,
+      "time": "2026-09-28T16:09:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-189-1",
+        "action": "read_metadata",
+        "account": "cl-blair",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-VM1",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-189"
+    },
+    {
+      "id": "LA-81B676-190-2",
+      "seq": 190,
+      "time": "2026-09-28T16:10:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-190-1",
+        "action": "stop",
+        "account": "cl-blair",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-VM1",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-190"
+    },
+    {
+      "id": "LA-81B676-191-2",
+      "seq": 191,
+      "time": "2026-09-28T16:11:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-191-1",
+        "action": "read_metadata",
+        "account": "cl-blair",
+        "reasons": [
+          "NO_MATCHING_GRANT"
+        ],
+        "decision": "deny"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-VM2",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-191"
+    },
+    {
+      "id": "LA-81B676-192-1",
+      "seq": 192,
+      "time": "2026-09-28T16:12:00Z",
+      "after": "resolved",
+      "before": "open",
+      "reason": "What I did: Added the approved Azure resource assignment (RG-LAB reader role) and group membership (Training-Resource-Readers) for Blair Chen (cl-blair) per APP-505.\nWhat I checked: Verified through access tests that Blair successfully reads Training-VM metadata, but is correctly denied from stopping Training-VM and from accessing other teams' VMs (Other-Team-VM).\nWhy: The requested access matches the approval scope for resource group RG-LAB without granting unauthorized infrastructure control.",
+      "result": "accepted",
+      "target": "T505",
+      "ticket": "T505",
+      "changed": [
+        "status"
+      ],
+      "activity": "ticket_resolved",
+      "actorKind": "learner",
+      "targetType": "ticket",
+      "correlation": "LC-81B676-192"
+    },
+    {
+      "id": "LA-81B676-193-2",
+      "seq": 193,
+      "time": "2026-09-28T16:13:00Z",
+      "after": {
+        "mode": "current-access",
+        "test": "AT-81B676-193-1",
+        "action": "export",
+        "account": "cl-alex",
+        "reasons": [
+          "ALLOW"
+        ],
+        "decision": "allow"
+      },
+      "before": null,
+      "result": "accepted",
+      "target": "R-AUD",
+      "ticket": null,
+      "changed": [],
+      "activity": "access_test",
+      "actorKind": "learner",
+      "targetType": "resource",
+      "correlation": "LC-81B676-193"
+    }
+  ],
+  "accessTests": [
+    {
+      "id": "AT-81B676-1-1",
+      "seq": 1,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-alex",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 1,
+      "memberships": [
+        "GA-ALL",
+        "GA-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-3-1",
+      "seq": 3,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "ad-alex",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-2",
+      "decision": "deny",
+      "resource": "R-ADAUD",
+      "revision": 3,
+      "memberships": [
+        "GA-ALL",
+        "GA-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-4-1",
+      "seq": 4,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-ALL",
+          "scope": "R-HAND"
+        }
+      ],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "ad-alex",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-2",
+      "decision": "allow",
+      "resource": "R-HAND",
+      "revision": 4,
+      "memberships": [
+        "GA-ALL",
+        "GA-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-5-1",
+      "seq": 5,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "cl-alex",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-LAND",
+      "revision": 5,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-7-1",
+      "seq": 7,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-LAND",
+          "group": "GC-JUN",
+          "scope": "R-LAND",
+          "assignment": "AS-01"
+        }
+      ],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "allow",
+      "resource": "R-LAND",
+      "revision": 7,
+      "memberships": [
+        "GC-JUN"
+      ]
+    },
+    {
+      "id": "AT-81B676-9-1",
+      "seq": 9,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-finley",
+      "account": "cl-finley",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-8",
+      "decision": "deny",
+      "resource": "R-LAND",
+      "revision": 9,
+      "memberships": [
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-10-1",
+      "seq": 10,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "cl-drew",
+      "reasons": [
+        "ACCOUNT_DISABLED"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-LAND",
+      "revision": 10,
+      "memberships": []
+    },
+    {
+      "id": "AT-81B676-12-1",
+      "seq": 12,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-finley",
+      "account": "cl-finley",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-11",
+      "decision": "deny",
+      "resource": "R-LAND",
+      "revision": 12,
+      "memberships": [
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-20-1",
+      "seq": 20,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "cl-alex",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-LAND",
+      "revision": 20,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-25-1",
+      "seq": 25,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-LAND",
+          "group": "GC-JUN",
+          "scope": "R-LAND",
+          "assignment": "AS-01"
+        }
+      ],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-24",
+      "decision": "allow",
+      "resource": "R-LAND",
+      "revision": 25,
+      "memberships": [
+        "GC-JUN"
+      ]
+    },
+    {
+      "id": "AT-81B676-26-1",
+      "seq": 26,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "DIRECTORY_MISMATCH"
+      ],
+      "session": "SES-81B676-24",
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 26,
+      "memberships": [
+        "GC-JUN"
+      ]
+    },
+    {
+      "id": "AT-81B676-27-1",
+      "seq": 27,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "DIRECTORY_MISMATCH"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 27,
+      "memberships": [
+        "GC-JUN"
+      ]
+    },
+    {
+      "id": "AT-81B676-28-1",
+      "seq": 28,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "DIRECTORY_MISMATCH"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 28,
+      "memberships": [
+        "GC-JUN"
+      ]
+    },
+    {
+      "id": "AT-81B676-30-1",
+      "seq": 30,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "DIRECTORY_MISMATCH"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 30,
+      "memberships": [
+        "GC-JUN"
+      ]
+    },
+    {
+      "id": "AT-81B676-32-1",
+      "seq": 32,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "deny",
+      "resource": "R-CASE",
+      "revision": 32,
+      "memberships": [
+        "GC-JUN"
+      ]
+    },
+    {
+      "id": "AT-81B676-34-1",
+      "seq": 34,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-READ",
+          "group": "GC-READ",
+          "scope": "R-CASE",
+          "assignment": "AS-02"
+        }
+      ],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "allow",
+      "resource": "R-CASE",
+      "revision": 34,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-35-1",
+      "seq": 35,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-READ",
+          "group": "GC-READ",
+          "scope": "R-CASE",
+          "assignment": "AS-02"
+        }
+      ],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "allow",
+      "resource": "R-CASE",
+      "revision": 35,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-36-1",
+      "seq": 36,
+      "mode": "current-access",
+      "paths": [],
+      "action": "update",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-6",
+      "decision": "deny",
+      "resource": "R-CASE",
+      "revision": 36,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-43-1",
+      "seq": 43,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-jamie",
+      "reasons": [
+        "ACCOUNT_DISABLED"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 43,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-44-1",
+      "seq": 44,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-jamie",
+      "reasons": [
+        "ACCOUNT_DISABLED"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 44,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-47-1",
+      "seq": 47,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-jamie",
+      "reasons": [
+        "ACCOUNT_DISABLED"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 47,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-52-1",
+      "seq": 52,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-jamie",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 52,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-58-1",
+      "seq": 58,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-ALL",
+          "scope": "R-HAND"
+        }
+      ],
+      "action": "read",
+      "device": "managed-jamie",
+      "account": "ad-jamie",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-57",
+      "decision": "allow",
+      "resource": "R-HAND",
+      "revision": 58,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-60-1",
+      "seq": 60,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-ALL",
+          "scope": "R-HAND"
+        }
+      ],
+      "action": "read",
+      "device": "managed-jamie",
+      "account": "ad-jamie",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-57",
+      "decision": "allow",
+      "resource": "R-HAND",
+      "revision": 60,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-68-1",
+      "seq": 68,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-ALL",
+          "scope": "R-HAND"
+        }
+      ],
+      "action": "read",
+      "device": "managed-jamie",
+      "account": "ad-jamie",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-62",
+      "decision": "allow",
+      "resource": "R-HAND",
+      "revision": 68,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-72-1",
+      "seq": 72,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-jamie",
+      "reasons": [
+        "ACCOUNT_DISABLED"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 72,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-84-1",
+      "seq": 84,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-jamie",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 84,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-86-1",
+      "seq": 86,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-drew",
+      "reasons": [
+        "ACCOUNT_DISABLED"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 86,
+      "memberships": []
+    },
+    {
+      "id": "AT-81B676-88-1",
+      "seq": 88,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-ALL",
+          "scope": "R-HAND"
+        }
+      ],
+      "action": "read",
+      "device": "managed-jamie",
+      "account": "ad-jamie",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-85",
+      "decision": "allow",
+      "resource": "R-HAND",
+      "revision": 88,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-90-1",
+      "seq": 90,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-casey",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 90,
+      "memberships": [
+        "GA-ALL",
+        "GA-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-91-1",
+      "seq": 91,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-blair",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 91,
+      "memberships": [
+        "GA-ALL",
+        "GA-SUP"
+      ]
+    },
+    {
+      "id": "AT-81B676-92-1",
+      "seq": 92,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "ad-casey",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-HAND",
+      "revision": 92,
+      "memberships": [
+        "GA-ALL",
+        "GA-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-103-1",
+      "seq": 103,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-READ",
+          "group": "GC-READ",
+          "scope": "R-CASE",
+          "assignment": "AS-02"
+        }
+      ],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-102",
+      "decision": "allow",
+      "resource": "R-CASE",
+      "revision": 103,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-104-1",
+      "seq": 104,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-READ",
+          "group": "GC-READ",
+          "scope": "R-CASE",
+          "assignment": "AS-02"
+        }
+      ],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-102",
+      "decision": "allow",
+      "resource": "R-CASE",
+      "revision": 104,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-106-1",
+      "seq": 106,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-RESP",
+          "group": "GC-RESP",
+          "scope": "R-QUEUE",
+          "assignment": "AS-03"
+        }
+      ],
+      "action": "read",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-105",
+      "decision": "allow",
+      "resource": "R-QUEUE",
+      "revision": 106,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-107-1",
+      "seq": 107,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-RESP",
+          "group": "GC-RESP",
+          "scope": "R-QUEUE",
+          "assignment": "AS-03"
+        }
+      ],
+      "action": "update",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-105",
+      "decision": "allow",
+      "resource": "R-QUEUE",
+      "revision": 107,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-108-1",
+      "seq": 108,
+      "mode": "current-access",
+      "paths": [],
+      "action": "delete",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-105",
+      "decision": "deny",
+      "resource": "R-AUD",
+      "revision": 108,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-109-1",
+      "seq": 109,
+      "mode": "current-access",
+      "paths": [],
+      "action": "manage_sensitive_groups",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-105",
+      "decision": "deny",
+      "resource": "R-DIR",
+      "revision": 109,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-111-1",
+      "seq": 111,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-AUD",
+          "group": "GC-AUD",
+          "scope": "R-AUD",
+          "assignment": "AS-05"
+        }
+      ],
+      "action": "read",
+      "device": "managed-emi",
+      "account": "cl-emi",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-110",
+      "decision": "allow",
+      "resource": "R-AUD",
+      "revision": 111,
+      "memberships": [
+        "GC-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-112-1",
+      "seq": 112,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-AUD",
+          "group": "GC-AUD",
+          "scope": "R-AUD",
+          "assignment": "AS-05"
+        }
+      ],
+      "action": "export",
+      "device": "managed-emi",
+      "account": "cl-emi",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-110",
+      "decision": "allow",
+      "resource": "R-AUD",
+      "revision": 112,
+      "memberships": [
+        "GC-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-113-1",
+      "seq": 113,
+      "mode": "current-access",
+      "paths": [],
+      "action": "delete",
+      "device": "managed-emi",
+      "account": "cl-emi",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-110",
+      "decision": "deny",
+      "resource": "R-AUD",
+      "revision": 113,
+      "memberships": [
+        "GC-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-115-1",
+      "seq": 115,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-AUD",
+          "group": "GC-AUD",
+          "scope": "R-AUD",
+          "assignment": "AS-05"
+        }
+      ],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-102",
+      "decision": "allow",
+      "resource": "R-AUD",
+      "revision": 115,
+      "memberships": [
+        "GC-AUD",
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-117-1",
+      "seq": 117,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-102",
+      "decision": "deny",
+      "resource": "R-AUD",
+      "revision": 117,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-119-1",
+      "seq": 119,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-RESP",
+          "group": "GC-RESP",
+          "scope": "R-ABAC",
+          "assignment": "AS-04"
+        }
+      ],
+      "action": "read",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-118",
+      "decision": "allow",
+      "resource": "R-ABAC",
+      "revision": 119,
+      "attributes": {
+        "department": "DEP-RESP",
+        "deviceTrust": "managed",
+        "classification": "Internal"
+      },
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-120-1",
+      "seq": 120,
+      "mode": "abac-what-if",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-RESP",
+          "group": "GC-RESP",
+          "scope": "R-ABAC",
+          "assignment": "AS-04"
+        }
+      ],
+      "action": "read",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "ABAC_CONDITION_FAILED"
+      ],
+      "session": "SES-81B676-118",
+      "decision": "deny",
+      "resource": "R-ABAC",
+      "revision": 120,
+      "overrides": {
+        "deviceTrust": "unmanaged"
+      },
+      "attributes": {
+        "department": "DEP-RESP",
+        "deviceTrust": "unmanaged",
+        "classification": "Internal"
+      },
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-121-1",
+      "seq": 121,
+      "mode": "abac-what-if",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-RESP",
+          "group": "GC-RESP",
+          "scope": "R-ABAC",
+          "assignment": "AS-04"
+        }
+      ],
+      "action": "read",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "ABAC_CONDITION_FAILED"
+      ],
+      "session": "SES-81B676-118",
+      "decision": "deny",
+      "resource": "R-ABAC",
+      "revision": 121,
+      "overrides": {
+        "department": "DEP-AUD"
+      },
+      "attributes": {
+        "department": "DEP-AUD",
+        "deviceTrust": "managed",
+        "classification": "Internal"
+      },
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-122-1",
+      "seq": 122,
+      "mode": "abac-what-if",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-RESP",
+          "group": "GC-RESP",
+          "scope": "R-ABAC",
+          "assignment": "AS-04"
+        }
+      ],
+      "action": "read",
+      "device": "managed-casey",
+      "account": "cl-casey",
+      "reasons": [
+        "ABAC_CONDITION_FAILED"
+      ],
+      "session": "SES-81B676-118",
+      "decision": "deny",
+      "resource": "R-ABAC",
+      "revision": 122,
+      "overrides": {
+        "classification": "Confidential"
+      },
+      "attributes": {
+        "department": "DEP-RESP",
+        "deviceTrust": "managed",
+        "classification": "Confidential"
+      },
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-136-1",
+      "seq": 136,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-READ",
+          "group": "GC-READ",
+          "scope": "R-CASE",
+          "assignment": "AS-02"
+        }
+      ],
+      "action": "read",
+      "device": "managed-jamie",
+      "account": "cl-jamie",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-131",
+      "decision": "allow",
+      "resource": "R-CASE",
+      "revision": 136,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-137-1",
+      "seq": 137,
+      "mode": "current-access",
+      "paths": [],
+      "action": "update",
+      "device": "managed-jamie",
+      "account": "cl-jamie",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-131",
+      "decision": "deny",
+      "resource": "R-CASE",
+      "revision": 137,
+      "memberships": [
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-139-1",
+      "seq": 139,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-RESP",
+          "scope": "R-ADRESP"
+        }
+      ],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "ad-alex",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-2",
+      "decision": "allow",
+      "resource": "R-ADRESP",
+      "revision": 139,
+      "memberships": [
+        "GA-ALL",
+        "GA-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-140-1",
+      "seq": 140,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "cl-alex",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-LAND",
+      "revision": 140,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-141-1",
+      "seq": 141,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "cl-alex",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-QUEUE",
+      "revision": 141,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-142-1",
+      "seq": 142,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": null,
+      "account": "cl-alex",
+      "reasons": [
+        "NO_VALID_SESSION"
+      ],
+      "session": null,
+      "decision": "deny",
+      "resource": "R-QUEUE",
+      "revision": 142,
+      "memberships": [
+        "GC-RESP"
+      ]
+    },
+    {
+      "id": "AT-81B676-148-1",
+      "seq": 148,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "ad-alex",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-147",
+      "decision": "deny",
+      "resource": "R-ADRESP",
+      "revision": 148,
+      "memberships": [
+        "GA-ALL",
+        "GA-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-149-1",
+      "seq": 149,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-AUD",
+          "scope": "R-ADAUD"
+        }
+      ],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "ad-alex",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-147",
+      "decision": "allow",
+      "resource": "R-ADAUD",
+      "revision": 149,
+      "memberships": [
+        "GA-ALL",
+        "GA-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-150-1",
+      "seq": 150,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "acl",
+          "group": "GA-ALL",
+          "scope": "R-HAND"
+        }
+      ],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "ad-alex",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-147",
+      "decision": "allow",
+      "resource": "R-HAND",
+      "revision": 150,
+      "memberships": [
+        "GA-ALL",
+        "GA-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-154-1",
+      "seq": 154,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "cl-alex",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-153",
+      "decision": "deny",
+      "resource": "R-QUEUE",
+      "revision": 154,
+      "memberships": [
+        "GC-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-155-1",
+      "seq": 155,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-AUD",
+          "group": "GC-AUD",
+          "scope": "R-AUD",
+          "assignment": "AS-05"
+        }
+      ],
+      "action": "read",
+      "device": "managed-alex",
+      "account": "cl-alex",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-153",
+      "decision": "allow",
+      "resource": "R-AUD",
+      "revision": 155,
+      "memberships": [
+        "GC-AUD"
+      ]
+    },
+    {
+      "id": "AT-81B676-161-1",
+      "seq": 161,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-READ",
+          "group": "GC-READ",
+          "scope": "R-CASE",
+          "assignment": "AS-02"
+        }
+      ],
+      "action": "read",
+      "device": "managed-finley",
+      "account": "cl-finley",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-160",
+      "decision": "allow",
+      "resource": "R-CASE",
+      "revision": 161,
+      "memberships": [
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-162-1",
+      "seq": 162,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-READ",
+          "group": "GC-READ",
+          "scope": "R-CASE",
+          "assignment": "AS-02"
+        }
+      ],
+      "action": "read",
+      "device": "managed-finley",
+      "account": "cl-finley",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-160",
+      "decision": "allow",
+      "resource": "R-CASE",
+      "revision": 162,
+      "memberships": [
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-181-1",
+      "seq": 181,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read",
+      "device": "managed-finley",
+      "account": "cl-finley",
+      "reasons": [
+        "ACCOUNT_DISABLED"
+      ],
+      "session": "SES-81B676-160",
+      "decision": "deny",
+      "resource": "R-CASE",
+      "revision": 181,
+      "memberships": []
+    },
+    {
+      "id": "AT-81B676-189-1",
+      "seq": 189,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-AZREAD",
+          "group": "GC-AZ",
+          "scope": "RG-LAB",
+          "assignment": "AS-11"
+        }
+      ],
+      "action": "read_metadata",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-188",
+      "decision": "allow",
+      "resource": "R-VM1",
+      "revision": 189,
+      "memberships": [
+        "GC-AZ",
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-190-1",
+      "seq": 190,
+      "mode": "current-access",
+      "paths": [],
+      "action": "stop",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-188",
+      "decision": "deny",
+      "resource": "R-VM1",
+      "revision": 190,
+      "memberships": [
+        "GC-AZ",
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-191-1",
+      "seq": 191,
+      "mode": "current-access",
+      "paths": [],
+      "action": "read_metadata",
+      "device": "managed-blair",
+      "account": "cl-blair",
+      "reasons": [
+        "NO_MATCHING_GRANT"
+      ],
+      "session": "SES-81B676-188",
+      "decision": "deny",
+      "resource": "R-VM2",
+      "revision": 191,
+      "memberships": [
+        "GC-AZ",
+        "GC-JUN",
+        "GC-READ"
+      ]
+    },
+    {
+      "id": "AT-81B676-193-1",
+      "seq": 193,
+      "mode": "current-access",
+      "paths": [
+        {
+          "kind": "role",
+          "role": "RL-AUD",
+          "group": "GC-AUD",
+          "scope": "R-AUD",
+          "assignment": "AS-05"
+        }
+      ],
+      "action": "export",
+      "device": "managed-alex",
+      "account": "cl-alex",
+      "reasons": [
+        "ALLOW"
+      ],
+      "session": "SES-81B676-153",
+      "decision": "allow",
+      "resource": "R-AUD",
+      "revision": 193,
+      "memberships": [
+        "GC-AUD"
+      ]
+    }
+  ]
+}

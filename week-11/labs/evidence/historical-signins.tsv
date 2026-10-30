@@ -1,1 +1,27 @@
-
+# selection: records referenced in findings/comparison (11 of 12); full dataset follows below the marker
+event_id	time_utc	user	application	source_ip	device_id	scenario_location	outcome	reason	authentication_method	mfa_detail	correlation_id
+S001	2026-09-21T13:00:00Z	alex@cvi-training.example	CaseDesk	192.0.2.10	managed-alex	Office-A	success	accepted	password_plus_mfa	challenged_now	C001
+S002	2026-09-21T13:01:00Z	blair@cvi-training.example	CaseDesk	192.0.2.11	managed-blair	Office-A	failure	incorrect_password	password	not_recorded	C002
+S003	2026-09-21T13:02:00Z	blair@cvi-training.example	CaseDesk	192.0.2.11	managed-blair	Office-A	success	accepted	password_plus_mfa	challenged_now	C003
+S004	2026-09-21T14:00:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C004
+S005	2026-09-21T14:00:30Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C005
+S006	2026-09-21T14:01:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C006
+S007	2026-09-21T14:01:30Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C007
+S008	2026-09-21T14:02:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C008
+S009	2026-09-21T14:03:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	success	accepted	password	no_challenge_recorded	C009
+S010	2026-09-21T14:10:00Z	alex@cvi-training.example	CaseDesk	192.0.2.10	managed-alex	Office-A	success	accepted	existing_session	satisfied_earlier	C010
+S011	2026-09-21T14:12:00Z	alex@cvi-training.example	CaseDesk	198.51.100.20	managed-alex	Remote-C	success	accepted	existing_session	satisfied_earlier	C011
+# full-dataset
+event_id	time_utc	user	application	source_ip	device_id	scenario_location	outcome	reason	authentication_method	mfa_detail	correlation_id
+S001	2026-09-21T13:00:00Z	alex@cvi-training.example	CaseDesk	192.0.2.10	managed-alex	Office-A	success	accepted	password_plus_mfa	challenged_now	C001
+S002	2026-09-21T13:01:00Z	blair@cvi-training.example	CaseDesk	192.0.2.11	managed-blair	Office-A	failure	incorrect_password	password	not_recorded	C002
+S003	2026-09-21T13:02:00Z	blair@cvi-training.example	CaseDesk	192.0.2.11	managed-blair	Office-A	success	accepted	password_plus_mfa	challenged_now	C003
+S004	2026-09-21T14:00:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C004
+S005	2026-09-21T14:00:30Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C005
+S006	2026-09-21T14:01:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C006
+S007	2026-09-21T14:01:30Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C007
+S008	2026-09-21T14:02:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	failure	incorrect_password	password	not_recorded	C008
+S009	2026-09-21T14:03:00Z	casey@cvi-training.example	CaseDesk	203.0.113.77	unknown-device	Remote-B	success	accepted	password	no_challenge_recorded	C009
+S010	2026-09-21T14:10:00Z	alex@cvi-training.example	CaseDesk	192.0.2.10	managed-alex	Office-A	success	accepted	existing_session	satisfied_earlier	C010
+S011	2026-09-21T14:12:00Z	alex@cvi-training.example	CaseDesk	198.51.100.20	managed-alex	Remote-C	success	accepted	existing_session	satisfied_earlier	C011
+S012	2026-09-21T14:20:00Z	drew@cvi-training.example	CaseDesk	203.0.113.88	unknown-device	Remote-B	failure	account_disabled	password	not_recorded	C012

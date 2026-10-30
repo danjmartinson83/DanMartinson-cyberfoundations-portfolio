@@ -1,1 +1,12 @@
-
+# selection: records referenced in findings/comparison (4 of 4); full dataset follows below the marker
+event_id	time_utc	actor	activity	target	before_value	after_value	result	approval_ticket	correlation_id
+A001	2026-09-21T13:10:00Z	helpdesk@cvi-training.example	group_member_added	blair@cvi-training.example	none	Junior-Analysts	success	CHG-1101	not_available
+A002	2026-09-21T14:04:00Z	casey@cvi-training.example	group_member_added	casey@cvi-training.example	none	Privileged-Operators	success	none_recorded	C009
+A003	2026-09-21T14:15:00Z	helpdesk@cvi-training.example	group_member_removed	alex@cvi-training.example	Old-Response-Team	none	success	CHG-1102	not_available
+A004	2026-09-21T14:25:00Z	helpdesk@cvi-training.example	password_reset_request	blair@cvi-training.example	unchanged	unchanged	refused	REQ-1103	not_available
+# full-dataset
+event_id	time_utc	actor	activity	target	before_value	after_value	result	approval_ticket	correlation_id
+A001	2026-09-21T13:10:00Z	helpdesk@cvi-training.example	group_member_added	blair@cvi-training.example	none	Junior-Analysts	success	CHG-1101	not_available
+A002	2026-09-21T14:04:00Z	casey@cvi-training.example	group_member_added	casey@cvi-training.example	none	Privileged-Operators	success	none_recorded	C009
+A003	2026-09-21T14:15:00Z	helpdesk@cvi-training.example	group_member_removed	alex@cvi-training.example	Old-Response-Team	none	success	CHG-1102	not_available
+A004	2026-09-21T14:25:00Z	helpdesk@cvi-training.example	password_reset_request	blair@cvi-training.example	unchanged	unchanged	refused	REQ-1103	not_available
